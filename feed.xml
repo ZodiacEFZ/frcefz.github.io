@@ -1,39 +1,1325 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>FRC@EFZ</title>
-    <description>FRC Team</description>
-    <link>http://o9u51ngm0.bkt.clouddn.com/</link>
-    <atom:link href="http://o9u51ngm0.bkt.clouddn.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 Jul 2016 21:56:07 +0800</pubDate>
-    <lastBuildDate>Wed, 06 Jul 2016 21:56:07 +0800</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <title>Team 9036 | Zodiac</title>
+    <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
+    <link>http://frc.hsefz.org/</link>
+    <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 03 Aug 2016 09:06:51 +0000</pubDate>
+    <lastBuildDate>Wed, 03 Aug 2016 09:06:51 +0000</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>和 Xenial 情感交流</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;那些年，那个扫地机器人&lt;/h2&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;SkyZH 研发了扫地机器人几个月后，终于意识到，只让扫地机器人自主扫地是远远不够的。
+SkyZH 决定开发一套通讯系统，使用 Xenialware 上的 APP 控制扫地机器人打扫的房间。&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;为了连接到机器人，SkyZH 引入了一套协议 &lt;code class=&quot;highlighter-rouge&quot;&gt;mDNS&lt;/code&gt;。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;mDNS&lt;/code&gt; 帮助计算机快速连接到 RoboRIO 机器人。
+没有 &lt;code class=&quot;highlighter-rouge&quot;&gt;mDNS&lt;/code&gt; 协议，SkyZH 就必须在管理系统中获取机器人的 IP 地址，
+然后在 APP 中手动输入。引入了这个协议后，SkyZH 就可以直接通过网址访问机器人了！
+在烧写机器人固件时，SkyZH 确定了它的地址为 &lt;code class=&quot;highlighter-rouge&quot;&gt;roborio-2333-frc.local&lt;/code&gt;。
+于是他就可以直接通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;roborio-2333-frc.local&lt;/code&gt; 这个地址解析出机器人的局域网 IP
+&lt;code class=&quot;highlighter-rouge&quot;&gt;10.23.33.xx&lt;/code&gt;，接着连接上去了。&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;networktables&quot;&gt;Networktables&lt;/h2&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;SkyZH 引入了 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 协议进行机器人数据的储存。
+SkyZH 可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 中创建表格，并在表格中储存键值对。&lt;/p&gt;
 
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 由服务器和客户端组成。服务器一般运行在 RoboRIO 控制器上，
+而客户端可以运行在任何地方。比如烧写在 RoboRIO 上的程序可以通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt;
+获取一个值，电脑上的 &lt;code class=&quot;highlighter-rouge&quot;&gt;SmartDashboard&lt;/code&gt; 可以通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 获取机器人的传感器数据，
+同时你也可以通过 Python 编写一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 程序。&lt;/p&gt;
+
+&lt;h3 id=&quot;networktable&quot;&gt;打开测试的 NetworkTable&lt;/h3&gt;
+
+&lt;p&gt;安装 FRC Update Suites 之后，你就可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;用户目录&amp;gt;/wpilib/tools&lt;/code&gt; 中找到应用程序。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/smartdashboard-1-1c96b6a098f1554aa9203ac3c9f211e353fdc531bbbe0013c955ce39ae3b5eba.png&quot; width=&quot;1196&quot; height=&quot;839&quot; alt=&quot;networking-roborio/smartdashboard-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;OutlineViewer&lt;/code&gt; 是一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 的监视工具。你可以在这个应用里看到所有的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/nt-1-fc8c72f3421c6a17ab4eecc5af5ecf73c38d413e7991c40947f8e3e7708513e8.png&quot; width=&quot;345&quot; height=&quot;176&quot; alt=&quot;networking-roborio/nt-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;地址填写 &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost&lt;/code&gt;，当然在调试机器人时要填写 &lt;code class=&quot;highlighter-rouge&quot;&gt;roborio-xxxx-frc.local&lt;/code&gt;。
+本地调试则点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Start Server&lt;/code&gt; 运行服务器。调试机器人选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;Start Client&lt;/code&gt; 运行客户端。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/nt-2-c688272d90f10bbc4bce0a0d91a9902f7767c6391a9826ee717c2beadb62a670.png&quot; width=&quot;584&quot; height=&quot;392&quot; alt=&quot;networking-roborio/nt-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在这个界面中就可以监视所有数值。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;在机器人控制器上存储数据&lt;/h3&gt;
+
+&lt;p&gt;首先要从 Networktables 中获取一张表格。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;NetworkTable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ntable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NetworkTable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;接着就可以向表格中存储各种数据。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ntable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;putNumber&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testInt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;233&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ntable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;putString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testString&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello, World!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;putString&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;putNumber&lt;/code&gt; 在设置的键存在时，会覆盖之前的数据。但是，
+如果 &lt;code class=&quot;highlighter-rouge&quot;&gt;test&lt;/code&gt; 原先设置成数字 233，而后又 &lt;code class=&quot;highlighter-rouge&quot;&gt;putString(&quot;test&quot;, &quot;Hello!&quot;)&lt;/code&gt; 就会报错。
+键的类型是不能改变的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/nt-3-6251d18fcda6b7ed911fa94aebcc7477ce61f0ae6ad91c3a8a0b2e67885a5518.png&quot; width=&quot;584&quot; height=&quot;392&quot; alt=&quot;networking-roborio/nt-3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;获取数据也十分简单。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ntable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getNumber&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testInt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ntable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testString&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Default String&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;函数的参数，第一个是要获取的键，第二个是如果该键不存在返回的默认值。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;远程操控&lt;/h3&gt;
+
+&lt;p&gt;视觉处理的数据经过控制器传输后，需要在电脑上处理。因此需要在电脑上远程连接 Networktables。&lt;/p&gt;
+
+&lt;p&gt;在使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;getTable&lt;/code&gt; 前调用初始化函数即可。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;NetworkTable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTeam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9036&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;订阅事件&lt;/h3&gt;
+
+&lt;p&gt;通过 Networktables 的事件订阅机制，每当有值被修改时，都可以调用用户指定的函数。
+首先要定义一个回调接口，并在接口中编写回调函数。&lt;/p&gt;
+
+&lt;p&gt;定义类成员变量 &lt;code class=&quot;highlighter-rouge&quot;&gt;tableListener&lt;/code&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ITableListener&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tableListener&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ITableListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;valueChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ITable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isNew&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testInt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在获取到 &lt;code class=&quot;highlighter-rouge&quot;&gt;Table&lt;/code&gt; 对象后，注册事件处理器。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ntable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addTableListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tableListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;事务&lt;/h3&gt;
+
+&lt;p&gt;有一天 SkyZH 给扫地机器人编写了视觉处理确定打扫目标程序，程序返回了三个键值对的结果：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(targetAngle, 180.0)
+(tragetPosition, 20)
+(tragetSpeed, 10)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;要进行存储，必然要经过以下几个步骤：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;putNumber(&quot;targetAngle&quot;, 180.0);
+...
+putNumber(&quot;tragetPosition&quot;, 20);
+...
+putNumber(&quot;tragetSpeed&quot;, 10);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;机器人要不断读取这些数据。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;getNumber(&quot;targetAngle&quot;, 0);
+...
+getNumber(&quot;tragetPosition&quot;, 0);
+...
+getNumber(&quot;tragetSpeed&quot;, 0);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;那么问题来了。假设储存程序执行了两次，而这一期间机器人又读取了数据：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;事件流
+1     targetAngle = 180
+2     targetPosition = 20
+3     targetSpeed = 10
+4     get targetAngle           (=180)
+5     get tragetPosition        (=20)
+6     get targetSpeed           (=10)
+7     targetAngle = 170
+8     targetPosition = 25
+9     targetSpeed = 13
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;一切正常。&lt;/p&gt;
+
+&lt;p&gt;但如果三个数据不是同时写入或同时读取，或者读取指令因为网络原因没有同时到达，可能造成这种队列：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;事件流
+1     targetAngle = 180
+2     targetPosition = 20
+3     targetSpeed = 10
+4     get targetAngle           (=180)
+5     targetAngle = 170
+6     targetPosition = 25
+7     get tragetPosition        (=25)
+8     get targetSpeed           (=10)
+9     targetSpeed = 13
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这样获取到的组合就是 &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;targetSpeed:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;10,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;targetPosition:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;25,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;targetAngle:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;，不是任何一次设置的值。&lt;/p&gt;
+
+&lt;p&gt;解决方法是将这些指令一起执行。中间不插入任何代码。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;......
+putNumber(&quot;targetAngle&quot;, 180.0);
+putNumber(&quot;tragetPosition&quot;, 20);
+putNumber(&quot;tragetSpeed&quot;, 10);
+......
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;......
+getNumber(&quot;targetAngle&quot;, 0);
+getNumber(&quot;tragetPosition&quot;, 0);
+getNumber(&quot;tragetSpeed&quot;, 0);
+......
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;或者再使用一个临时的键值对 &lt;code class=&quot;highlighter-rouge&quot;&gt;isTransferred&lt;/code&gt;，当数据全部设置完毕后设置为 &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;，仅在此时才能获取数据。&lt;/p&gt;
+
+&lt;h3 id=&quot;python--networktables&quot;&gt;(拓展) 使用 Python 操作 Networktables&lt;/h3&gt;
+
+&lt;p&gt;我们使用这个开源项目操作 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt;。&lt;a href=&quot;https://github.com/robotpy/pynetworktables&quot;&gt;pynetworktables&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;安装 Python3&lt;/li&gt;
+  &lt;li&gt;将 Python 添加到环境变量中&lt;/li&gt;
+  &lt;li&gt;在命令提示符中运行 &lt;code class=&quot;highlighter-rouge&quot;&gt;pip install pynetworktables&lt;/code&gt;。如果速度很慢请使用国内 pip 镜像。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;编写 Python 程序。&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;networktables&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NetworkTable&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dashboard&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NetworkTable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'SmartDashboard'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dashboard&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;putNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'test'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2333&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;保存为 &lt;code class=&quot;highlighter-rouge&quot;&gt;test.py&lt;/code&gt;，在命令提示符中切换到当前目录，执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;python test.py&lt;/code&gt;。最后一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;while&lt;/code&gt; 循环保证数据录入后再退出程序。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;smartdashboard&quot;&gt;SmartDashboard&lt;/h2&gt;
+
+&lt;p&gt;除了使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 储存数据以外，&lt;code class=&quot;highlighter-rouge&quot;&gt;SmartDashboard&lt;/code&gt; 利用 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt;，
+通过配置文件，可以方便地将储存在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 数据展示在屏幕上。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;SmartDashboard&lt;/code&gt; 是机器人与计算机通讯的桥梁。&lt;/p&gt;
+
+&lt;h3 id=&quot;smartdashboard-1&quot;&gt;打开 SmartDashboard&lt;/h3&gt;
+
+&lt;p&gt;安装 FRC Update Suites 之后，你就可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;用户目录&amp;gt;/wpilib/tools&lt;/code&gt; 中找到应用程序。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/smartdashboard-1-1c96b6a098f1554aa9203ac3c9f211e353fdc531bbbe0013c955ce39ae3b5eba.png&quot; width=&quot;1196&quot; height=&quot;839&quot; alt=&quot;networking-roborio/smartdashboard-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;OutlineViewer&lt;/code&gt; 是一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 的监视工具。你可以在这个应用里看到所有的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SmartDashboard&lt;/code&gt; 是稳定的 &lt;code class=&quot;highlighter-rouge&quot;&gt;SmartDashboard&lt;/code&gt; 版本。推荐在比赛时使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sfx&lt;/code&gt; 是一个美观大气但充满 BUG 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;SmartDashboard&lt;/code&gt; 程序。在调试时可以用它进行数据分析。&lt;/p&gt;
+
+&lt;h3 id=&quot;smartdashboard-&quot;&gt;使用 SmartDashboard 显示调试数据&lt;/h3&gt;
+
+&lt;p&gt;SmartDashboard 是一个静态类，可以使用其中的静态函数向 SmartDashboard 发送数据。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;SmartDashboard&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;putNumber&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;TestData&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;23333&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在指令执行过程中不断调用发送数据的指令，数据就会不断刷新。在 &lt;code class=&quot;highlighter-rouge&quot;&gt;SmartDashboard&lt;/code&gt;
+上将该数据设置成折线图格式，就可以显示出一段时间内的该数据点的所有数值。&lt;/p&gt;
+
+&lt;h3 id=&quot;smartdashboard--networktables&quot;&gt;为什么有 SmartDashboard 还要 Networktables?&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SmartDashboard&lt;/code&gt; 是直接展现给操作员的面板，并且可以可视化展现调试数据。&lt;/p&gt;
+
+&lt;p&gt;而视觉处理、图像处理等的临时数据必须要存储在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 才能进行进一步展现和处理。
+另外 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 提供了事件订阅功能，可以在其中的键值对发生更改时接收到通知。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;练习&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;阅读 &lt;code class=&quot;highlighter-rouge&quot;&gt;SmartDashboard&lt;/code&gt; 教程，学习如何查看现在运行的所有指令、现在 &lt;code class=&quot;highlighter-rouge&quot;&gt;DriveSubsystem&lt;/code&gt; 子系统执行的指令，
+以及如何手动运行一个指令。
+(&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/26401/l/255422-displaying-the-status-of-commands-and-subsystems&quot;&gt;教程&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;阅读 &lt;code class=&quot;highlighter-rouge&quot;&gt;SmartDashboard&lt;/code&gt; 教程，学习如何通过控制板选择自动阶段执行的指令。
+(关键: 添加 &lt;code class=&quot;highlighter-rouge&quot;&gt;SendableChooser&lt;/code&gt; 到控制板, &lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/26401&quot;&gt;教程&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;添加一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;DebugSubsystem&lt;/code&gt; 以及 &lt;code class=&quot;highlighter-rouge&quot;&gt;DebugCommand&lt;/code&gt;，实现在机器人程序运行期间，不断向 &lt;code class=&quot;highlighter-rouge&quot;&gt;SmartDashboard&lt;/code&gt; 写入一个随机数值。
+(提示: 在 &lt;code class=&quot;highlighter-rouge&quot;&gt;DebugCommand&lt;/code&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;execute&lt;/code&gt; 函数中进行数据存放)&lt;/li&gt;
+  &lt;li&gt;通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 读取 &lt;code class=&quot;highlighter-rouge&quot;&gt;Test&lt;/code&gt; 表格中的三个数据 &lt;code class=&quot;highlighter-rouge&quot;&gt;speedMax&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;speedDelta&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;speedMin&lt;/code&gt;。注意使用事务。&lt;/li&gt;
+  &lt;li&gt;在 DriverStation 的设置中将默认的调试面板改为 &lt;code class=&quot;highlighter-rouge&quot;&gt;SmartDashboard&lt;/code&gt; (调成 Java 模式)。&lt;/li&gt;
+  &lt;li&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 中添加 &lt;code class=&quot;highlighter-rouge&quot;&gt;SubTable&lt;/code&gt; 并存储数据 &lt;a href=&quot;http://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/networktables/NetworkTable.html&quot;&gt;文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;请善用官方教程和 WPILib 文档：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809&quot;&gt;FRC Java Programming 在线版&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/26401&quot;&gt;SmartDashboard 教程 在线版&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://first.wpi.edu/FRC/roborio/release/docs/java/&quot;&gt;WPILib API Reference 在线版&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 06 Jul 2016 19:48:55 +0800</pubDate>
-        <link>http://o9u51ngm0.bkt.clouddn.com/jekyll/update/2016/07/06/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://o9u51ngm0.bkt.clouddn.com/jekyll/update/2016/07/06/welcome-to-jekyll.html</guid>
+        <pubDate>Sun, 24 Jul 2016 05:29:02 +0000</pubDate>
+        <link>http://frc.hsefz.org/programming/2016/07/24/networking-with-roborio.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/24/networking-with-roborio.html</guid>
+        
+        <category>zc大哥哥的编程干货</category>
+        
+        <category>FRC@EFZ</category>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
         
         
-        <category>jekyll</category>
+        <category>programming</category>
         
-        <category>update</category>
+      </item>
+    
+      <item>
+        <title>Xenial 的代码仓库 · 使用 git</title>
+        <description>&lt;p&gt;很久以前，在 Xenial 星球上，人们都使用 XBrick 编写代码。一个名为 WindHub 软件公司迅猛发展，
+从无到有，从一个人到十个人，从十个人到一百个人。要不是英勇的 ttt (又称 3t 卫士) 阻止了 CEO SkyZH 的阴谋，
+Xenial 星球早就变成可怕程序猿的天下了！
+刚开始 WindHub 公司里的 Xenial 人使用 Brick Device 储存源代码，
+每天早晨都有一场例会，CEO SkyZH 当场收集 Brick Device，
+在自己的 Xenialware 上查看每个人新增的程序段，
+然后合并，拷贝给大家。终于有一天，SkyZH 累了，
+于是他引入了 git 这种版本管理工具，开辟了一片新天地。
+git 仓库就被建在被 Xenial 人奉为 &lt;em&gt;被遗忘的角落&lt;/em&gt; 中央。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;下载与安装&lt;/h2&gt;
+
+&lt;p&gt;git 是一个源代码管理工具。我们可以使用图形化界面的 git 进行源代码管理。&lt;/p&gt;
+
+&lt;p&gt;在 &lt;a href=&quot;https://git-scm.com/&quot;&gt;git 官网&lt;/a&gt; 下载。点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Downloads for Windows&lt;/code&gt; 即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/download-1-a592e59ab4bd5a4eef960b8d5beaa69a4467cf633257f3b1d12be21b8b3451fc.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/download-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;安装全部采用默认选项即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-1-557dfde398fa26b79389e949052abc4647199cb879c4ef417e423474fa1017ef.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-2-9b80d6e4268e2a5b3d6df4d9fe6bd0feba878d8fd3e32e1e43e4958df999105a.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-3-fba2a929d8b72bc536b6d266b375db50634ac1d33673c2515714d9b3a2a246b6.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-4-047bedd569c85fe49b86d5272c30703ea48a481e20dd735be0d16456a0eb5734.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-4.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-5-812b60ecc881c6215e14917f2f0aa64cf827cd9ac38b00341153f06f14b9a96e.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-5.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-6-254bbb7d394b8b513558451615fa8bfbdaa9e070c4eda707273c253239b38c5b.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-6.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;github---&quot;&gt;注册 GitHub 账号 &amp;amp; 设置密钥&lt;/h2&gt;
+
+&lt;p&gt;在 &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt; 上注册你的账号，请记住邮箱、用户名。&lt;/p&gt;
+
+&lt;p&gt;点击右上头像 - &lt;code class=&quot;highlighter-rouge&quot;&gt;Settings&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-1-61fcd190f035f3bb5b24abd048b811a9da9bd0cf24586e25b14926c37f32fbcc.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/use-github-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH and GPG keys&lt;/code&gt;，点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;New SSH Key&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-2-53c9905d3ccd64246024bc105a3318fc2bf38512e05d28a18bacd0c160cae385.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/use-github-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Users\&amp;lt;用户名&amp;gt;\workspace&lt;/code&gt; (即你的 Eclipse 的 workspace 位置) 内点击右键打开 &lt;code class=&quot;highlighter-rouge&quot;&gt;Git GUI&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-3-54b1b42c8f7be1673f2803f97382a1052e1c3456b1116702023942ba4575d007.png&quot; width=&quot;1211&quot; height=&quot;859&quot; alt=&quot;using-git/use-github-3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;Show SSH Key&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-4-026978bf96ae5f541e831f090f6814f08eae0e7e309a0dbe8f701e652e616963.png&quot; width=&quot;561&quot; height=&quot;288&quot; alt=&quot;using-git/use-github-4.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;Generate Key&lt;/code&gt; 密码留空点 OK。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-5-101f8986c1e409f4a00c9f67edb431a45743048fd7af017b87b7514577481782.png&quot; width=&quot;506&quot; height=&quot;347&quot; alt=&quot;using-git/use-github-5.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;将文本框内密钥拷贝到 GitHub 上，点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Add SSH Key&lt;/code&gt;。输入密码即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-6-c9512daf1cb7c7a00512f9e45cb3e14ff4555f51ab8465ec23830edceb839fe2.png&quot; width=&quot;486&quot; height=&quot;323&quot; alt=&quot;using-git/use-github-6.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-7-d1cf62f89ff3f2a615e5650e825d99037371ead3e779a207e3685a484d7c9d7c.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/use-github-7.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;现在你就可以不用输入密码，通过这个 SSH 密钥连接到远程的代码仓库了。&lt;/p&gt;
+
+&lt;h2 id=&quot;xenial-&quot;&gt;Xenial 的代码仓库&lt;/h2&gt;
+
+&lt;p&gt;Xenial 使用一种非常高级的仓库管理程序。仓库建在一个名为 &lt;em&gt;被遗忘的角落&lt;/em&gt; 的城区。
+这里的人们天天只穿着运动鞋、鸭舌帽、短袖、牛仔裤，背着双肩包。
+每天都坐在 Xenialware 前编程序。仓库就在 &lt;em&gt;被遗忘的角落&lt;/em&gt; 的中心地带。&lt;/p&gt;
+
+&lt;p&gt;Xenial 星人使用一种非常高级的方法编程序。他们使用 XBrick 编写程序。
+Xenial 星人将不同类型的方块按特定的顺序排列好，然后就能使用 Xenialware 执行程序。
+他们用 git 这种高级的运输工具将方块运输到中心仓库。&lt;/p&gt;
+
+&lt;p&gt;git 将每一次向仓库存数据的 &lt;strong&gt;内容&lt;/strong&gt; 叫做 &lt;code class=&quot;highlighter-rouge&quot;&gt;Commit(提交)&lt;/code&gt;。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Commit&lt;/code&gt; 保存了程序相对于上次提交更改的部分。
+创建了一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;Commit&lt;/code&gt; 后，git 通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;Push (推送)&lt;/code&gt; 的方式将 &lt;code class=&quot;highlighter-rouge&quot;&gt;Commit&lt;/code&gt; 从本地运输到远程仓库。
+如果远程仓库无法接受这次 &lt;code class=&quot;highlighter-rouge&quot;&gt;Commit&lt;/code&gt;，它就不能被成功 &lt;code class=&quot;highlighter-rouge&quot;&gt;Push&lt;/code&gt;。
+Xenial 星人于是不得不将远程仓库的所有 &lt;code class=&quot;highlighter-rouge&quot;&gt;Commit&lt;/code&gt; 拉取下来 &lt;code class=&quot;highlighter-rouge&quot;&gt;Merge (合并)&lt;/code&gt; 到自己的程序里，
+再尝试提交。&lt;/p&gt;
+
+&lt;p&gt;后来这套机制也被用在人类的代码管理上。人类使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; 建设了分布式的源代码管理库。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;获取代码仓库 &amp;amp; 提交更改。&lt;/h2&gt;
+
+&lt;p&gt;在 Eclipse workspace 文件夹内右键打开 &lt;code class=&quot;highlighter-rouge&quot;&gt;Git GUI&lt;/code&gt;，点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Clone Existing Repository&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/clone-1-d129caa892b6ae5c83186303c31600038aa7cb920f38b5a203365b17a8aea7f1.png&quot; width=&quot;545&quot; height=&quot;341&quot; alt=&quot;using-git/clone-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;输入远程仓库的地址 &lt;code class=&quot;highlighter-rouge&quot;&gt;git@github.com:SkyZH/BreezeRobot.git&lt;/code&gt;，以及目标目录 &lt;code class=&quot;highlighter-rouge&quot;&gt;BreezeRobot&lt;/code&gt;。
+点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Clone&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：这个远程仓库需要经过授权才能访问。请联系 SkyZH。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/clone-2-19c688251627bd75a0f8fb5954c1e994d56af931d63d7348e96e8b20c3d22bca.png&quot; width=&quot;760&quot; height=&quot;341&quot; alt=&quot;using-git/clone-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可能会出现一个弹框询问是否要信任 &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub&lt;/code&gt;，输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;yes&lt;/code&gt; 点击 OK。&lt;/p&gt;
+
+&lt;p&gt;以后都可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;workspace/BreezeRobot&lt;/code&gt; 目录下右击 - &lt;code class=&quot;highlighter-rouge&quot;&gt;Git GUI&lt;/code&gt; 打开 &lt;code class=&quot;highlighter-rouge&quot;&gt;仓库管理视图&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/clone-3-139d85c680f0d46434ae774a5d9b1b99fe14df9a58f4b5c69d3ed3e7f2e9108e.png&quot; width=&quot;1105&quot; height=&quot;684&quot; alt=&quot;using-git/clone-3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;现在我们将这个项目导入到 Eclipse 中。选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;File&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;Import&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/import-1-8c4014d1df6add75c6946af3cfeb8252da3a3ae7b71008cd859cdc6d5c80ab18.png&quot; width=&quot;1275&quot; height=&quot;849&quot; alt=&quot;using-git/import-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;Existing Projects into Workspace&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/import-2-0fde3ce9881b09c988e3691be75df1d507f4fe9983d13d8104149d598fd46af9.png&quot; width=&quot;684&quot; height=&quot;542&quot; alt=&quot;using-git/import-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Browse...&lt;/code&gt; 选择目录，点击 Finish 即可完成导入。
+在左侧 &lt;code class=&quot;highlighter-rouge&quot;&gt;Package Explorer&lt;/code&gt; 中就能找到导入的项目。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/import-3-a3f1bb116a8b73a4493eb013d3deac9eefa3301df1464505c847aa8e52dd18fe.png&quot; width=&quot;694&quot; height=&quot;840&quot; alt=&quot;using-git/import-3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;现在在 Eclipse 中随便编辑一个文件，比如 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot.java&lt;/code&gt;。保存后回到 &lt;code class=&quot;highlighter-rouge&quot;&gt;Git GUI&lt;/code&gt;。
+点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Rescan&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;Stage Changed&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-1-c8d5e3327cb152ccedbee2998fa1b3106cff36fab4de64860cf216d16bba0896.png&quot; width=&quot;1105&quot; height=&quot;684&quot; alt=&quot;using-git/push-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Commit Message&lt;/code&gt; 中输入本次提交的说明。 (&lt;em&gt;比如：Add xxx, Modify xxx, Delete xxx&lt;/em&gt;)
+然后点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Commit&lt;/code&gt;，再点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Push&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-2-4334747ce92eb56c147945b974620ebdabf3a408c6e71a7f752b84c40ef1daa2.png&quot; width=&quot;601&quot; height=&quot;559&quot; alt=&quot;using-git/push-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;再次点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Push&lt;/code&gt; 即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-4-cdc9d6a5245329dee528966b44ecbf94d5ad7e0383a07908079b4ba40d975a86.png&quot; width=&quot;837&quot; height=&quot;363&quot; alt=&quot;using-git/fix-error-4.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;绿色代表推送成功。然后在项目的 &lt;a href=&quot;https://github.com/SkyZH/BreezeRobot/&quot;&gt;GitHub 主页&lt;/a&gt; 上就可以看到最新的程序。
+点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;xx Commits&lt;/code&gt; 可以看到你提交的记录。&lt;/p&gt;
+
+&lt;p&gt;那么 &lt;code class=&quot;highlighter-rouge&quot;&gt;Rescan&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Stage&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Commit&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Push&lt;/code&gt; 分别有什么作用呢？&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Rescan&lt;/code&gt; 扫描所有被修改过的文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-3-d6c11aa37d8977caef5f4038483a831e20b001f046d2f4dfc6a5d86054afc2bd.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Stage&lt;/code&gt; 将修改过的文件记录下来。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-4-a1802ed7248d394443541d85a6622ee6885753692c1ec9dfd293577cf816cfe9.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-4.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Commit&lt;/code&gt; 把本地的程序保存到本地的代码仓库中。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-5-e48e91a81459c2ca79382db6c50becb86500fb8ac179040fa2f47f452333c8c9.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-5.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Push&lt;/code&gt; 将本地代码仓库同步到远程代码仓库中。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-6-159dd35125650c19b6e995967e1b408693ac64c44cb0a7bbc164d09caee2e950.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-6.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;修复错误&lt;/h2&gt;
+
+&lt;p&gt;如果在点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Push&lt;/code&gt; 看到如下视图，这意味着你的本地仓库并不是最新的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-1-99782132d2e391491d69043eaebaef6796bcbc86433cdc4ed670187714bbc652.png&quot; width=&quot;837&quot; height=&quot;384&quot; alt=&quot;using-git/fix-error-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Remote&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;Fetch from&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;origin&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-2-cec9560b2699eed0d4a28cceed23e1f6055c0704c6da8f74a93dd7c109b8aa1c.png&quot; width=&quot;1119&quot; height=&quot;699&quot; alt=&quot;using-git/fix-error-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;成功后点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Merge&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;Local Merge&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-3-a68b3f69edccb4cd4604fc2dae7b7d346aa65c1a6d832a96eb0e7dcde6a0ee41.png&quot; width=&quot;1127&quot; height=&quot;693&quot; alt=&quot;using-git/fix-error-3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;成功后再点击 Push 即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-4-cdc9d6a5245329dee528966b44ecbf94d5ad7e0383a07908079b4ba40d975a86.png&quot; width=&quot;837&quot; height=&quot;363&quot; alt=&quot;using-git/fix-error-4.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后在项目的 &lt;a href=&quot;https://github.com/SkyZH/BreezeRobot/&quot;&gt;GitHub 主页&lt;/a&gt; 上就可以看到最新的程序。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;修复不了错误&lt;/h2&gt;
+
+&lt;p&gt;在项目根目录下右键 - &lt;code class=&quot;highlighter-rouge&quot;&gt;Git Bash&lt;/code&gt;，输入：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; git reset --hard
+&amp;gt; git pull origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-5-f6ff116ec65ff53f636c431dd3447f892c904ed38f1c440975a4ff65fc83f86d.png&quot; width=&quot;923&quot; height=&quot;232&quot; alt=&quot;using-git/fix-error-5.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;你本地所作的所有更改会全部消失，变成远程代码仓库的最新代码&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 08 Jul 2016 09:08:16 +0000</pubDate>
+        <link>http://frc.hsefz.org/programming/2016/07/08/using-git.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/08/using-git.html</guid>
+        
+        <category>zc大哥哥的编程干货</category>
+        
+        <category>FRC@EFZ</category>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        
+        <category>programming</category>
+        
+      </item>
+    
+      <item>
+        <title>手舞足蹈的 Xenial 星人 · 指令式机器人</title>
+        <description>&lt;p&gt;SkyZH 要对自己的机器人开始升级啦！因为之前的程序只能扫他扁平状的房间，而不能扫客厅，
+因此他非常恼火。他想要让机器人自动扫大厅，但是又懒得写自动寻路算法。终于有一天，
+他在 X购物 上购买的的 Xperia 手柄快递到家了！期待已久的他决定使用手柄控制机器人，
+玩 Xenial 冲突累了的时候就可以让机器人扫地了。&lt;/p&gt;
+
+&lt;p&gt;上次自动控制的代码是这个样子的：&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSafetyEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;SkyZH 于是决定稍微修改一下程序。
+&lt;strong&gt;（注意：以下几段代码中的部分函数，比如 &lt;code class=&quot;highlighter-rouge&quot;&gt;getSpeed&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;getDirection&lt;/code&gt; 并不是官方 API 中的，这是胡编乱造的。 o(^▽^)o）&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSafetyEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joystick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSpeed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joystick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDirection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.02&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;机器人要在按住手柄上的 &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; 键时停下，并开始扫地。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSafetyEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joystick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSpeed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joystick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDirection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.02&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;SkyZH 有一个很奇怪的习惯。他凭感觉将扫地机器人开到任意一个地方，按下扫地键后，他才会关注那里到底是什么。
+如果机器人扫到他心爱的最新 Xenialware 笔记本电脑的话，他会很不开心的。因此松开 &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; 键后，机器人应该立刻停下扫地工作。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;milliseconds()&lt;/code&gt; 可以获取到程序运行的毫秒数，&lt;strong&gt;但官方文档并没有这个函数&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSafetyEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joystick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSpeed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joystick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDirection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;milliseconds&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;milliseconds&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;milliseconds&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.02&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;好麻烦啊！SkyZH 为了偷懒，决定采用指令式编程来解决这个问题。&lt;/p&gt;
+
+&lt;h2 id=&quot;xenial--inn&quot;&gt;Xenial 星人的 INN&lt;/h2&gt;
+
+&lt;p&gt;Xenial 星人通过名为 INN 的系统进行身体各个器官的通讯。
+当 Xenial 星人想要起床时，INN 系统会从中心器官大脑向各个器官发送如下指令：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;腰部关节旋转到 90 度。（翻身，仰视）&lt;/li&gt;
+  &lt;li&gt;等待腰部旋转完成。&lt;/li&gt;
+  &lt;li&gt;腰关节旋转到 45 度。&lt;/li&gt;
+  &lt;li&gt;小腿关节旋转到 90 度。（由于 INN 发送指令的速度非常快，因此 3~4 可以被认为是同一时间发出的）&lt;/li&gt;
+  &lt;li&gt;等待 3~5 完成。&lt;/li&gt;
+  &lt;li&gt;开始转动 XEN 器官。&lt;/li&gt;
+  &lt;li&gt;等待两秒。&lt;/li&gt;
+  &lt;li&gt;停止 XEN 器官旋转。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/xenial-1-d0c789da893bf63e0a6ac8a7b76eb41e6baf6d2368d4ef377dd11266368adf70.png&quot; width=&quot;963&quot; height=&quot;665&quot; alt=&quot;command-based-robot/xenial-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;总之最后 Xenial 人就变成这个样子了。&lt;/p&gt;
+
+&lt;p&gt;我们把这个过程分解成如下几个指令：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;初始操作：让腰部关节横轴旋转到 90 度。  &lt;br /&gt;
+结束条件：腰部关节横轴已经旋转到 90 度了。&lt;/li&gt;
+  &lt;li&gt;初始操作：腰关节纵轴旋转到 45 度。  &lt;br /&gt;
+结束条件：已经旋转到了 45 度。&lt;/li&gt;
+  &lt;li&gt;初始操作：小腿关节旋转到 90 度。  &lt;br /&gt;
+结束条件：小腿已经旋转到 90 度了。&lt;/li&gt;
+  &lt;li&gt;初始操作：转动 XEN 器官。  &lt;br /&gt;
+结束条件：指令执行了两秒。  &lt;br /&gt;
+终止操作：停止旋转 XEN 器官。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt; 并行，其他顺序执行。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/xenial-2-fc36582b34c71f65658137bd1519040ff923df78f538715a199a21e732e4c77b.png&quot; width=&quot;963&quot; height=&quot;665&quot; alt=&quot;command-based-robot/xenial-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;command-based-programming&quot;&gt;开始 Command-based Programming&lt;/h2&gt;
+
+&lt;p&gt;SkyZH 想，我们也能利用这种 &lt;strong&gt;指令系统&lt;/strong&gt; 完成上面的扫地机器人。
+于是他决定把这些资料交给你，让你帮忙完成这个程序。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wpilib&lt;/code&gt; 提供了一整套 Command-based 的类与函数，可以帮助你使用指令来编写机器人程序。&lt;/p&gt;
+
+&lt;p&gt;这个工程中最重要的两个基类就是 &lt;code class=&quot;highlighter-rouge&quot;&gt;Command/CommandGroup&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;Subsystem&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;我们创建新工程来慢慢学习。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;入门&lt;/h3&gt;
+
+&lt;p&gt;打开 Eclipse，创建 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot Java Project&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-1-443422511fa9e7e9f7cc0375ffd095288c79c03121c2bd5a73a9d18ef04847eb.png&quot; width=&quot;684&quot; height=&quot;673&quot; alt=&quot;command-based-robot/tutorial-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;robot&lt;/code&gt; 包中有三个类：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-2-6dcbb9cce0c50d97dcbe167b3f2b433c04442643ba8847646332d14fdebd7512.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/tutorial-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Robot&lt;/code&gt; 类是机器人的引导类。通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot&lt;/code&gt; 可以控制自动期间、手动期间所需要执行的指令。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-3-a8d1e8d161e35518d8021a6b7c88283fb23ec237784b1da490ca1e52e2cab01a.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/tutorial-3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RobotMap&lt;/code&gt; 类是一个常量类，在这里写入每种控制器或传感器的端口号，这样在创建对象时就不用记录端口号了。
+比如 &lt;code class=&quot;highlighter-rouge&quot;&gt;Servo servo = new Servo(RobotMap.CleanerServoPort);&lt;/code&gt; 另外在调试时也可以方便地更改端口号。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-4-08b6c3edced0b73c35d870ce21774a206d5b350b05e7b6f68187917c82a995c2.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/tutorial-4.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;OI&lt;/code&gt; 类里保存了机器人所有传感器控制器的对象。在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot&lt;/code&gt; 类初始化时会创建一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;OI&lt;/code&gt; 对象，
+我们可以通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;OI&lt;/code&gt; 直接访问到机器人的所有设备。注意：&lt;code class=&quot;highlighter-rouge&quot;&gt;RobotMap&lt;/code&gt; 储存端口号，
+而 &lt;code class=&quot;highlighter-rouge&quot;&gt;OI&lt;/code&gt; 中才真正创建了 &lt;code class=&quot;highlighter-rouge&quot;&gt;Servo&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;RobotDrive&lt;/code&gt; 等可以通过程序操控的对象。&lt;/p&gt;
+
+&lt;h3 id=&quot;subsystem-&quot;&gt;Subsystem (子系统)&lt;/h3&gt;
+
+&lt;p&gt;子系统绑定了机器人的各个部件，比如马达、舵机，并把它抽象成机械臂、发射塔等装置，提供更加简单接口。&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;org.usfirst.frc.teamxxxx.robot.subsystems&lt;/code&gt; 包中右键新建，选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;Others&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-5-09661d8653c106ada1d3aa7a093fbd24f596e8786d8927a236132a4cee3576fa.png&quot; width=&quot;684&quot; height=&quot;497&quot; alt=&quot;command-based-robot/tutorial-5.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;双击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Subsystem&lt;/code&gt; 即可创建子系统。&lt;/p&gt;
+
+&lt;p&gt;扫地机器人上有一个很奇怪的部件叫做 &lt;code class=&quot;highlighter-rouge&quot;&gt;XEN&lt;/code&gt;，它是一个可以 360 度旋转的天线，使用马达控制。
+一般来说我们只需要它正转、反转、停止。因此我们可以这样抽象这个马达：&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XenSubsystem&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Subsystem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;VictorSP&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VictorSP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RobotMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MotorXenPort&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initDefaultCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forward&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    	&lt;span class=&quot;n&quot;&gt;xen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;backward&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    	&lt;span class=&quot;n&quot;&gt;xen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    	&lt;span class=&quot;n&quot;&gt;xen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;最后在 &lt;code class=&quot;highlighter-rouge&quot;&gt;RobotMap&lt;/code&gt; 中指定端口号。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RobotMap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MotorXenPort&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在创建 &lt;code class=&quot;highlighter-rouge&quot;&gt;XenSubsystem&lt;/code&gt; 对象后，我们就可以调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;xen.forward()&lt;/code&gt; 等函数了。在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot&lt;/code&gt; 中创建 &lt;code class=&quot;highlighter-rouge&quot;&gt;Subsystem&lt;/code&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Robot&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IterativeRobot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XenSubsystem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xenSubsystem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XenSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;command-&quot;&gt;Command (指令)&lt;/h3&gt;
+
+&lt;p&gt;我们可以使用指令控制子系统。在 &lt;code class=&quot;highlighter-rouge&quot;&gt;org.usfirst.frc.teamxxxx.robot.commands&lt;/code&gt; 包中右键新建，选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;Others&lt;/code&gt;。
+选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;Command&lt;/code&gt;，输入名称即可创建指令。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XenCommand&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;XenCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isFinished&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;interrupted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;XenCommand&lt;/code&gt; 中有以下几个成员函数。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;XenCommand()&lt;/code&gt; 是类的构造函数。在这里使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;requires(...)&lt;/code&gt; 声明这个类所需要的子系统。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;initialize()&lt;/code&gt; 是初始化函数。第一次运行这个指令时会执行它。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;为什么又要初始化函数又要构造函数？类在创建对象时，机器人的各个部件可能还没有初始化好。
+要等机器人的事件系统完全运行时才能初始化。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;execute()&lt;/code&gt; 指令执行过程中不断调用这个函数。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;isFinished()&lt;/code&gt; 用于判断指令是否结束了。一般这里可以写“角度大于 180”或“时间到了”之类的语句。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;end()&lt;/code&gt; 是指令执行完毕后需要调用的函数。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;interrupted()&lt;/code&gt; 是指令被中断时调用的函数。比如手柄按钮按住时执行一个指令，指令没有执行完就松开了手柄，就会调用它。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;XenCommand&lt;/code&gt; 要实现 XEN 的转动。我们将这一操作抽象成 &lt;code class=&quot;highlighter-rouge&quot;&gt;Command&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;初始操作：转动 XEN 器官。  &lt;br /&gt;
+结束条件：指令执行了两秒。  &lt;br /&gt;
+终止操作：停止旋转 XEN 器官。&lt;/p&gt;
+
+&lt;p&gt;可以使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout(double seconds)&lt;/code&gt; 设定定时器，&lt;code class=&quot;highlighter-rouge&quot;&gt;isTimedOut()&lt;/code&gt; 判断是否到时间。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XenCommand&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;XenCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;requires&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xenSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//声明依赖&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    	&lt;span class=&quot;n&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    	&lt;span class=&quot;n&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xenSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forward&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+     &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isFinished&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isTimedOut&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    	&lt;span class=&quot;n&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xenSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;interrupted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;最后在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot&lt;/code&gt; 中将这个指令设定为自动阶段的默认指令。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autonomousInit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;autonomousCommand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XenCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;autonomousCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;最后的话&lt;/h3&gt;
+
+&lt;p&gt;FRC 机器人的 Command-based Robot 模式在国外的队伍中广泛使用。它的模块化、组件化的特点使得程序架构变得清楚，维护起来也更加方便。&lt;/p&gt;
+
+&lt;p&gt;除了 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot&lt;/code&gt; 引导机器人主程序，&lt;code class=&quot;highlighter-rouge&quot;&gt;OI&lt;/code&gt; 保存机器人所有的手柄相关设置，&lt;code class=&quot;highlighter-rouge&quot;&gt;RobotMap&lt;/code&gt; 保存所有常量、端口映射以外，
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Subsystem&lt;/code&gt; 提供了抽象的功能，可以将一个控制器原来的十几个函数变成所需要的几个甚至一个函数，并增加可读性。
+(比如将 &lt;code class=&quot;highlighter-rouge&quot;&gt;VictorSP&lt;/code&gt; 抽象为 &lt;code class=&quot;highlighter-rouge&quot;&gt;XenSubsystem&lt;/code&gt;)。而 &lt;code class=&quot;highlighter-rouge&quot;&gt;Command&lt;/code&gt; 提供了操作 &lt;code class=&quot;highlighter-rouge&quot;&gt;Subsystem&lt;/code&gt; 的可能，
+使得我们可以通过发送指令的方式&lt;strong&gt;非阻塞地&lt;/strong&gt;执行命令，并且轻松地执行命令组。&lt;/p&gt;
+
+&lt;p&gt;UPDATE: 由于 &lt;code class=&quot;highlighter-rouge&quot;&gt;OI&lt;/code&gt; 对象创建时机器人还没有完全初始化完毕，因此传感器、控制器对象直接在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Subsystem&lt;/code&gt; 中创建。相关代码已修改。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;练习&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;自学 &lt;code class=&quot;highlighter-rouge&quot;&gt;CommandGroup&lt;/code&gt;。创建一个指令组，让 &lt;code class=&quot;highlighter-rouge&quot;&gt;XEN&lt;/code&gt; 正转两秒，反转两秒。  &lt;br /&gt;
+&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/241903-creating-groups-of-commands&quot;&gt;教程&lt;/a&gt;
+&lt;a href=&quot;http://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/command/CommandGroup.html&quot;&gt;文档&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;创建一个待机指令，相当于 &lt;code class=&quot;highlighter-rouge&quot;&gt;Timer.delay()&lt;/code&gt;，让 &lt;code class=&quot;highlighter-rouge&quot;&gt;XEN&lt;/code&gt; 正转两秒，停两秒，反转两秒。  &lt;br /&gt;
+提示：想一想如何将一个操作抽象成 &lt;code class=&quot;highlighter-rouge&quot;&gt;Command&lt;/code&gt;? 一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;Command&lt;/code&gt; 要有哪些要素？&lt;/li&gt;
+  &lt;li&gt;修改这个待机指令的构造函数，使得创建指令对象时可以指定待机指令的待机时长。让 &lt;code class=&quot;highlighter-rouge&quot;&gt;XEN&lt;/code&gt; 正转两秒，停两秒，反转两秒，停三秒，正转两秒。      &lt;br /&gt;
+提示：最后应该有这两句语句 &lt;code class=&quot;highlighter-rouge&quot;&gt;addSequential(new SuspendCommand(2))&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;addSequential(new SuspendCommand(3))&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;自行查阅 &lt;code class=&quot;highlighter-rouge&quot;&gt;Subsystem&lt;/code&gt; 相关文档，让 &lt;code class=&quot;highlighter-rouge&quot;&gt;XenSubsystem&lt;/code&gt; 在没有任何指令执行的情况下执行一个默认指令 (Default Command)，让 XEN 反转。&lt;/li&gt;
+  &lt;li&gt;尝试添加更多的控制器，比如底盘。  &lt;br /&gt;
+提示：回忆一下创建一个控制器需要依次更改哪些类？创建一个指令需要依次更改哪些类？&lt;/li&gt;
+  &lt;li&gt;学习使用并行执行指令组 (Parallel)，实现 &lt;code class=&quot;highlighter-rouge&quot;&gt;XEN&lt;/code&gt; 正方向转动两秒的同时让扫地机器人的底盘行走。&lt;/li&gt;
+  &lt;li&gt;(选做) 尝试自己阅读传感器相关文档，创建一个基于陀螺仪 (Gyro) 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;PIDSubsystem&lt;/code&gt;。  &lt;br /&gt;
+提示：&lt;code class=&quot;highlighter-rouge&quot;&gt;WPILib sensors&lt;/code&gt; 章节中讲传感器的用法，而 &lt;code class=&quot;highlighter-rouge&quot;&gt;PIDSubsystem&lt;/code&gt; 将如何创建传感器的子系统。&lt;/li&gt;
+  &lt;li&gt;(选做) 添加底盘的默认指令，添加手柄，默认情况下底盘用手柄控制。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;请善用下列资料：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/c/88893&quot;&gt;Java Programming Guide - Command-based Programming 在线版&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://first.wpi.edu/FRC/roborio/release/docs/java/&quot;&gt;WPILib API Reference 在线版&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;第一个文档有 PDF 版。第二个文档可以在 Eclipse 中展开 &lt;code class=&quot;highlighter-rouge&quot;&gt;WPILib&lt;/code&gt; 包查看。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/api-reference-1-628a288958d0b034872846ab67fa4d65e5905fb2b12144fe5e1b773fe28476e1.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/api-reference-1.png&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 08 Jul 2016 00:54:35 +0000</pubDate>
+        <link>http://frc.hsefz.org/programming/2016/07/08/command-based-robot.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/08/command-based-robot.html</guid>
+        
+        <category>zc大哥哥的编程干货</category>
+        
+        <category>FRC@EFZ</category>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        
+        <category>programming</category>
+        
+      </item>
+    
+      <item>
+        <title>漂亮和丑陋的 Xenial 星人 · Java 面向对象入门</title>
+        <description>&lt;p&gt;Pisces000221 是一名 Xenial 星人。
+经过五年的观察，他发现了 Xenial 生物的遗传规律。
+Xenial 星生物可以分成两部分：漂亮的 Xenial 星人和丑陋的 Xenial 星人。
+漂亮的 Xenial 星女人和丑陋的 Xenial 星男人生孩子生下的女孩都是丑陋的，男孩都是美丽的……&lt;/p&gt;
+
+&lt;p&gt;Pisces000221 决定使用 &lt;strong&gt;Java 面向对象&lt;/strong&gt; 的方法分析 Xenial 星人的数据。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;从零开始&lt;/h2&gt;
+
+&lt;p&gt;类描述了许多个对象共同的属性和方法。每一个类都有成员变量，成员函数，构造函数，析构函数等等。&lt;/p&gt;
+
+&lt;p&gt;我们先创建一个 Java 工程来尝试创建类。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/object-oriented-programming/oo-1-a8b6e1b33d84d952c0f3990443c2d52f2111f9521f77c3a0d692b7ff5dd2ff6e.png&quot; width=&quot;1284&quot; height=&quot;768&quot; alt=&quot;object-oriented-programming/oo-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Finish&lt;/code&gt; 创建工程。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/object-oriented-programming/oo-2-5a07a5f1af24d807407d52587ecfdc1501dd687c3f38b05a87ec8c61cb59471f.png&quot; width=&quot;684&quot; height=&quot;886&quot; alt=&quot;object-oriented-programming/oo-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;右击工程创建类。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/object-oriented-programming/oo-3-5e9fe0453877f9e11f03ef7eedaa5f55a570fb39ca65e676a8dfdffc3e32b680.png&quot; width=&quot;1296&quot; height=&quot;848&quot; alt=&quot;object-oriented-programming/oo-3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;填入 &lt;code class=&quot;highlighter-rouge&quot;&gt;Name&lt;/code&gt;，勾选 &lt;code class=&quot;highlighter-rouge&quot;&gt;public static void main(String[] args)&lt;/code&gt; 创建主程序所在的类。
+注意，创建其他类时&lt;strong&gt;不需要勾选这一项&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/object-oriented-programming/oo-4-78948a53fa9f62778fc0b84dc0fcd8bf81c182dbb20c2341b3ccf89bd32d964f.png&quot; width=&quot;684&quot; height=&quot;750&quot; alt=&quot;object-oriented-programming/oo-4.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在创建的类中输入程序：&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XenialMain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, World!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;单击工具栏中的运行键即可运行程序。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/object-oriented-programming/oo-5-c42d95d96fba879c37068f522b997815a933cdd65b29caeb66b9f9c77956a0f7.png&quot; width=&quot;1272&quot; height=&quot;760&quot; alt=&quot;object-oriented-programming/oo-5.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;此时在 Console 中会出现一句 &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello, World!&lt;/code&gt; 表明程序成功运行。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/object-oriented-programming/oo-6-393adead1070df415df310a5fb45a23a47f8ed94bcdc7c5573979ad84c04c0bc.png&quot; width=&quot;1272&quot; height=&quot;760&quot; alt=&quot;object-oriented-programming/oo-6.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;xenial-&quot;&gt;在 Xenial 星球上&lt;/h2&gt;
+
+&lt;p&gt;Pisces000221 觉得所有 Xenial 星人都有以下几个属性：名字、外貌特征、年龄。
+所有 Xenial 星人都会用电波进行心♂灵交流。
+这种交流的方法叫做 &lt;code class=&quot;highlighter-rouge&quot;&gt;say&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;除了外貌特征以外，其他的特征都无法直接通过 Xenial 星人的特殊感觉器官 XEN 发现。
+只能在心♂灵交流时，其他的特征才能被人知晓。&lt;/p&gt;
+
+&lt;p&gt;在心♂灵交流时 Xenial 会在控制台内输出一句话。
+当然 Pisces000221 也不知道什么时候 Xenial 星人和控制台联系在了一起。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;万能的神明&lt;/strong&gt;：哈哈哈 Pisces000221 你怎么也是想不到的其实 Xenial 星人的基因是由 &lt;code class=&quot;highlighter-rouge&quot;&gt;TNA&lt;/code&gt; 决定的！这个 &lt;code class=&quot;highlighter-rouge&quot;&gt;TNA&lt;/code&gt; 只有我神明知道！&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;定义基类&lt;/h3&gt;
+
+&lt;p&gt;在项目视图中创建 &lt;code class=&quot;highlighter-rouge&quot;&gt;Xenial&lt;/code&gt; 类后，即可添加成员变量和构造函数。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Xenial&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;appearance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TNA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Xenial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TNA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我们可以在主程序创建该类的对象。调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;new Xenial()&lt;/code&gt; 时实际上给这个变量分配了内存，并调用了构造函数 &lt;code class=&quot;highlighter-rouge&quot;&gt;Xenial()&lt;/code&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XenialMain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;Xenial&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xenial&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Xenial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;这里不需要 import 这个类，是因为它和 &lt;code class=&quot;highlighter-rouge&quot;&gt;XenialMain&lt;/code&gt; 在同一个包 (package) 中。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;接下来你可以尝试访问这个对象的成员变量。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XenialMain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;Xenial&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xenial&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Xenial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xenial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xenial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;appearance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xenial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;TNA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;最后一句话报错了。因为 &lt;code class=&quot;highlighter-rouge&quot;&gt;TNA&lt;/code&gt; 是 &lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt; 变量，无法&lt;strong&gt;直接通过对象访问&lt;/strong&gt;，也无法在子类中访问。
+而 &lt;code class=&quot;highlighter-rouge&quot;&gt;gender&lt;/code&gt; 是一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;protected&lt;/code&gt; 的变量。这个变量在&lt;strong&gt;子类&lt;/strong&gt;和&lt;strong&gt;同一个包&lt;/strong&gt;中可以直接访问。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt; 类型的成员可以直接通过对象访问。&lt;/p&gt;
+
+&lt;p&gt;经过 Pisces000221 研究发现，Xenial 人分为豪爽的人和内向的人。
+豪爽的人一旦心灵交流就会毫不犹豫地把自己的性别、年龄告诉别人，
+这也增加了他们被怪蜀黍拐走的可能性。
+而内向的人只会犹犹豫豫地交流自己的性别。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;类的继承&lt;/h3&gt;
+
+&lt;p&gt;每个 &lt;code class=&quot;highlighter-rouge&quot;&gt;Xenial&lt;/code&gt; 都会心灵♂交流。我们在基类 &lt;code class=&quot;highlighter-rouge&quot;&gt;Xenial&lt;/code&gt; 中定义 &lt;code class=&quot;highlighter-rouge&quot;&gt;say&lt;/code&gt; 函数。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Xenial&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;appearance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TNA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Xenial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TNA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;创建 &lt;code class=&quot;highlighter-rouge&quot;&gt;StraightXenial&lt;/code&gt; 类来代表豪爽的人。我们要 &lt;strong&gt;重写&lt;/strong&gt; 他的 &lt;code class=&quot;highlighter-rouge&quot;&gt;say&lt;/code&gt; 函数。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;StraightXenial&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Xenial&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;StraightXenial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;I'm &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; years old. I'm &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XenialMain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;StraightXenial&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xenial&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StraightXenial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xenial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;如果把 &lt;code class=&quot;highlighter-rouge&quot;&gt;StraightXenial xenial = new StraightXenial();&lt;/code&gt; 改成 &lt;code class=&quot;highlighter-rouge&quot;&gt;Xenial xenial = new StraightXenial();&lt;/code&gt; 还能执行吗？这时调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;say&lt;/code&gt; 会输出什么呢&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XenialMain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;Xenial&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xenial&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StraightXenial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xenial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;I'm 0 years old. I'm 0.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;因此&lt;strong&gt;对象的行为取决于创建对象时的类，而不是保存类的变量类型本身&lt;/strong&gt;。
+即使是使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;Xenial&lt;/code&gt; 类型保存一个用 &lt;code class=&quot;highlighter-rouge&quot;&gt;StraightXenial&lt;/code&gt; 初始化的对象，
+调用的也是 &lt;code class=&quot;highlighter-rouge&quot;&gt;StraightXenial&lt;/code&gt; 的函数和成员变量。这也是类的多态性的体现。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;构造函数&lt;/h2&gt;
+
+&lt;p&gt;Pisces000221 发现写的程序里没有办法指定创建的 Xenial 的年龄、性别、名字等信息。&lt;/p&gt;
+
+&lt;p&gt;我们可以通过构造函数或成员函数添加。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Xenial&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;appearance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TNA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Xenial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TNA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;gender&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;TNA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TNA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;而在主程序中可以通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt; 操作符创建 &lt;code class=&quot;highlighter-rouge&quot;&gt;Xenial&lt;/code&gt; 对象。&lt;/p&gt;
+
+&lt;p&gt;Xenial 生物的 &lt;code class=&quot;highlighter-rouge&quot;&gt;TNA&lt;/code&gt; 是生来注定的。而他的名字在日后还可以随时更改。因此我们可以添加一个成员函数 setName 进行名字的更改。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;练习&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;创建内向的 Xenial。&lt;/li&gt;
+  &lt;li&gt;有一天内向的 Xenial 发现他们可以通过一种叫 CEN 的器官让对方瞬间明白自己的一切。
+这意味着他们不用再害羞地用心灵交流出自己的小秘密啦！给内向的 Xenial 定义 &lt;code class=&quot;highlighter-rouge&quot;&gt;cen&lt;/code&gt; 函数。
+并探究如果使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;Xenial&lt;/code&gt; 基类储存这个对象，是否可以调用它的 &lt;code class=&quot;highlighter-rouge&quot;&gt;cen&lt;/code&gt; 函数。&lt;/li&gt;
+  &lt;li&gt;使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;super&lt;/code&gt; 关键字在 &lt;code class=&quot;highlighter-rouge&quot;&gt;StraightXenial&lt;/code&gt; 等类中调用父类的构造函数。&lt;/li&gt;
+  &lt;li&gt;Xenial 还有很多种。你可以自己创造一些，然后定义它的成员。&lt;/li&gt;
+  &lt;li&gt;自学静态类 (static)，定义一个类似 C/C++ 中的全局变量。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 07 Jul 2016 11:15:22 +0000</pubDate>
+        <link>http://frc.hsefz.org/programming/2016/07/07/object-oriented-programming.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/07/object-oriented-programming.html</guid>
+        
+        <category>zc大哥哥的编程干货</category>
+        
+        <category>FRC@EFZ</category>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        
+        <category>programming</category>
+        
+      </item>
+    
+      <item>
+        <title>来自 Xenial 星的召唤 · FRC 机器人编程入门</title>
+        <description>&lt;p&gt;很久以前在 Xenial 星上住着一群懒虫。它们整天什么事情都不想干，只想坐在沙发上玩 Xenial 冲突。终于有一天 Xenial 星上的人们发现自己的家里太脏太乱了，于是决定开发一款基于 &lt;code class=&quot;highlighter-rouge&quot;&gt;wpilib&lt;/code&gt; 的扫地机器人。一位名为 SkyZH 的 Xenial 星人自告奋勇跳出来说，我可以做出扫地机器人！SkyZH 真是一位勤劳勇敢的好同志。&lt;/p&gt;
+
+&lt;p&gt;可是好景不长，当他兴高采烈地搭好机器人底盘，设计好底盘上的设备的时候，发现自己不会写程序。&lt;/p&gt;
+
+&lt;p&gt;SkyZH 求助于聪明的你，希望你可以帮忙设计出这样的机器人。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;创建机器人工程&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/create-project-1-20ebe7bea5f993524b47afcf29e2eb44984d0ad7316c262c928e106a52e13768.png&quot; width=&quot;1009&quot; height=&quot;761&quot; alt=&quot;programming-with-wpilib/create-project-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;打开 Eclipse，选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;File&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;New&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;Others&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/create-project-2-9f45188f86172c8011fa75ee2711b3fc22e987454f043b836d0b5d7520664db3.png&quot; width=&quot;684&quot; height=&quot;497&quot; alt=&quot;programming-with-wpilib/create-project-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;WPILib Robot Java Development&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot Java Project&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/create-project-3-d55a0df2b02ce6c58b7c4623ee2b9748da9254ae18acf9505c349206c8129d50.png&quot; width=&quot;684&quot; height=&quot;673&quot; alt=&quot;programming-with-wpilib/create-project-3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;填写项目名，选择 Sample Robot。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/create-project-4-ef315daf17674562d856f7cbe84ecbc533a47c13ee60d7f927fd6645fe5cea7f.png&quot; width=&quot;1006&quot; height=&quot;757&quot; alt=&quot;programming-with-wpilib/create-project-4.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果界面没有反应，点击左侧边栏上的放大键。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/create-project-5-b1c2d040cd0b43b3a3d62c163351141d0ed39dc6a64e7c54e8e847f4fdc6f08e.png&quot; width=&quot;1008&quot; height=&quot;760&quot; alt=&quot;programming-with-wpilib/create-project-5.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Package Explorer&lt;/code&gt; 中找到刚才创建项目中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot.java&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;编写逻辑&lt;/h2&gt;
+
+&lt;p&gt;新创建的机器人类中，删去多余的代码，有以下几个函数：&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Robot&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SampleRobot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;robotInit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;operatorControl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public Robot()&lt;/code&gt; 是类的初始化函数。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;public void robotInit()&lt;/code&gt; 是机器人的初始化函数。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;public void autonomous()&lt;/code&gt; 是机器人自动驾驶时的执行逻辑。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;public void operatorControl()&lt;/code&gt; 是机器人人工操控时的执行逻辑。&lt;/p&gt;
+
+&lt;p&gt;SkyZH 首先希望能够操控底盘，让机器人在他扁平状的卧室里直线行走。那么我们需要干这么几件事情：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot&lt;/code&gt; 类中声明所需要的控制器。&lt;/li&gt;
+  &lt;li&gt;将控制器绑定在端口上。&lt;/li&gt;
+  &lt;li&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;autonomous()&lt;/code&gt; 函数中编写逻辑。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;机器人底盘通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;RobotDrive&lt;/code&gt; 类驱动。与此同时 SkyZH 的机器人采用的是 &lt;code class=&quot;highlighter-rouge&quot;&gt;VictorSP&lt;/code&gt; 马达控制器。
+&lt;strong&gt;前左，前右，后左，后右马达分别对应端口 &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;4&lt;/code&gt;。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;声明控制器&lt;/h3&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Robot&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SampleRobot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;RobotDrive&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;绑定控制器&lt;/h3&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Robot&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SampleRobot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;RobotDrive&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RobotDrive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VictorSP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VictorSP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VictorSP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VictorSP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;注意：&lt;code class=&quot;highlighter-rouge&quot;&gt;RobotDrive&lt;/code&gt; 初始化时的顺序是前左，后左，前右，后右。&lt;/p&gt;
+
+&lt;p&gt;这时我们发现 &lt;code class=&quot;highlighter-rouge&quot;&gt;VictorSP&lt;/code&gt; 下出现了红线。这说明这句语句出了问题。我们可以点击左边的小灯泡让 Eclipse 自动解决。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/bind-ctrl-1-5bf43cc9d68d82ee0def54bcecd1098a2431b9079b9d8e55720a0ae46ddd4df4.png&quot; width=&quot;1272&quot; height=&quot;760&quot; alt=&quot;programming-with-wpilib/bind-ctrl-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;双击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Import VictorSP&lt;/code&gt; 将没有包含的库包含进程序中。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/bind-ctrl-2-bcc15c39ed3971dc040678e2004e4189b4c56616230caf6155fab64c1e9babd4.png&quot; width=&quot;1341&quot; height=&quot;773&quot; alt=&quot;programming-with-wpilib/bind-ctrl-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;编写逻辑&lt;/h3&gt;
+
+&lt;p&gt;SkyZH 让机器人在房间里前进两秒，停两秒扫地，后退两秒，再停止两秒，不断循环。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSafetyEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;于是我们就写完了扫地机器人的行走程序啦！是不是很棒 QwQ。&lt;/p&gt;
+
+&lt;h2 id=&quot;xenial-&quot;&gt;燃烧 Xenial 初号！扫地吧！&lt;/h2&gt;
+
+&lt;p&gt;SkyZH 说那就给这个机器人取个名字叫 Xenial 初号 吧。可是它还不能扫地啊。&lt;/p&gt;
+
+&lt;p&gt;扫帚的毛刷被固定在一个舵机上。让舵机不断转动就可以扫地了。舵机被接在端口 &lt;code class=&quot;highlighter-rouge&quot;&gt;5&lt;/code&gt; 上。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;声明控制器 &amp;amp; 绑定控制器&lt;/h3&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Robot&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SampleRobot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;RobotDrive&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Servo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RobotDrive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VictorSP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VictorSP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VictorSP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VictorSP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setExpiration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;编写逻辑&lt;/h3&gt;
+
+&lt;p&gt;在机器人停下脚步时调用舵机转向。使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;Timer.delay()&lt;/code&gt; 等待几秒，保证舵机转到底。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSafetyEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-7&quot;&gt;习题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;阅读 &lt;code class=&quot;highlighter-rouge&quot;&gt;wpilib&lt;/code&gt; &lt;a href=&quot;http://first.wpi.edu/FRC/roborio/release/docs/java/&quot;&gt;API 文档&lt;/a&gt;，查找获取 &lt;code class=&quot;highlighter-rouge&quot;&gt;Servo&lt;/code&gt; 现在的旋转角度的函数，将原来的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Timer.delay(2)&lt;/code&gt; ，改成使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;while&lt;/code&gt; 循环等待舵机转到指定角度。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;尝试绑定 &lt;code class=&quot;highlighter-rouge&quot;&gt;Joystick&lt;/code&gt; 手柄，当手柄按钮按下时再开始扫地。相关文档可以在 &lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/241881-joysticks&quot;&gt;wpilib 官网&lt;/a&gt; 或 &lt;em&gt;Java Programming Guide PDF&lt;/em&gt; 中找到。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 07 Jul 2016 09:23:35 +0000</pubDate>
+        <link>http://frc.hsefz.org/programming/2016/07/07/programming-with-wpilib.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/07/programming-with-wpilib.html</guid>
+        
+        <category>zc大哥哥的编程干货</category>
+        
+        <category>FRC@EFZ</category>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        
+        <category>programming</category>
         
       </item>
     
