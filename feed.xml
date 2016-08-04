@@ -5,9 +5,37 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 04 Aug 2016 12:48:14 +0000</pubDate>
-    <lastBuildDate>Thu, 04 Aug 2016 12:48:14 +0000</lastBuildDate>
+    <pubDate>Thu, 04 Aug 2016 15:30:32 +0000</pubDate>
+    <lastBuildDate>Thu, 04 Aug 2016 15:30:32 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>First Day Training</title>
+        <description>&lt;hr /&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;layout: post
+title:  &quot;创客营第一天&quot;
+date:   2016-08-03 15:10:09 +0800
+categories: news
+tags: 新闻 创客营 日常   ---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;em&gt;正文&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;今&lt;/strong&gt;天各队员来到了奉贤中等职业学校，在放置好了机器人和所有零件后，我们将宿舍的床铺擦干净，并铺好了各自的床上用品。这里的住宿条件讲真不太好 orz ==上铺还需要夏普的同学“放下来”（要不然爬梯子床会倒）……&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;今&lt;/strong&gt;天晚上6:30左右我们开始参加创客营的入营培训活动，主要是强调了安全的事宜，特别是针对了安全老师巡查各教室的时候发现的安全隐患，比如护目镜的佩戴、手套的使用以及诸多应急情况的处理方式。一定程度上帮助我们发现了自身在人身保护方面的不足。毕竟，安全第一，一切活动都应该以安全作为第一要求、准则。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;之&lt;/strong&gt;后，主要是针对创客营时间安排、作息时间，以及 CRC 比赛的一些事宜（比如规则、一些活动）的通知。总的来说，能够对我们再创客营期间的生活、制作，以及 CRC 比赛有很大的帮助。&lt;/p&gt;
+</description>
+        <pubDate>Thu, 04 Aug 2016 00:00:00 +0000</pubDate>
+        <link>http://frc.hsefz.org/2016/08/04/first-day-training.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/2016/08/04/first-day-training.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>和 Xenial 情感交流</title>
