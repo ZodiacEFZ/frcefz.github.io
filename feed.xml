@@ -5,8 +5,8 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 05 Aug 2016 06:48:03 +0000</pubDate>
-    <lastBuildDate>Fri, 05 Aug 2016 06:48:03 +0000</lastBuildDate>
+    <pubDate>Fri, 05 Aug 2016 08:54:55 +0000</pubDate>
+    <lastBuildDate>Fri, 05 Aug 2016 08:54:55 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -70,7 +70,7 @@ SkyZH 可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt
 
 &lt;h3 id=&quot;networktable&quot;&gt;打开测试的 NetworkTable&lt;/h3&gt;
 
-&lt;p&gt;安装 FRC Update Suites 之后，你就可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;用户目录&amp;gt;/wpilib/tools&lt;/code&gt; 中找到应用程序。&lt;/p&gt;
+&lt;p&gt;安装 WPIlib 插件之后，你就可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;用户目录&amp;gt;/wpilib/tools&lt;/code&gt; 中找到应用程序。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/smartdashboard-1-1c96b6a098f1554aa9203ac3c9f211e353fdc531bbbe0013c955ce39ae3b5eba.png&quot; width=&quot;1196&quot; height=&quot;839&quot; alt=&quot;networking-roborio/smartdashboard-1.png&quot; /&gt;&lt;/p&gt;
 
