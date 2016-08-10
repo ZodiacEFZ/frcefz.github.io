@@ -5,9 +5,92 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 05 Aug 2016 09:03:03 +0000</pubDate>
-    <lastBuildDate>Fri, 05 Aug 2016 09:03:03 +0000</lastBuildDate>
+    <pubDate>Wed, 10 Aug 2016 14:52:55 +0000</pubDate>
+    <lastBuildDate>Wed, 10 Aug 2016 14:52:55 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>队员介绍 / Team Member</title>
+        <description>&lt;div class=&quot;container m-t-3&quot;&gt;
+  &lt;h1 class=&quot;display-4&quot;&gt;Team Members&lt;/h1&gt;
+  &lt;div class=&quot;card-columns m-t-1&quot;&gt;
+    
+      
+      &lt;div class=&quot;card card-block card-outline-info text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;Clark (陈谦路)&lt;/h4&gt;
+          &lt;p&gt;运动达人，昆虫控，喜欢捣鼓电子和机械。不过感觉只要是团队合作都很喜欢。&lt;br&gt; I have a wide variety of hobbies which allows me to negotiate with different groups of the team quite easily. Also my double personality, serious when working and silly when playing, helps me get along with my teammates well.
+&lt;/p&gt;
+          &lt;footer&gt;&lt;em&gt;Captain&lt;/em&gt;&lt;/footer&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+      
+      &lt;div class=&quot;card card-block card-outline-info text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;GuoZL (郭子梁)&lt;/h4&gt;
+          &lt;p&gt;我渣渣，涉猎较广泛。爱膜蛤 +1，兼任小学生手工副队长助理。&lt;br&gt; I have a broad mind, to an extend. In addition to help our group leader to do some team work, I also do a lot of &lt;em&gt;interesting&lt;/em&gt; handcrafts (for instance, the bumper and our wooden moat).
+&lt;/p&gt;
+          &lt;footer&gt;&lt;em&gt;Vice Captain&lt;/em&gt;&lt;/footer&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+      
+      &lt;div class=&quot;card card-block card-outline-warning text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;SkyZH (迟遲)&lt;/h4&gt;
+          &lt;p&gt;不会写程序，补番大魔王，爱膜蛤。&lt;br&gt; Experienced in software engineering. Maintain several open source projects. Focus on vision process.
+&lt;/p&gt;
+          &lt;footer&gt;&lt;em&gt;Leader of Programming&lt;br&gt;Web Engineer&lt;/em&gt;&lt;/footer&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+      
+      &lt;div class=&quot;card card-block  text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;Xinjia (新家正太)&lt;/h4&gt;
+          &lt;p&gt;喜欢工科，inventor玩得还不错，课余喜欢踢球和赛车游戏。&lt;br&gt; Good at robot controlling and CAD. Help the team figure out the way of building our robot.
+&lt;/p&gt;
+          &lt;footer&gt;&lt;em&gt;Member of Electronic Team&lt;br&gt;Driver&lt;/em&gt;&lt;/footer&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+      
+      &lt;div class=&quot;card card-block card-outline-info text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;闵天淏 16 男&lt;/h4&gt;
+          &lt;p&gt;MDZZ。&lt;br&gt; Phylosophy。&lt;br&gt; 队里负责锯木头以及布艺，简单来说就是技工。 单机游戏，烧耳机。 羽毛球，过度热爱公路车导致牙齿疼痛。 在交响乐团吹大管。
+&lt;/p&gt;
+          &lt;footer&gt;&lt;em&gt;Vice Captain&lt;/em&gt;&lt;/footer&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+      
+      &lt;div class=&quot;card card-block card-outline-warning text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;David Wang (汪达玮)&lt;/h4&gt;
+          &lt;p&gt;Having no experienced skill, except strong ability to arrange wires, but learning fast. Preferring to solving problems efficiently. Believing that safety comes first, friendship comes second, competition comes the third.
+&lt;/p&gt;
+          &lt;footer&gt;&lt;em&gt;Leader of Electricity&lt;/em&gt;&lt;/footer&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 10 Aug 2016 13:22:19 +0000</pubDate>
+        <link>http://frc.hsefz.org/team/2016/08/10/team-member.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/team/2016/08/10/team-member.html</guid>
+        
+        <category>队伍</category>
+        
+        <category>介绍</category>
+        
+        
+        <category>team</category>
+        
+      </item>
     
       <item>
         <title>创客营第零天</title>
