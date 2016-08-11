@@ -5,8 +5,8 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Aug 2016 15:42:51 +0000</pubDate>
-    <lastBuildDate>Wed, 10 Aug 2016 15:42:51 +0000</lastBuildDate>
+    <pubDate>Thu, 11 Aug 2016 01:55:31 +0000</pubDate>
+    <lastBuildDate>Thu, 11 Aug 2016 01:55:31 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -71,7 +71,17 @@
           &lt;h4&gt;David Wang (汪达玮)&lt;/h4&gt;
           &lt;p&gt;Having no experienced skill, except strong ability to arrange wires, but learning fast. Preferring to solving problems efficiently. Believing that safety comes first, friendship comes second, competition comes the third.
 &lt;/p&gt;
-          &lt;footer&gt;&lt;em&gt;Leader of Electricity&lt;/em&gt;&lt;/footer&gt;
+          &lt;footer&gt;&lt;em&gt;Leader of Electronic&lt;/em&gt;&lt;/footer&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+      
+      &lt;div class=&quot;card card-block  text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;杨致远&lt;/h4&gt;
+          &lt;p&gt;机械工，酷爱足球和机器人，善于切割板材，制作零件。喜欢工程。
+&lt;/p&gt;
+          &lt;footer&gt;&lt;em&gt;Member of Electronic&lt;/em&gt;&lt;/footer&gt;
         &lt;/blockquote&gt;
       &lt;/div&gt;
     
