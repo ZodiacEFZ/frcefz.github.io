@@ -5,9 +5,96 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 13 Aug 2016 10:28:01 +0000</pubDate>
-    <lastBuildDate>Sat, 13 Aug 2016 10:28:01 +0000</lastBuildDate>
+    <pubDate>Sat, 13 Aug 2016 14:03:14 +0000</pubDate>
+    <lastBuildDate>Sat, 13 Aug 2016 14:03:14 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>开源项目 / Open Source Projects</title>
+        <description>&lt;div class=&quot;container&quot;&gt;
+  &lt;h1 class=&quot;display-4&quot;&gt;Open Source Projects &lt;small&gt;Stronghold 2016&lt;/small&gt;&lt;/h1&gt;
+  &lt;p&gt;We are happy to anounce that all of our projects in Stronghold 2016 are open-sourced.
+  &lt;div class=&quot;card-columns m-t-1&quot;&gt;
+    
+      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;BreezeRobot&lt;/h4&gt;
+          &lt;p&gt;Robot Program for Stronghold 2016
+&lt;/p&gt;
+          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/BreezeRobot&quot;&gt;Learn More&lt;/a&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;Vision MJPEG Proxy&lt;/h4&gt;
+          &lt;p&gt;Proxy will set up a web server to serve WebDashboard static files and proxy requests to vision camera server so as to make it possible for multiple clients to gain access to vision camera at the same time.
+&lt;/p&gt;
+          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/stronghold-vision-mjpeg-proxy&quot;&gt;Learn More&lt;/a&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;Vision OpenCV&lt;/h4&gt;
+          &lt;p&gt;Vision process with OpenCV by Zodiac.
+&lt;/p&gt;
+          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/stronghold-vision-opencv&quot;&gt;Learn More&lt;/a&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;Vision WebDashboard&lt;/h4&gt;
+          &lt;p&gt;Vision dashboard for Zodiac.
+&lt;/p&gt;
+          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/stronghold-vision-webdashboard&quot;&gt;Learn More&lt;/a&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;Video Capture&lt;/h4&gt;
+          &lt;p&gt;Capture video from an mjpg stream and extract them into image sequence.
+&lt;/p&gt;
+          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/stronghold-video-capture&quot;&gt;Learn More&lt;/a&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;Website&lt;/h4&gt;
+          &lt;p&gt;Zodiac Website source code.
+&lt;/p&gt;
+          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/website&quot;&gt;Learn More&lt;/a&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;Vision Script&lt;/h4&gt;
+          &lt;p&gt;Process Management with PM2 on Raspberry Pi to start vision process.
+&lt;/p&gt;
+          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/stronghold-vision-script&quot;&gt;Learn More&lt;/a&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 10 Aug 2016 13:42:45 +0000</pubDate>
+        <link>http://frc.hsefz.org/team/2016/08/10/open-source.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/team/2016/08/10/open-source.html</guid>
+        
+        <category>队伍</category>
+        
+        <category>开源</category>
+        
+        
+        <category>team</category>
+        
+      </item>
     
       <item>
         <title>队员介绍 / Team Member</title>
