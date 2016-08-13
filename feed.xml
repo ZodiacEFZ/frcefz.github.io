@@ -5,15 +5,15 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 13 Aug 2016 14:03:14 +0000</pubDate>
-    <lastBuildDate>Sat, 13 Aug 2016 14:03:14 +0000</lastBuildDate>
+    <pubDate>Sat, 13 Aug 2016 14:11:38 +0000</pubDate>
+    <lastBuildDate>Sat, 13 Aug 2016 14:11:38 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>开源项目 / Open Source Projects</title>
         <description>&lt;div class=&quot;container&quot;&gt;
   &lt;h1 class=&quot;display-4&quot;&gt;Open Source Projects &lt;small&gt;Stronghold 2016&lt;/small&gt;&lt;/h1&gt;
-  &lt;p&gt;We are happy to anounce that all of our projects in Stronghold 2016 are open-sourced.
+  &lt;p&gt;We are happy to announce that all of our projects in Stronghold 2016 are open-sourced.
   &lt;div class=&quot;card-columns m-t-1&quot;&gt;
     
       &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
