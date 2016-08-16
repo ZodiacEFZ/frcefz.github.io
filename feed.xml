@@ -5,9 +5,78 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Aug 2016 14:04:54 +0000</pubDate>
-    <lastBuildDate>Tue, 16 Aug 2016 14:04:54 +0000</lastBuildDate>
+    <pubDate>Tue, 16 Aug 2016 14:12:44 +0000</pubDate>
+    <lastBuildDate>Tue, 16 Aug 2016 14:12:44 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>论如何维护 Zodiac 官网</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;首先你需要注册一个 &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt; 账号。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;访问 &lt;a href=&quot;https://github.com/ZodiacEFZ/website/&quot;&gt;https://github.com/ZodiacEFZ/website/&lt;/a&gt; ，点击 Fork 把这个项目拷贝到自己的账户下。 
+&lt;strong&gt;（这之后的操作都是在自己的项目里操作的！）&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在拷贝后的网站 &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 文件夹下点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Create New File&lt;/code&gt; 创建文件。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;文件名设置为 &lt;code class=&quot;highlighter-rouge&quot;&gt;2016-08-04-first-day-training.markdown&lt;/code&gt; (格式为 &lt;code class=&quot;highlighter-rouge&quot;&gt;日期-英文-名&lt;/code&gt;)。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在开头复制文件头  &lt;br /&gt;
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;
+ ---
+ layout: post
+ title:  &quot;创客营第一天&quot;
+ date:   2016-08-03 15:10:09 +0800
+ categories: news
+ tags: 新闻 创客营 日常
+ ---
+&lt;/code&gt;
+   &lt;code class=&quot;highlighter-rouge&quot;&gt;date&lt;/code&gt; 改成当前时间，&lt;code class=&quot;highlighter-rouge&quot;&gt;categories&lt;/code&gt; 只能写英文。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;空一行直接开始写文章。Markdown 语法相关请参见 &lt;a href=&quot;http://www.jianshu.com/p/q81RER&quot;&gt;http://www.jianshu.com/p/q81RER&lt;/a&gt;
+(如果不习惯使用 GitHub 的编辑器，可以在 &lt;a href=&quot;https://stackedit.io&quot;&gt;StackEdit&lt;/a&gt; 上编辑完成后拷贝过来)。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Preview&lt;/code&gt; 可以预览当前文章。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果需要插入图片，请先把图片上传到 &lt;code class=&quot;highlighter-rouge&quot;&gt;_assets/img&lt;/code&gt; 目录下。文件名不要出现中文字符。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在文章中引入图片，换行空行后直接插入代码 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/create-project-1-20ebe7bea5f993524b47afcf29e2eb44984d0ad7316c262c928e106a52e13768.png&quot; width=&quot;1009&quot; height=&quot;761&quot; alt=&quot;programming-with-wpilib/create-project-1.png&quot;&amp;gt;&lt;/code&gt;。
+这里 &lt;code class=&quot;highlighter-rouge&quot;&gt;programming-with-wpilib/create-project-1.png&lt;/code&gt; 是图片相对于 img 目录的位置。注意图片无法直接在 GitHub 上预览。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Commit New File&lt;/code&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;文章的文字和图片都上传完毕后，点击项目导航栏中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Pull Requests&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;New Pull Request&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;Create Pull Request&lt;/code&gt;，在提交信息中填写这次更改的内容（比如&lt;code class=&quot;highlighter-rouge&quot;&gt;添加了创客营第一天的新闻&lt;/code&gt;），再点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Create Pull Request&lt;/code&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;本人审核后即可自动部署到网站上。部署完毕后在 Slack 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;#business&lt;/code&gt; 中会有通知。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Tue, 16 Aug 2016 14:03:43 +0000</pubDate>
+        <link>http://frc.hsefz.org/team/2016/08/16/maintain-website.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/team/2016/08/16/maintain-website.html</guid>
+        
+        <category>队伍</category>
+        
+        <category>网站</category>
+        
+        <category>维护</category>
+        
+        
+        <category>team</category>
+        
+      </item>
     
       <item>
         <title>开源项目 / Open Source Projects</title>
@@ -797,7 +866,7 @@ Xenial 星人于是不得不将远程仓库的所有 &lt;code class=&quot;highli
                 &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;milliseconds&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
                 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
                     &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;milliseconds&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;milliseconds&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
                 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
                 &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
             &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
