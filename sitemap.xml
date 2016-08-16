@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://frc.hsefz.org/programming/2016/08/16/command-group.html</loc>
+<lastmod>2016-08-16T15:30:41+00:00</lastmod>
+</url>
+<url>
 <loc>http://frc.hsefz.org/team/2016/08/13/open-source.html</loc>
 <lastmod>2016-08-13T13:42:45+00:00</lastmod>
 </url>
@@ -15,10 +19,6 @@
 <url>
 <loc>http://frc.hsefz.org/programming/2016/07/24/networking-with-roborio.html</loc>
 <lastmod>2016-07-24T05:29:02+00:00</lastmod>
-</url>
-<url>
-<loc>http://frc.hsefz.org/programming/2016/07/08/command-group.html</loc>
-<lastmod>2016-07-08T09:08:16+00:00</lastmod>
 </url>
 <url>
 <loc>http://frc.hsefz.org/programming/2016/07/08/using-git.html</loc>
@@ -44,5 +44,8 @@
 </url>
 <url>
 <loc>http://frc.hsefz.org/post.html</loc>
+</url>
+<url>
+<loc>http://frc.hsefz.org/status.html</loc>
 </url>
 </urlset>
