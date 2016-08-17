@@ -5,8 +5,8 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 17 Aug 2016 07:55:11 +0000</pubDate>
-    <lastBuildDate>Wed, 17 Aug 2016 07:55:11 +0000</lastBuildDate>
+    <pubDate>Wed, 17 Aug 2016 08:17:04 +0000</pubDate>
+    <lastBuildDate>Wed, 17 Aug 2016 08:17:04 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -304,7 +304,7 @@ addSequential(new Command6());
       &lt;div class=&quot;card card-block  text-xs-center member-info&quot;&gt;
         &lt;blockquote class=&quot;card-blockquote&quot;&gt;
           &lt;h4&gt;Rocka Zhou (周亦哲)&lt;/h4&gt;
-          &lt;p&gt;新人一枚，喜爱工程，乐于编程，MC忠粉。  Focus on robotics logic, and some other programming issues. Helpful in mechanic designing. Know how to use CAD.
+          &lt;p&gt;新人一枚，喜爱工程，乐于编程，MC忠粉。 Focus on robotics logic, and some other programming issues. Helpful in mechanic designing. Know how to use CAD.
 &lt;/p&gt;
           &lt;footer&gt;&lt;em&gt;Member of Programming&lt;/em&gt;&lt;/footer&gt;
         &lt;/blockquote&gt;
