@@ -5,9 +5,35 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Aug 2016 16:01:53 +0000</pubDate>
-    <lastBuildDate>Tue, 16 Aug 2016 16:01:53 +0000</lastBuildDate>
+    <pubDate>Wed, 17 Aug 2016 07:38:29 +0000</pubDate>
+    <lastBuildDate>Wed, 17 Aug 2016 07:38:29 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>友情链接 / Friends</title>
+        <description>
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;初檬 &lt;a href=&quot;https://truemoe.cn/&quot;&gt;https://truemoe.cn/&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Miss Daisy &lt;a href=&quot;http://www.team341.com/&quot;&gt;http://www.team341.com/&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Wed, 17 Aug 2016 07:12:06 +0000</pubDate>
+        <link>http://frc.hsefz.org/team/2016/08/17/friends.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/team/2016/08/17/friends.html</guid>
+        
+        <category>队伍</category>
+        
+        <category>链接</category>
+        
+        
+        <category>team</category>
+        
+      </item>
     
       <item>
         <title>CommandGroup · 指令组</title>
@@ -113,8 +139,9 @@ addSequential(new Command6());
       <item>
         <title>开源项目 / Open Source Projects</title>
         <description>&lt;div class=&quot;container&quot;&gt;
-  &lt;h1 class=&quot;display-4&quot;&gt;Open Source Projects &lt;small&gt;Stronghold 2016&lt;/small&gt;&lt;/h1&gt;
-  &lt;p&gt;We are happy to announce that all of our projects in Stronghold 2016 are open-sourced.
+  &lt;h1 class=&quot;display-4&quot;&gt;开源项目 / Open Source Projects&lt;/h1&gt;
+  &lt;h2&gt;Stronghold 2016&lt;/h2&gt;
+  &lt;p&gt;We are happy to announce that all of our projects in Stronghold 2016 are open-sourced.&lt;/p&gt;
   &lt;div class=&quot;card-columns m-t-1&quot;&gt;
     
       &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
@@ -200,7 +227,7 @@ addSequential(new Command6());
       <item>
         <title>队员介绍 / Team Member</title>
         <description>&lt;div class=&quot;container m-t-3&quot;&gt;
-  &lt;h1 class=&quot;display-4&quot;&gt;Team Members&lt;/h1&gt;
+  &lt;h1 class=&quot;display-4&quot;&gt;队员介绍 / Team Member&lt;/h1&gt;
   &lt;div class=&quot;card-columns m-t-1&quot;&gt;
     
       
