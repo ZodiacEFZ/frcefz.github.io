@@ -1,1 +1,0 @@
-$(document).ready(function(){"/"==window.location.pathname&&window.location.replace("/index.html")});
