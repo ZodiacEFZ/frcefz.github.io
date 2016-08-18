@@ -3,10 +3,10 @@
   <channel>
     <title>Team 9036 | Zodiac</title>
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
-    <link>http://frc.hsefz.orghttp://frc.hsefz.org/</link>
-    <atom:link href="http://frc.hsefz.orghttp://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 18 Aug 2016 05:39:45 +0000</pubDate>
-    <lastBuildDate>Thu, 18 Aug 2016 05:39:45 +0000</lastBuildDate>
+    <link>http://frc.hsefz.org/</link>
+    <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 18 Aug 2016 05:43:11 +0000</pubDate>
+    <lastBuildDate>Thu, 18 Aug 2016 05:43:11 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -29,8 +29,8 @@
 
 </description>
         <pubDate>Wed, 17 Aug 2016 07:12:06 +0000</pubDate>
-        <link>http://frc.hsefz.orghttp://frc.hsefz.org/team/2016/08/17/friends.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.orghttp://frc.hsefz.org/team/2016/08/17/friends.html</guid>
+        <link>http://frc.hsefz.org/team/2016/08/17/friends.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/team/2016/08/17/friends.html</guid>
         
         <category>队伍</category>
         
@@ -51,7 +51,7 @@ INN，他可以 &lt;strong&gt;按顺序&lt;/strong&gt; 或者 &lt;strong&gt;同�
 
 &lt;h2 id=&quot;commandgroup&quot;&gt;创建 CommandGroup&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/command-group/create-1-59837c7e26087e3d42f8f06cc0752bef7ec6cd73431821a0e5c5f6caba0e97dd.png&quot; width=&quot;684&quot; height=&quot;497&quot; alt=&quot;command-group/create-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-group/create-1-59837c7e26087e3d42f8f06cc0752bef7ec6cd73431821a0e5c5f6caba0e97dd.png&quot; width=&quot;684&quot; height=&quot;497&quot; alt=&quot;command-group/create-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;右击项目 - &lt;code class=&quot;highlighter-rouge&quot;&gt;Add&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;CommandGroup&lt;/code&gt; 输入名称即可创建一个指令组。&lt;/p&gt;
 
@@ -76,7 +76,7 @@ INN，他可以 &lt;strong&gt;按顺序&lt;/strong&gt; 或者 &lt;strong&gt;同�
 
 &lt;p&gt;我们再回到之前的 Command-based Robot 中，探索如何运行 INN 器官。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/command-based-robot/xenial-2-fc36582b34c71f65658137bd1519040ff923df78f538715a199a21e732e4c77b.png&quot; width=&quot;963&quot; height=&quot;665&quot; alt=&quot;command-based-robot/xenial-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/xenial-2-fc36582b34c71f65658137bd1519040ff923df78f538715a199a21e732e4c77b.png&quot; width=&quot;963&quot; height=&quot;665&quot; alt=&quot;command-based-robot/xenial-2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;CommandGroup&lt;/code&gt; 的构造函数里插入你的代码：&lt;/p&gt;
 
@@ -97,7 +97,7 @@ INN，他可以 &lt;strong&gt;按顺序&lt;/strong&gt; 或者 &lt;strong&gt;同�
 
 &lt;p&gt;&lt;em&gt;注：如果需要达到并联串联同时使用的效果，可以将一部分指令放在一个 CommandGroup 里，再将这个 CommandGroup 加到其他的 CommandGroup 里。&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/command-group/create-2-9aa4bc029440311d2a1a0f04f34afd4f1afeb087305f413fc6ecbd1adc4686ff.png&quot; width=&quot;684&quot; height=&quot;497&quot; alt=&quot;command-group/create-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-group/create-2-9aa4bc029440311d2a1a0f04f34afd4f1afeb087305f413fc6ecbd1adc4686ff.png&quot; width=&quot;684&quot; height=&quot;497&quot; alt=&quot;command-group/create-2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;比如这里可以将绿框内的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Command&lt;/code&gt; 放在一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;CommandGroup&lt;/code&gt; 里，标号 &lt;code class=&quot;highlighter-rouge&quot;&gt;7&lt;/code&gt;，
 然后再创建一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;CommandGroup&lt;/code&gt;：&lt;/p&gt;
@@ -128,8 +128,8 @@ addSequential(new Command6());
 &lt;p&gt;&lt;em&gt;感谢 Rocka Zhou 供稿&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 16 Aug 2016 15:30:41 +0000</pubDate>
-        <link>http://frc.hsefz.orghttp://frc.hsefz.org/programming/2016/08/16/command-group.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.orghttp://frc.hsefz.org/programming/2016/08/16/command-group.html</guid>
+        <link>http://frc.hsefz.org/programming/2016/08/16/command-group.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/16/command-group.html</guid>
         
         <category>zyz大哥哥的编程干货</category>
         
@@ -218,8 +218,8 @@ addSequential(new Command6());
 &lt;/div&gt;
 </description>
         <pubDate>Sat, 13 Aug 2016 13:42:45 +0000</pubDate>
-        <link>http://frc.hsefz.orghttp://frc.hsefz.org/team/2016/08/13/open-source.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.orghttp://frc.hsefz.org/team/2016/08/13/open-source.html</guid>
+        <link>http://frc.hsefz.org/team/2016/08/13/open-source.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/team/2016/08/13/open-source.html</guid>
         
         <category>队伍</category>
         
@@ -321,8 +321,8 @@ addSequential(new Command6());
 &lt;/div&gt;
 </description>
         <pubDate>Wed, 10 Aug 2016 13:22:19 +0000</pubDate>
-        <link>http://frc.hsefz.orghttp://frc.hsefz.org/team/2016/08/10/team-member.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.orghttp://frc.hsefz.org/team/2016/08/10/team-member.html</guid>
+        <link>http://frc.hsefz.org/team/2016/08/10/team-member.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/team/2016/08/10/team-member.html</guid>
         
         <category>队伍</category>
         
@@ -339,12 +339,12 @@ addSequential(new Command6());
 
 &lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;col-md-6&quot;&gt;
-    &lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/crc-training-0/IMG_2668-eef12f48a8264cc14e36a5339a503982e3995828e5bf584581670fbf42495ad5.JPG&quot; width=&quot;667&quot; height=&quot;1000&quot; alt=&quot;crc-training-0/IMG_2668.JPG&quot; /&gt;
+    &lt;img src=&quot;http://frc.hsefz.org/assets/crc-training-0/IMG_2668-eef12f48a8264cc14e36a5339a503982e3995828e5bf584581670fbf42495ad5.JPG&quot; width=&quot;667&quot; height=&quot;1000&quot; alt=&quot;crc-training-0/IMG_2668.JPG&quot; /&gt;
   &lt;/div&gt;
   &lt;div class=&quot;col-md-6&quot;&gt;
-    &lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/crc-training-0/IMG_2657-6f2cfa848cb5323760e41f1fc150c68500c8ec4db51149733cd7fd6a1cef5af7.JPG&quot; class=&quot;m-b-1&quot; width=&quot;1000&quot; height=&quot;667&quot; alt=&quot;crc-training-0/IMG_2657.JPG&quot; /&gt;
+    &lt;img src=&quot;http://frc.hsefz.org/assets/crc-training-0/IMG_2657-6f2cfa848cb5323760e41f1fc150c68500c8ec4db51149733cd7fd6a1cef5af7.JPG&quot; class=&quot;m-b-1&quot; width=&quot;1000&quot; height=&quot;667&quot; alt=&quot;crc-training-0/IMG_2657.JPG&quot; /&gt;
 
-    &lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/crc-training-0/IMG_2672-3b3ddb8786f84fb1e68ae28b15a6c93715bf2176d252df8d16c08cee781e6d85.JPG&quot; width=&quot;1000&quot; height=&quot;667&quot; alt=&quot;crc-training-0/IMG_2672.JPG&quot; /&gt;
+    &lt;img src=&quot;http://frc.hsefz.org/assets/crc-training-0/IMG_2672-3b3ddb8786f84fb1e68ae28b15a6c93715bf2176d252df8d16c08cee781e6d85.JPG&quot; width=&quot;1000&quot; height=&quot;667&quot; alt=&quot;crc-training-0/IMG_2672.JPG&quot; /&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -353,8 +353,8 @@ addSequential(new Command6());
 &lt;p&gt;之后，主要是针对创客营时间安排、作息时间，以及 CRC 比赛的一些事宜（比如规则、一些活动）的通知。总的来说，能够对我们再创客营期间的生活、制作，以及 CRC 比赛有很大的帮助。&lt;/p&gt;
 </description>
         <pubDate>Wed, 03 Aug 2016 07:10:09 +0000</pubDate>
-        <link>http://frc.hsefz.orghttp://frc.hsefz.org/news/2016/08/03/first-day-training.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.orghttp://frc.hsefz.org/news/2016/08/03/first-day-training.html</guid>
+        <link>http://frc.hsefz.org/news/2016/08/03/first-day-training.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/news/2016/08/03/first-day-training.html</guid>
         
         <category>新闻</category>
         
@@ -396,16 +396,16 @@ SkyZH 可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt
 
 &lt;p&gt;安装 WPIlib 插件之后，你就可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;用户目录&amp;gt;/wpilib/tools&lt;/code&gt; 中找到应用程序。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/networking-roborio/smartdashboard-1-1c96b6a098f1554aa9203ac3c9f211e353fdc531bbbe0013c955ce39ae3b5eba.png&quot; width=&quot;1196&quot; height=&quot;839&quot; alt=&quot;networking-roborio/smartdashboard-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/smartdashboard-1-1c96b6a098f1554aa9203ac3c9f211e353fdc531bbbe0013c955ce39ae3b5eba.png&quot; width=&quot;1196&quot; height=&quot;839&quot; alt=&quot;networking-roborio/smartdashboard-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;OutlineViewer&lt;/code&gt; 是一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 的监视工具。你可以在这个应用里看到所有的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 数据。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/networking-roborio/nt-1-fc8c72f3421c6a17ab4eecc5af5ecf73c38d413e7991c40947f8e3e7708513e8.png&quot; width=&quot;345&quot; height=&quot;176&quot; alt=&quot;networking-roborio/nt-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/nt-1-fc8c72f3421c6a17ab4eecc5af5ecf73c38d413e7991c40947f8e3e7708513e8.png&quot; width=&quot;345&quot; height=&quot;176&quot; alt=&quot;networking-roborio/nt-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;地址填写 &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost&lt;/code&gt;，当然在调试机器人时要填写 &lt;code class=&quot;highlighter-rouge&quot;&gt;roborio-xxxx-frc.local&lt;/code&gt;。
 本地调试则点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Start Server&lt;/code&gt; 运行服务器。调试机器人选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;Start Client&lt;/code&gt; 运行客户端。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/networking-roborio/nt-2-c688272d90f10bbc4bce0a0d91a9902f7767c6391a9826ee717c2beadb62a670.png&quot; width=&quot;584&quot; height=&quot;392&quot; alt=&quot;networking-roborio/nt-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/nt-2-c688272d90f10bbc4bce0a0d91a9902f7767c6391a9826ee717c2beadb62a670.png&quot; width=&quot;584&quot; height=&quot;392&quot; alt=&quot;networking-roborio/nt-2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在这个界面中就可以监视所有数值。&lt;/p&gt;
 
@@ -428,7 +428,7 @@ SkyZH 可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt
 如果 &lt;code class=&quot;highlighter-rouge&quot;&gt;test&lt;/code&gt; 原先设置成数字 233，而后又 &lt;code class=&quot;highlighter-rouge&quot;&gt;putString(&quot;test&quot;, &quot;Hello!&quot;)&lt;/code&gt; 就会报错。
 键的类型是不能改变的。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/networking-roborio/nt-3-6251d18fcda6b7ed911fa94aebcc7477ce61f0ae6ad91c3a8a0b2e67885a5518.png&quot; width=&quot;584&quot; height=&quot;392&quot; alt=&quot;networking-roborio/nt-3.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/nt-3-6251d18fcda6b7ed911fa94aebcc7477ce61f0ae6ad91c3a8a0b2e67885a5518.png&quot; width=&quot;584&quot; height=&quot;392&quot; alt=&quot;networking-roborio/nt-3.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;获取数据也十分简单。&lt;/p&gt;
 
@@ -591,7 +591,7 @@ getNumber(&quot;tragetSpeed&quot;, 0);
 
 &lt;p&gt;安装 WPIlib 插件 之后，你就可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;用户目录&amp;gt;/wpilib/tools&lt;/code&gt; 中找到应用程序。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/networking-roborio/smartdashboard-1-1c96b6a098f1554aa9203ac3c9f211e353fdc531bbbe0013c955ce39ae3b5eba.png&quot; width=&quot;1196&quot; height=&quot;839&quot; alt=&quot;networking-roborio/smartdashboard-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/smartdashboard-1-1c96b6a098f1554aa9203ac3c9f211e353fdc531bbbe0013c955ce39ae3b5eba.png&quot; width=&quot;1196&quot; height=&quot;839&quot; alt=&quot;networking-roborio/smartdashboard-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;OutlineViewer&lt;/code&gt; 是一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 的监视工具。你可以在这个应用里看到所有的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Networktables&lt;/code&gt; 数据。&lt;/p&gt;
 
@@ -641,8 +641,8 @@ getNumber(&quot;tragetSpeed&quot;, 0);
 &lt;p&gt;&lt;a href=&quot;http://first.wpi.edu/FRC/roborio/release/docs/java/&quot;&gt;WPILib API Reference 在线版&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Jul 2016 05:29:02 +0000</pubDate>
-        <link>http://frc.hsefz.orghttp://frc.hsefz.org/programming/2016/07/24/networking-with-roborio.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.orghttp://frc.hsefz.org/programming/2016/07/24/networking-with-roborio.html</guid>
+        <link>http://frc.hsefz.org/programming/2016/07/24/networking-with-roborio.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/24/networking-with-roborio.html</guid>
         
         <category>zc大哥哥的编程干货</category>
         
@@ -673,21 +673,21 @@ git 仓库就被建在被 Xenial 人奉为 &lt;em&gt;被遗忘的角落&lt;/em&g
 
 &lt;p&gt;在 &lt;a href=&quot;https://git-scm.com/&quot;&gt;git 官网&lt;/a&gt; 下载。点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Downloads for Windows&lt;/code&gt; 即可。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/download-1-a592e59ab4bd5a4eef960b8d5beaa69a4467cf633257f3b1d12be21b8b3451fc.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/download-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/download-1-a592e59ab4bd5a4eef960b8d5beaa69a4467cf633257f3b1d12be21b8b3451fc.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/download-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;安装全部采用默认选项即可。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/install-1-557dfde398fa26b79389e949052abc4647199cb879c4ef417e423474fa1017ef.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-1-557dfde398fa26b79389e949052abc4647199cb879c4ef417e423474fa1017ef.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-1.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/install-2-9b80d6e4268e2a5b3d6df4d9fe6bd0feba878d8fd3e32e1e43e4958df999105a.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-2-9b80d6e4268e2a5b3d6df4d9fe6bd0feba878d8fd3e32e1e43e4958df999105a.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-2.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/install-3-fba2a929d8b72bc536b6d266b375db50634ac1d33673c2515714d9b3a2a246b6.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-3.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-3-fba2a929d8b72bc536b6d266b375db50634ac1d33673c2515714d9b3a2a246b6.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-3.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/install-4-047bedd569c85fe49b86d5272c30703ea48a481e20dd735be0d16456a0eb5734.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-4.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-4-047bedd569c85fe49b86d5272c30703ea48a481e20dd735be0d16456a0eb5734.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-4.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/install-5-812b60ecc881c6215e14917f2f0aa64cf827cd9ac38b00341153f06f14b9a96e.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-5.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-5-812b60ecc881c6215e14917f2f0aa64cf827cd9ac38b00341153f06f14b9a96e.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-5.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/install-6-254bbb7d394b8b513558451615fa8bfbdaa9e070c4eda707273c253239b38c5b.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-6.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-6-254bbb7d394b8b513558451615fa8bfbdaa9e070c4eda707273c253239b38c5b.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-6.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;github---&quot;&gt;注册 GitHub 账号 &amp;amp; 设置密钥&lt;/h2&gt;
 
@@ -695,29 +695,29 @@ git 仓库就被建在被 Xenial 人奉为 &lt;em&gt;被遗忘的角落&lt;/em&g
 
 &lt;p&gt;点击右上头像 - &lt;code class=&quot;highlighter-rouge&quot;&gt;Settings&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/use-github-1-61fcd190f035f3bb5b24abd048b811a9da9bd0cf24586e25b14926c37f32fbcc.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/use-github-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-1-61fcd190f035f3bb5b24abd048b811a9da9bd0cf24586e25b14926c37f32fbcc.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/use-github-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH and GPG keys&lt;/code&gt;，点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;New SSH Key&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/use-github-2-53c9905d3ccd64246024bc105a3318fc2bf38512e05d28a18bacd0c160cae385.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/use-github-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-2-53c9905d3ccd64246024bc105a3318fc2bf38512e05d28a18bacd0c160cae385.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/use-github-2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Users\&amp;lt;用户名&amp;gt;\workspace&lt;/code&gt; (即你的 Eclipse 的 workspace 位置) 内点击右键打开 &lt;code class=&quot;highlighter-rouge&quot;&gt;Git GUI&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/use-github-3-54b1b42c8f7be1673f2803f97382a1052e1c3456b1116702023942ba4575d007.png&quot; width=&quot;1211&quot; height=&quot;859&quot; alt=&quot;using-git/use-github-3.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-3-54b1b42c8f7be1673f2803f97382a1052e1c3456b1116702023942ba4575d007.png&quot; width=&quot;1211&quot; height=&quot;859&quot; alt=&quot;using-git/use-github-3.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;Show SSH Key&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/use-github-4-026978bf96ae5f541e831f090f6814f08eae0e7e309a0dbe8f701e652e616963.png&quot; width=&quot;561&quot; height=&quot;288&quot; alt=&quot;using-git/use-github-4.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-4-026978bf96ae5f541e831f090f6814f08eae0e7e309a0dbe8f701e652e616963.png&quot; width=&quot;561&quot; height=&quot;288&quot; alt=&quot;using-git/use-github-4.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;Generate Key&lt;/code&gt; 密码留空点 OK。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/use-github-5-101f8986c1e409f4a00c9f67edb431a45743048fd7af017b87b7514577481782.png&quot; width=&quot;506&quot; height=&quot;347&quot; alt=&quot;using-git/use-github-5.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-5-101f8986c1e409f4a00c9f67edb431a45743048fd7af017b87b7514577481782.png&quot; width=&quot;506&quot; height=&quot;347&quot; alt=&quot;using-git/use-github-5.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;将文本框内密钥拷贝到 GitHub 上，点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Add SSH Key&lt;/code&gt;。输入密码即可。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/use-github-6-c9512daf1cb7c7a00512f9e45cb3e14ff4555f51ab8465ec23830edceb839fe2.png&quot; width=&quot;486&quot; height=&quot;323&quot; alt=&quot;using-git/use-github-6.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-6-c9512daf1cb7c7a00512f9e45cb3e14ff4555f51ab8465ec23830edceb839fe2.png&quot; width=&quot;486&quot; height=&quot;323&quot; alt=&quot;using-git/use-github-6.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/use-github-7-d1cf62f89ff3f2a615e5650e825d99037371ead3e779a207e3685a484d7c9d7c.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/use-github-7.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-7-d1cf62f89ff3f2a615e5650e825d99037371ead3e779a207e3685a484d7c9d7c.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/use-github-7.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;现在你就可以不用输入密码，通过这个 SSH 密钥连接到远程的代码仓库了。&lt;/p&gt;
 
@@ -744,47 +744,47 @@ Xenial 星人于是不得不将远程仓库的所有 &lt;code class=&quot;highli
 
 &lt;p&gt;在 Eclipse workspace 文件夹内右键打开 &lt;code class=&quot;highlighter-rouge&quot;&gt;Git GUI&lt;/code&gt;，点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Clone Existing Repository&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/clone-1-d129caa892b6ae5c83186303c31600038aa7cb920f38b5a203365b17a8aea7f1.png&quot; width=&quot;545&quot; height=&quot;341&quot; alt=&quot;using-git/clone-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/clone-1-d129caa892b6ae5c83186303c31600038aa7cb920f38b5a203365b17a8aea7f1.png&quot; width=&quot;545&quot; height=&quot;341&quot; alt=&quot;using-git/clone-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;输入远程仓库的地址 &lt;code class=&quot;highlighter-rouge&quot;&gt;git@github.com:SkyZH/BreezeRobot.git&lt;/code&gt;，以及目标目录 &lt;code class=&quot;highlighter-rouge&quot;&gt;BreezeRobot&lt;/code&gt;。
 点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Clone&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;注意：这个远程仓库需要经过授权才能访问。请联系 SkyZH。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/clone-2-19c688251627bd75a0f8fb5954c1e994d56af931d63d7348e96e8b20c3d22bca.png&quot; width=&quot;760&quot; height=&quot;341&quot; alt=&quot;using-git/clone-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/clone-2-19c688251627bd75a0f8fb5954c1e994d56af931d63d7348e96e8b20c3d22bca.png&quot; width=&quot;760&quot; height=&quot;341&quot; alt=&quot;using-git/clone-2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;可能会出现一个弹框询问是否要信任 &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub&lt;/code&gt;，输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;yes&lt;/code&gt; 点击 OK。&lt;/p&gt;
 
 &lt;p&gt;以后都可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;workspace/BreezeRobot&lt;/code&gt; 目录下右击 - &lt;code class=&quot;highlighter-rouge&quot;&gt;Git GUI&lt;/code&gt; 打开 &lt;code class=&quot;highlighter-rouge&quot;&gt;仓库管理视图&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/clone-3-139d85c680f0d46434ae774a5d9b1b99fe14df9a58f4b5c69d3ed3e7f2e9108e.png&quot; width=&quot;1105&quot; height=&quot;684&quot; alt=&quot;using-git/clone-3.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/clone-3-139d85c680f0d46434ae774a5d9b1b99fe14df9a58f4b5c69d3ed3e7f2e9108e.png&quot; width=&quot;1105&quot; height=&quot;684&quot; alt=&quot;using-git/clone-3.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;现在我们将这个项目导入到 Eclipse 中。选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;File&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;Import&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/import-1-8c4014d1df6add75c6946af3cfeb8252da3a3ae7b71008cd859cdc6d5c80ab18.png&quot; width=&quot;1275&quot; height=&quot;849&quot; alt=&quot;using-git/import-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/import-1-8c4014d1df6add75c6946af3cfeb8252da3a3ae7b71008cd859cdc6d5c80ab18.png&quot; width=&quot;1275&quot; height=&quot;849&quot; alt=&quot;using-git/import-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;Existing Projects into Workspace&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/import-2-0fde3ce9881b09c988e3691be75df1d507f4fe9983d13d8104149d598fd46af9.png&quot; width=&quot;684&quot; height=&quot;542&quot; alt=&quot;using-git/import-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/import-2-0fde3ce9881b09c988e3691be75df1d507f4fe9983d13d8104149d598fd46af9.png&quot; width=&quot;684&quot; height=&quot;542&quot; alt=&quot;using-git/import-2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Browse...&lt;/code&gt; 选择目录，点击 Finish 即可完成导入。
 在左侧 &lt;code class=&quot;highlighter-rouge&quot;&gt;Package Explorer&lt;/code&gt; 中就能找到导入的项目。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/import-3-a3f1bb116a8b73a4493eb013d3deac9eefa3301df1464505c847aa8e52dd18fe.png&quot; width=&quot;694&quot; height=&quot;840&quot; alt=&quot;using-git/import-3.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/import-3-a3f1bb116a8b73a4493eb013d3deac9eefa3301df1464505c847aa8e52dd18fe.png&quot; width=&quot;694&quot; height=&quot;840&quot; alt=&quot;using-git/import-3.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;现在在 Eclipse 中随便编辑一个文件，比如 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot.java&lt;/code&gt;。保存后回到 &lt;code class=&quot;highlighter-rouge&quot;&gt;Git GUI&lt;/code&gt;。
 点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Rescan&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;Stage Changed&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/push-1-c8d5e3327cb152ccedbee2998fa1b3106cff36fab4de64860cf216d16bba0896.png&quot; width=&quot;1105&quot; height=&quot;684&quot; alt=&quot;using-git/push-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-1-c8d5e3327cb152ccedbee2998fa1b3106cff36fab4de64860cf216d16bba0896.png&quot; width=&quot;1105&quot; height=&quot;684&quot; alt=&quot;using-git/push-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Commit Message&lt;/code&gt; 中输入本次提交的说明。 (&lt;em&gt;比如：Add xxx, Modify xxx, Delete xxx&lt;/em&gt;)
 然后点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Commit&lt;/code&gt;，再点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Push&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/push-2-4334747ce92eb56c147945b974620ebdabf3a408c6e71a7f752b84c40ef1daa2.png&quot; width=&quot;601&quot; height=&quot;559&quot; alt=&quot;using-git/push-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-2-4334747ce92eb56c147945b974620ebdabf3a408c6e71a7f752b84c40ef1daa2.png&quot; width=&quot;601&quot; height=&quot;559&quot; alt=&quot;using-git/push-2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;再次点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Push&lt;/code&gt; 即可。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/fix-error-4-cdc9d6a5245329dee528966b44ecbf94d5ad7e0383a07908079b4ba40d975a86.png&quot; width=&quot;837&quot; height=&quot;363&quot; alt=&quot;using-git/fix-error-4.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-4-cdc9d6a5245329dee528966b44ecbf94d5ad7e0383a07908079b4ba40d975a86.png&quot; width=&quot;837&quot; height=&quot;363&quot; alt=&quot;using-git/fix-error-4.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;绿色代表推送成功。然后在项目的 &lt;a href=&quot;https://github.com/SkyZH/BreezeRobot/&quot;&gt;GitHub 主页&lt;/a&gt; 上就可以看到最新的程序。
 点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;xx Commits&lt;/code&gt; 可以看到你提交的记录。&lt;/p&gt;
@@ -793,37 +793,37 @@ Xenial 星人于是不得不将远程仓库的所有 &lt;code class=&quot;highli
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Rescan&lt;/code&gt; 扫描所有被修改过的文件。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/push-3-d6c11aa37d8977caef5f4038483a831e20b001f046d2f4dfc6a5d86054afc2bd.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-3.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-3-d6c11aa37d8977caef5f4038483a831e20b001f046d2f4dfc6a5d86054afc2bd.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-3.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Stage&lt;/code&gt; 将修改过的文件记录下来。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/push-4-a1802ed7248d394443541d85a6622ee6885753692c1ec9dfd293577cf816cfe9.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-4.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-4-a1802ed7248d394443541d85a6622ee6885753692c1ec9dfd293577cf816cfe9.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-4.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Commit&lt;/code&gt; 把本地的程序保存到本地的代码仓库中。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/push-5-e48e91a81459c2ca79382db6c50becb86500fb8ac179040fa2f47f452333c8c9.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-5.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-5-e48e91a81459c2ca79382db6c50becb86500fb8ac179040fa2f47f452333c8c9.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-5.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Push&lt;/code&gt; 将本地代码仓库同步到远程代码仓库中。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/push-6-159dd35125650c19b6e995967e1b408693ac64c44cb0a7bbc164d09caee2e950.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-6.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-6-159dd35125650c19b6e995967e1b408693ac64c44cb0a7bbc164d09caee2e950.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-6.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2&quot;&gt;修复错误&lt;/h2&gt;
 
 &lt;p&gt;如果在点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Push&lt;/code&gt; 看到如下视图，这意味着你的本地仓库并不是最新的。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/fix-error-1-99782132d2e391491d69043eaebaef6796bcbc86433cdc4ed670187714bbc652.png&quot; width=&quot;837&quot; height=&quot;384&quot; alt=&quot;using-git/fix-error-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-1-99782132d2e391491d69043eaebaef6796bcbc86433cdc4ed670187714bbc652.png&quot; width=&quot;837&quot; height=&quot;384&quot; alt=&quot;using-git/fix-error-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Remote&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;Fetch from&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;origin&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/fix-error-2-cec9560b2699eed0d4a28cceed23e1f6055c0704c6da8f74a93dd7c109b8aa1c.png&quot; width=&quot;1119&quot; height=&quot;699&quot; alt=&quot;using-git/fix-error-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-2-cec9560b2699eed0d4a28cceed23e1f6055c0704c6da8f74a93dd7c109b8aa1c.png&quot; width=&quot;1119&quot; height=&quot;699&quot; alt=&quot;using-git/fix-error-2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;成功后点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Merge&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;Local Merge&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/fix-error-3-a68b3f69edccb4cd4604fc2dae7b7d346aa65c1a6d832a96eb0e7dcde6a0ee41.png&quot; width=&quot;1127&quot; height=&quot;693&quot; alt=&quot;using-git/fix-error-3.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-3-a68b3f69edccb4cd4604fc2dae7b7d346aa65c1a6d832a96eb0e7dcde6a0ee41.png&quot; width=&quot;1127&quot; height=&quot;693&quot; alt=&quot;using-git/fix-error-3.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;成功后再点击 Push 即可。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/fix-error-4-cdc9d6a5245329dee528966b44ecbf94d5ad7e0383a07908079b4ba40d975a86.png&quot; width=&quot;837&quot; height=&quot;363&quot; alt=&quot;using-git/fix-error-4.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-4-cdc9d6a5245329dee528966b44ecbf94d5ad7e0383a07908079b4ba40d975a86.png&quot; width=&quot;837&quot; height=&quot;363&quot; alt=&quot;using-git/fix-error-4.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;然后在项目的 &lt;a href=&quot;https://github.com/SkyZH/BreezeRobot/&quot;&gt;GitHub 主页&lt;/a&gt; 上就可以看到最新的程序。&lt;/p&gt;
 
@@ -836,13 +836,13 @@ Xenial 星人于是不得不将远程仓库的所有 &lt;code class=&quot;highli
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/using-git/fix-error-5-f6ff116ec65ff53f636c431dd3447f892c904ed38f1c440975a4ff65fc83f86d.png&quot; width=&quot;923&quot; height=&quot;232&quot; alt=&quot;using-git/fix-error-5.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-5-f6ff116ec65ff53f636c431dd3447f892c904ed38f1c440975a4ff65fc83f86d.png&quot; width=&quot;923&quot; height=&quot;232&quot; alt=&quot;using-git/fix-error-5.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;你本地所作的所有更改会全部消失，变成远程代码仓库的最新代码&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 08 Jul 2016 09:08:16 +0000</pubDate>
-        <link>http://frc.hsefz.orghttp://frc.hsefz.org/programming/2016/07/08/using-git.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.orghttp://frc.hsefz.org/programming/2016/07/08/using-git.html</guid>
+        <link>http://frc.hsefz.org/programming/2016/07/08/using-git.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/08/using-git.html</guid>
         
         <category>zc大哥哥的编程干货</category>
         
@@ -965,7 +965,7 @@ Xenial 星人于是不得不将远程仓库的所有 &lt;code class=&quot;highli
   &lt;li&gt;停止 XEN 器官旋转。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/command-based-robot/xenial-1-d0c789da893bf63e0a6ac8a7b76eb41e6baf6d2368d4ef377dd11266368adf70.png&quot; width=&quot;963&quot; height=&quot;665&quot; alt=&quot;command-based-robot/xenial-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/xenial-1-d0c789da893bf63e0a6ac8a7b76eb41e6baf6d2368d4ef377dd11266368adf70.png&quot; width=&quot;963&quot; height=&quot;665&quot; alt=&quot;command-based-robot/xenial-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;总之最后 Xenial 人就变成这个样子了。&lt;/p&gt;
 
@@ -985,7 +985,7 @@ Xenial 星人于是不得不将远程仓库的所有 &lt;code class=&quot;highli
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt; 并行，其他顺序执行。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/command-based-robot/xenial-2-fc36582b34c71f65658137bd1519040ff923df78f538715a199a21e732e4c77b.png&quot; width=&quot;963&quot; height=&quot;665&quot; alt=&quot;command-based-robot/xenial-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/xenial-2-fc36582b34c71f65658137bd1519040ff923df78f538715a199a21e732e4c77b.png&quot; width=&quot;963&quot; height=&quot;665&quot; alt=&quot;command-based-robot/xenial-2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;command-based-programming&quot;&gt;开始 Command-based Programming&lt;/h2&gt;
 
@@ -1002,20 +1002,20 @@ Xenial 星人于是不得不将远程仓库的所有 &lt;code class=&quot;highli
 
 &lt;p&gt;打开 Eclipse，创建 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot Java Project&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/command-based-robot/tutorial-1-443422511fa9e7e9f7cc0375ffd095288c79c03121c2bd5a73a9d18ef04847eb.png&quot; width=&quot;684&quot; height=&quot;673&quot; alt=&quot;command-based-robot/tutorial-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-1-443422511fa9e7e9f7cc0375ffd095288c79c03121c2bd5a73a9d18ef04847eb.png&quot; width=&quot;684&quot; height=&quot;673&quot; alt=&quot;command-based-robot/tutorial-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;robot&lt;/code&gt; 包中有三个类：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/command-based-robot/tutorial-2-6dcbb9cce0c50d97dcbe167b3f2b433c04442643ba8847646332d14fdebd7512.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/tutorial-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-2-6dcbb9cce0c50d97dcbe167b3f2b433c04442643ba8847646332d14fdebd7512.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/tutorial-2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Robot&lt;/code&gt; 类是机器人的引导类。通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot&lt;/code&gt; 可以控制自动期间、手动期间所需要执行的指令。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/command-based-robot/tutorial-3-a8d1e8d161e35518d8021a6b7c88283fb23ec237784b1da490ca1e52e2cab01a.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/tutorial-3.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-3-a8d1e8d161e35518d8021a6b7c88283fb23ec237784b1da490ca1e52e2cab01a.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/tutorial-3.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RobotMap&lt;/code&gt; 类是一个常量类，在这里写入每种控制器或传感器的端口号，这样在创建对象时就不用记录端口号了。
 比如 &lt;code class=&quot;highlighter-rouge&quot;&gt;Servo servo = new Servo(RobotMap.CleanerServoPort);&lt;/code&gt; 另外在调试时也可以方便地更改端口号。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/command-based-robot/tutorial-4-08b6c3edced0b73c35d870ce21774a206d5b350b05e7b6f68187917c82a995c2.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/tutorial-4.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-4-08b6c3edced0b73c35d870ce21774a206d5b350b05e7b6f68187917c82a995c2.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/tutorial-4.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;OI&lt;/code&gt; 类里保存了机器人所有传感器控制器的对象。在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot&lt;/code&gt; 类初始化时会创建一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;OI&lt;/code&gt; 对象，
 我们可以通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;OI&lt;/code&gt; 直接访问到机器人的所有设备。注意：&lt;code class=&quot;highlighter-rouge&quot;&gt;RobotMap&lt;/code&gt; 储存端口号，
@@ -1027,7 +1027,7 @@ Xenial 星人于是不得不将远程仓库的所有 &lt;code class=&quot;highli
 
 &lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;org.usfirst.frc.teamxxxx.robot.subsystems&lt;/code&gt; 包中右键新建，选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;Others&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/command-based-robot/tutorial-5-09661d8653c106ada1d3aa7a093fbd24f596e8786d8927a236132a4cee3576fa.png&quot; width=&quot;684&quot; height=&quot;497&quot; alt=&quot;command-based-robot/tutorial-5.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-5-09661d8653c106ada1d3aa7a093fbd24f596e8786d8927a236132a4cee3576fa.png&quot; width=&quot;684&quot; height=&quot;497&quot; alt=&quot;command-based-robot/tutorial-5.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;双击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Subsystem&lt;/code&gt; 即可创建子系统。&lt;/p&gt;
 
@@ -1202,11 +1202,11 @@ Xenial 星人于是不得不将远程仓库的所有 &lt;code class=&quot;highli
 
 &lt;p&gt;第一个文档有 PDF 版。第二个文档可以在 Eclipse 中展开 &lt;code class=&quot;highlighter-rouge&quot;&gt;WPILib&lt;/code&gt; 包查看。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/command-based-robot/api-reference-1-628a288958d0b034872846ab67fa4d65e5905fb2b12144fe5e1b773fe28476e1.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/api-reference-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/api-reference-1-628a288958d0b034872846ab67fa4d65e5905fb2b12144fe5e1b773fe28476e1.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/api-reference-1.png&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 08 Jul 2016 00:54:35 +0000</pubDate>
-        <link>http://frc.hsefz.orghttp://frc.hsefz.org/programming/2016/07/08/command-based-robot.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.orghttp://frc.hsefz.org/programming/2016/07/08/command-based-robot.html</guid>
+        <link>http://frc.hsefz.org/programming/2016/07/08/command-based-robot.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/08/command-based-robot.html</guid>
         
         <category>zc大哥哥的编程干货</category>
         
@@ -1234,20 +1234,20 @@ Xenial 星生物可以分成两部分：漂亮的 Xenial 星人和丑陋的 Xeni
 
 &lt;p&gt;我们先创建一个 Java 工程来尝试创建类。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/object-oriented-programming/oo-1-a8b6e1b33d84d952c0f3990443c2d52f2111f9521f77c3a0d692b7ff5dd2ff6e.png&quot; width=&quot;1284&quot; height=&quot;768&quot; alt=&quot;object-oriented-programming/oo-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/object-oriented-programming/oo-1-a8b6e1b33d84d952c0f3990443c2d52f2111f9521f77c3a0d692b7ff5dd2ff6e.png&quot; width=&quot;1284&quot; height=&quot;768&quot; alt=&quot;object-oriented-programming/oo-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Finish&lt;/code&gt; 创建工程。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/object-oriented-programming/oo-2-5a07a5f1af24d807407d52587ecfdc1501dd687c3f38b05a87ec8c61cb59471f.png&quot; width=&quot;684&quot; height=&quot;886&quot; alt=&quot;object-oriented-programming/oo-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/object-oriented-programming/oo-2-5a07a5f1af24d807407d52587ecfdc1501dd687c3f38b05a87ec8c61cb59471f.png&quot; width=&quot;684&quot; height=&quot;886&quot; alt=&quot;object-oriented-programming/oo-2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;右击工程创建类。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/object-oriented-programming/oo-3-5e9fe0453877f9e11f03ef7eedaa5f55a570fb39ca65e676a8dfdffc3e32b680.png&quot; width=&quot;1296&quot; height=&quot;848&quot; alt=&quot;object-oriented-programming/oo-3.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/object-oriented-programming/oo-3-5e9fe0453877f9e11f03ef7eedaa5f55a570fb39ca65e676a8dfdffc3e32b680.png&quot; width=&quot;1296&quot; height=&quot;848&quot; alt=&quot;object-oriented-programming/oo-3.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;填入 &lt;code class=&quot;highlighter-rouge&quot;&gt;Name&lt;/code&gt;，勾选 &lt;code class=&quot;highlighter-rouge&quot;&gt;public static void main(String[] args)&lt;/code&gt; 创建主程序所在的类。
 注意，创建其他类时&lt;strong&gt;不需要勾选这一项&lt;/strong&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/object-oriented-programming/oo-4-78948a53fa9f62778fc0b84dc0fcd8bf81c182dbb20c2341b3ccf89bd32d964f.png&quot; width=&quot;684&quot; height=&quot;750&quot; alt=&quot;object-oriented-programming/oo-4.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/object-oriented-programming/oo-4-78948a53fa9f62778fc0b84dc0fcd8bf81c182dbb20c2341b3ccf89bd32d964f.png&quot; width=&quot;684&quot; height=&quot;750&quot; alt=&quot;object-oriented-programming/oo-4.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在创建的类中输入程序：&lt;/p&gt;
 
@@ -1263,11 +1263,11 @@ Xenial 星生物可以分成两部分：漂亮的 Xenial 星人和丑陋的 Xeni
 
 &lt;p&gt;单击工具栏中的运行键即可运行程序。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/object-oriented-programming/oo-5-c42d95d96fba879c37068f522b997815a933cdd65b29caeb66b9f9c77956a0f7.png&quot; width=&quot;1272&quot; height=&quot;760&quot; alt=&quot;object-oriented-programming/oo-5.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/object-oriented-programming/oo-5-c42d95d96fba879c37068f522b997815a933cdd65b29caeb66b9f9c77956a0f7.png&quot; width=&quot;1272&quot; height=&quot;760&quot; alt=&quot;object-oriented-programming/oo-5.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;此时在 Console 中会出现一句 &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello, World!&lt;/code&gt; 表明程序成功运行。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/object-oriented-programming/oo-6-393adead1070df415df310a5fb45a23a47f8ed94bcdc7c5573979ad84c04c0bc.png&quot; width=&quot;1272&quot; height=&quot;760&quot; alt=&quot;object-oriented-programming/oo-6.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/object-oriented-programming/oo-6-393adead1070df415df310a5fb45a23a47f8ed94bcdc7c5573979ad84c04c0bc.png&quot; width=&quot;1272&quot; height=&quot;760&quot; alt=&quot;object-oriented-programming/oo-6.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;xenial-&quot;&gt;在 Xenial 星球上&lt;/h2&gt;
 
@@ -1453,8 +1453,8 @@ Xenial 星生物可以分成两部分：漂亮的 Xenial 星人和丑陋的 Xeni
 &lt;/ol&gt;
 </description>
         <pubDate>Thu, 07 Jul 2016 11:15:22 +0000</pubDate>
-        <link>http://frc.hsefz.orghttp://frc.hsefz.org/programming/2016/07/07/object-oriented-programming.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.orghttp://frc.hsefz.org/programming/2016/07/07/object-oriented-programming.html</guid>
+        <link>http://frc.hsefz.org/programming/2016/07/07/object-oriented-programming.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/07/object-oriented-programming.html</guid>
         
         <category>zc大哥哥的编程干货</category>
         
@@ -1479,23 +1479,23 @@ Xenial 星生物可以分成两部分：漂亮的 Xenial 星人和丑陋的 Xeni
 
 &lt;h2 id=&quot;section&quot;&gt;创建机器人工程&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/programming-with-wpilib/create-project-1-20ebe7bea5f993524b47afcf29e2eb44984d0ad7316c262c928e106a52e13768.png&quot; width=&quot;1009&quot; height=&quot;761&quot; alt=&quot;programming-with-wpilib/create-project-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/create-project-1-20ebe7bea5f993524b47afcf29e2eb44984d0ad7316c262c928e106a52e13768.png&quot; width=&quot;1009&quot; height=&quot;761&quot; alt=&quot;programming-with-wpilib/create-project-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;打开 Eclipse，选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;File&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;New&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;Others&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/programming-with-wpilib/create-project-2-9f45188f86172c8011fa75ee2711b3fc22e987454f043b836d0b5d7520664db3.png&quot; width=&quot;684&quot; height=&quot;497&quot; alt=&quot;programming-with-wpilib/create-project-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/create-project-2-9f45188f86172c8011fa75ee2711b3fc22e987454f043b836d0b5d7520664db3.png&quot; width=&quot;684&quot; height=&quot;497&quot; alt=&quot;programming-with-wpilib/create-project-2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;WPILib Robot Java Development&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot Java Project&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/programming-with-wpilib/create-project-3-d55a0df2b02ce6c58b7c4623ee2b9748da9254ae18acf9505c349206c8129d50.png&quot; width=&quot;684&quot; height=&quot;673&quot; alt=&quot;programming-with-wpilib/create-project-3.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/create-project-3-d55a0df2b02ce6c58b7c4623ee2b9748da9254ae18acf9505c349206c8129d50.png&quot; width=&quot;684&quot; height=&quot;673&quot; alt=&quot;programming-with-wpilib/create-project-3.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;填写项目名，选择 Sample Robot。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/programming-with-wpilib/create-project-4-ef315daf17674562d856f7cbe84ecbc533a47c13ee60d7f927fd6645fe5cea7f.png&quot; width=&quot;1006&quot; height=&quot;757&quot; alt=&quot;programming-with-wpilib/create-project-4.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/create-project-4-ef315daf17674562d856f7cbe84ecbc533a47c13ee60d7f927fd6645fe5cea7f.png&quot; width=&quot;1006&quot; height=&quot;757&quot; alt=&quot;programming-with-wpilib/create-project-4.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;如果界面没有反应，点击左侧边栏上的放大键。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/programming-with-wpilib/create-project-5-b1c2d040cd0b43b3a3d62c163351141d0ed39dc6a64e7c54e8e847f4fdc6f08e.png&quot; width=&quot;1008&quot; height=&quot;760&quot; alt=&quot;programming-with-wpilib/create-project-5.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/create-project-5-b1c2d040cd0b43b3a3d62c163351141d0ed39dc6a64e7c54e8e847f4fdc6f08e.png&quot; width=&quot;1008&quot; height=&quot;760&quot; alt=&quot;programming-with-wpilib/create-project-5.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Package Explorer&lt;/code&gt; 中找到刚才创建项目中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Robot.java&lt;/code&gt;&lt;/p&gt;
 
@@ -1565,11 +1565,11 @@ Xenial 星生物可以分成两部分：漂亮的 Xenial 星人和丑陋的 Xeni
 
 &lt;p&gt;这时我们发现 &lt;code class=&quot;highlighter-rouge&quot;&gt;VictorSP&lt;/code&gt; 下出现了红线。这说明这句语句出了问题。我们可以点击左边的小灯泡让 Eclipse 自动解决。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/programming-with-wpilib/bind-ctrl-1-5bf43cc9d68d82ee0def54bcecd1098a2431b9079b9d8e55720a0ae46ddd4df4.png&quot; width=&quot;1272&quot; height=&quot;760&quot; alt=&quot;programming-with-wpilib/bind-ctrl-1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/bind-ctrl-1-5bf43cc9d68d82ee0def54bcecd1098a2431b9079b9d8e55720a0ae46ddd4df4.png&quot; width=&quot;1272&quot; height=&quot;760&quot; alt=&quot;programming-with-wpilib/bind-ctrl-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;双击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Import VictorSP&lt;/code&gt; 将没有包含的库包含进程序中。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/http://frc.hsefz.org/assets/programming-with-wpilib/bind-ctrl-2-bcc15c39ed3971dc040678e2004e4189b4c56616230caf6155fab64c1e9babd4.png&quot; width=&quot;1341&quot; height=&quot;773&quot; alt=&quot;programming-with-wpilib/bind-ctrl-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/programming-with-wpilib/bind-ctrl-2-bcc15c39ed3971dc040678e2004e4189b4c56616230caf6155fab64c1e9babd4.png&quot; width=&quot;1341&quot; height=&quot;773&quot; alt=&quot;programming-with-wpilib/bind-ctrl-2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-4&quot;&gt;编写逻辑&lt;/h3&gt;
 
@@ -1657,8 +1657,8 @@ Xenial 星生物可以分成两部分：漂亮的 Xenial 星人和丑陋的 Xeni
 &lt;/ol&gt;
 </description>
         <pubDate>Thu, 07 Jul 2016 09:23:35 +0000</pubDate>
-        <link>http://frc.hsefz.orghttp://frc.hsefz.org/programming/2016/07/07/programming-with-wpilib.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.orghttp://frc.hsefz.org/programming/2016/07/07/programming-with-wpilib.html</guid>
+        <link>http://frc.hsefz.org/programming/2016/07/07/programming-with-wpilib.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/07/programming-with-wpilib.html</guid>
         
         <category>zc大哥哥的编程干货</category>
         
