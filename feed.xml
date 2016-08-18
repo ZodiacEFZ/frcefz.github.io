@@ -5,8 +5,8 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 18 Aug 2016 05:43:11 +0000</pubDate>
-    <lastBuildDate>Thu, 18 Aug 2016 05:43:11 +0000</lastBuildDate>
+    <pubDate>Thu, 18 Aug 2016 05:53:40 +0000</pubDate>
+    <lastBuildDate>Thu, 18 Aug 2016 05:53:40 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -237,6 +237,16 @@ addSequential(new Command6());
   &lt;div class=&quot;card-columns m-t-1&quot;&gt;
     
       
+      &lt;div class=&quot;card card-block card-outline-success text-xs-center member-info&quot;&gt;
+        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
+          &lt;h4&gt;Albert Chen (陈向东)&lt;/h4&gt;
+          &lt;p&gt;From Engineer Technology Department of No.2 High school of East China Normal University. A Master Degree in Educational Technology of East China Normal University.
+&lt;/p&gt;
+          &lt;footer&gt;&lt;em&gt;Mentor&lt;/em&gt;&lt;/footer&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    
+      
       &lt;div class=&quot;card card-block card-outline-info text-xs-center member-info&quot;&gt;
         &lt;blockquote class=&quot;card-blockquote&quot;&gt;
           &lt;h4&gt;Clark (陈谦路)&lt;/h4&gt;
@@ -270,7 +280,7 @@ addSequential(new Command6());
       &lt;div class=&quot;card card-block  text-xs-center member-info&quot;&gt;
         &lt;blockquote class=&quot;card-blockquote&quot;&gt;
           &lt;h4&gt;Xinjia (新家正太)&lt;/h4&gt;
-          &lt;p&gt;喜欢工科，inventor玩得还不错，课余喜欢踢球和赛车游戏。&lt;br&gt; Good at robot controlling and CAD. Help the team figure out the way of building our robot.
+          &lt;p&gt;喜欢工科，Inventor 玩得还不错，课余喜欢踢球和赛车游戏。&lt;br&gt; Good at robot controlling and CAD. Help the team figure out the way of building our robot.
 &lt;/p&gt;
           &lt;footer&gt;&lt;em&gt;Member of Electronical&lt;br&gt;Driver&lt;/em&gt;&lt;/footer&gt;
         &lt;/blockquote&gt;
