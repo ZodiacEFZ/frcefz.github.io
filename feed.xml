@@ -5,24 +5,24 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Aug 2016 12:46:09 +0000</pubDate>
-    <lastBuildDate>Mon, 22 Aug 2016 12:46:09 +0000</lastBuildDate>
+    <pubDate>Mon, 22 Aug 2016 13:56:27 +0000</pubDate>
+    <lastBuildDate>Mon, 22 Aug 2016 13:56:27 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>什么是指令式编程</title>
         <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599732-what-is-command-based-programming&quot;&gt;What is Command based programming&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;WPILib 支持一种叫“指令式编程”的编写机器人程序的方法。指令式编程是一种可以帮助我们更好地管理机器人工程代码的设计模式。机器人程序和一般的视窗程序不同的地方有：&lt;/p&gt;
+&lt;p&gt;WPILib 支持通过“指令式编程” —— 一种帮助我们更好地管理机器人工程代码的设计模式 —— 来编写机器人程序。机器人程序和一般的视窗程序不同的地方有：&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;行为按次序执行。比如射出飞盘、提升升降装置、在目标地点放置一个管子等等由许多小动作组合而成的&lt;strong&gt;一系列&lt;/strong&gt;动作。&lt;/li&gt;
-&lt;li&gt;一些行为同时发生。比如升降装置、机械手腕、机械夹&lt;strong&gt;同时&lt;/strong&gt;工作移动到拾取位置，而不是一个接一个地移动来提高效率。&lt;/li&gt;
-&lt;li&gt;最好是能够单独测试某一个机械或者某一个行为，提高调试的效率。&lt;/li&gt;
-&lt;li&gt;有时在比赛的最后一分钟，机器人可能还需要编写（不在自动阶段执行的）自动程序来提高运行效率，因此具有高度可扩展性的代码十分重要。&lt;/li&gt;
+&lt;li&gt;一些行为同时发生。比如让升降装置、机械手腕、机械夹&lt;strong&gt;同时&lt;/strong&gt;工作来移动到拾取位置，这相比一个接一个地移动更有效率。&lt;/li&gt;
+&lt;li&gt;最好能够单独测试某个机械或者某个行为，提高调试的效率。&lt;/li&gt;
+&lt;li&gt;有时在上场前的最后一刻，还需要编写新的自动程序来提高运行效率，因此代码的可扩展性十分重要。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;指令式编程支持以上所有的特性，利用它编写复杂的机器人行为更为简单方便，我们应该避免使用非模块化、非结构化的方法编写这些行为。&lt;/p&gt;
+&lt;p&gt;在编写机器人行为时，我们应该避免使用非模块化、非结构化的方法，而应使用指令式编程，因为她（是的！指令式编程在我心中就是如女神般的存在！）支持上述所有特性，使编写复杂的机器人行为更为简单方便。&lt;/p&gt;
 
 &lt;h2&gt;指令和子系统&lt;/h2&gt;
 
@@ -32,21 +32,21 @@
 
 &lt;p&gt;子系统：定义机器人的某个机械可以执行的功能。它继承于 &lt;code&gt;Subsystem&lt;/code&gt; 类。&lt;/p&gt;
 
-&lt;p&gt;指令：通过子系统中支持的功能，结合成一个机器人的行为。它继承于 &lt;code&gt;Command&lt;/code&gt; 类或 &lt;code&gt;CommandGroup&lt;/code&gt; (指令组) 类。指令会被调度执行，或者在事件发生时执行。比如手柄按钮被按下、SmartDashboard 中的虚拟按钮被按下。&lt;/p&gt;
+&lt;p&gt;指令：通过子系统中支持的功能，结合成一个机器人的行为。它继承于 &lt;code&gt;Command&lt;/code&gt; 类或 &lt;code&gt;CommandGroup&lt;/code&gt; (指令组) 类。指令会被调度或事件发生时执行。比如手柄按钮被按下、SmartDashboard 中的虚拟按钮被按下。&lt;/p&gt;
 
-&lt;h2&gt;指令如何编写&lt;/h2&gt;
+&lt;h2&gt;指令是如何被执行的&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/what-is-command-based-programming/2-cf5393e42f96cf64afc6f8e3ec83b591db42da1067f44dafb9d9ee2e4b7dcc58.png&quot; width=&quot;640&quot; height=&quot;199&quot; alt=&quot;what-is-command-based-programming/2.png&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;指令使得我们可以把操作机器人的一整个步骤分割成一个个小的部分。每个指令都有一个 &lt;code&gt;execute()&lt;/code&gt; (执行中) 函数和一个 &lt;code&gt;isFinished()&lt;/code&gt; (是否执行结束) 函数。这些函数在收到 Driver Station 的状态更新后执行，周期为大约 20 毫秒。指令可以被组合，然后一个接一个依次执行。&lt;/p&gt;
+&lt;p&gt;指令使得我们可以把操作机器人的一整个步骤分割成一个个小的部分。每个指令都有一个 &lt;code&gt;execute()&lt;/code&gt; (执行) 函数和一个 &lt;code&gt;isFinished()&lt;/code&gt; (是否执行结束) 函数。这些函数在收到 Driver Station 的状态更新后执行，周期大约为 20 毫秒。我们可以组合并依次执行指令。&lt;/p&gt;
 
 &lt;h2&gt;并行&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/what-is-command-based-programming/3-34598754372e36c8913a762547cefd99f33a43c99677146ad09663670e4ca440.png&quot; width=&quot;640&quot; height=&quot;404&quot; alt=&quot;what-is-command-based-programming/3.png&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;有时我们需要几个行为并行执行的功能。之前的那个例子里，可能需要在机械手腕转动的同时提升升降装置。一个&lt;strong&gt;指令组&lt;/strong&gt;可以启动一个并行执行的指令，也可以启动一个并行执行的指令组。&lt;/p&gt;
+&lt;p&gt;有时我们需要几个行为同时执行来实现指定功能。在先前图中的例子里，可能需要在机械手腕转动的同时提升升降装置。我们可以通过&lt;strong&gt;指令组&lt;/strong&gt;来启动数个并行执行的指令，甚至可以通过指令组来启动数个并行执行的指令组。&lt;/p&gt;
 
-&lt;h1&gt;指令如何被调用 —— 指令调度&lt;/h1&gt;
+&lt;h1&gt;指令被以何种方式执行 —— 指令调度&lt;/h1&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/what-is-command-based-programming/4-adad6a6c340930857fa36ef5705f2490996a36eefe391affcf7ddfcbc44bb66a.png&quot; width=&quot;477&quot; height=&quot;514&quot; alt=&quot;what-is-command-based-programming/4.png&quot;&gt;&lt;/p&gt;
 
@@ -58,7 +58,7 @@
 &lt;li&gt;在上一个指令执行完成时。（子系统的默认指令和指令组中的指令）&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;当机器人程序从 Driver Station 那里获取到了新的数据后，机器人程序的 &lt;code&gt;periodic&lt;/code&gt; 这些周期函数会被调用。在指令式机器人程序中，周期函数干的事情就是让调度器根据触发的事件确认是否需要执行新的指令或者停止一个正在执行的指令。&lt;/p&gt;
+&lt;p&gt;当机器人程序从 Driver Station 那里获取到了新的数据后，机器人程序的周期函数会被调用（这些函数都是 &lt;code&gt;Periodic&lt;/code&gt; 结尾的）。在指令式机器人程序中，周期函数干的事情就是让调度器根据触发的事件确认是否需要执行新的指令，或者停止一个正在执行的指令。&lt;/p&gt;
 
 &lt;p&gt;当一个指令将要被执行时，调度器会保证没有其他指令在使用这个指令所需要的子系统。如果一个或多个子系统正在被其他指令使用，并且这些正在执行的指令可以被中断，那么正在执行的指令会被中断，新的指令就会被&lt;strong&gt;加入当前正在执行的指令列表&lt;/strong&gt;。如果有正在执行的指令不能被中断，新的指令就无法执行。&lt;/p&gt;
 
@@ -66,13 +66,15 @@
 
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/what-is-command-based-programming/5-d43e2f5f0eb1afa2dc986e4ee083f17f8daa1499fed5d39b3a7ae77fe5494fd9.png&quot; width=&quot;198&quot; height=&quot;358&quot; alt=&quot;what-is-command-based-programming/5.png&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;调度器维护了一个当前正在执行的指令列表，在一个周期中调用每一个正在执行指令的 &lt;code&gt;execute()&lt;/code&gt; 和 &lt;code&gt;isFinished()&lt;/code&gt; 方法。显而易见，这些操作都可以不需要使用多线程多任务技术就能完成，这显著地降低了程序的复杂程度。每一个指令都有一个 &lt;code&gt;execute()&lt;/code&gt; 函数，执行让机器人一步步接近目标的程序；还有一个 &lt;code&gt;isFinished()&lt;/code&gt; 函数，决定程序是否已经达到指令的目标。这两个函数都是不断地被周期性调用的。&lt;/p&gt;
+&lt;p&gt;调度器维护了一个当前正在执行的指令列表，在一个周期内调用每一个正在执行指令的 &lt;code&gt;execute()&lt;/code&gt; 和 &lt;code&gt;isFinished()&lt;/code&gt; 方法。显而易见，这些操作都可以不需要使用多线程多任务技术就能完成，这显著地降低了程序的复杂程度。每一个指令都有一个 &lt;code&gt;execute()&lt;/code&gt; 函数和一个 &lt;code&gt;isFinished()&lt;/code&gt; 函数。 &lt;code&gt;execute()&lt;/code&gt; 函数执行让机器人一步步接近目标的程序； &lt;code&gt;isFinished()&lt;/code&gt; 函数决定程序是否已经达到指令的目标。这两个函数都是不断地被周期性调用的。&lt;/p&gt;
 
 &lt;h2&gt;指令组&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/what-is-command-based-programming/2-cf5393e42f96cf64afc6f8e3ec83b591db42da1067f44dafb9d9ee2e4b7dcc58.png&quot; width=&quot;640&quot; height=&quot;199&quot; alt=&quot;what-is-command-based-programming/2.png&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;复杂的指令是由一个个小的指令组合而成的。比如射击飞盘可能由一系列指令组成，一个接一个执行。可能这些一个接一个执行的指令中还有需要并行执行的指令。指令组是一个指令，但不需要自己定义 &lt;code&gt;isFinished()&lt;/code&gt; 和 &lt;code&gt;execute()&lt;/code&gt; 方法，因为它帮助我们接管一系列指令的执行。因此我们可以把许多小的指令组合起来，变成一个巨大的复杂的指令组。这种模块化思想是经常在软件工程中使用到的。每一个小指令都可以被单独测试，最后再测试指令组。指令组的相关教程可以在“创建指令组”这一篇教程中找到。&lt;/p&gt;
+&lt;p&gt;复杂的指令是由一个个小的指令组合而成的。比如射击飞盘可能由“瞄准飞盘”、“向‘指令式编程’女神敬礼”、“扣动扳机”等一系列指令组成，一个接一个执行。可能这些一个接一个执行的指令中还有需要并行执行的指令。指令组是一个指令，但不需要自己定义 &lt;code&gt;isFinished()&lt;/code&gt; 和 &lt;code&gt;execute()&lt;/code&gt; 方法，因为它帮助我们接管一系列指令的执行。因此我们可以把许多小的指令组合起来，变成一个巨大的复杂的指令组。这种模块化思想是经常在软件工程中使用到的。每一个小指令都可以被单独测试，最后再测试指令组。指令组的相关教程可以在“创建指令组”这一篇教程中找到。&lt;/p&gt;
+
+&lt;p&gt;*（感谢 &lt;a href=&quot;https://github.com/SkyZH&quot;&gt;@SkyZH&lt;/a&gt; &lt;a href=&quot;https://github.com/incrediblink/&quot;&gt;@IncredibLink&lt;/a&gt; 翻译）&lt;/p&gt;
 </description>
         <pubDate>Mon, 22 Aug 2016 10:13:22 +0000</pubDate>
         <link>http://frc.hsefz.org/command-based%20programming/programming/2016/08/22/what-is-command-based-programming.html</link>
