@@ -5,13 +5,13 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Aug 2016 12:25:26 +0000</pubDate>
-    <lastBuildDate>Mon, 22 Aug 2016 12:25:26 +0000</lastBuildDate>
+    <pubDate>Mon, 22 Aug 2016 12:46:09 +0000</pubDate>
+    <lastBuildDate>Mon, 22 Aug 2016 12:46:09 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>什么是指令式编程</title>
-        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;源文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599732-what-is-command-based-programming&quot;&gt;What is Command based programming&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599732-what-is-command-based-programming&quot;&gt;What is Command based programming&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;WPILib 支持一种叫“指令式编程”的编写机器人程序的方法。指令式编程是一种可以帮助我们更好地管理机器人工程代码的设计模式。机器人程序和一般的视窗程序不同的地方有：&lt;/p&gt;
 
