@@ -5,9 +5,57 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Aug 2016 14:19:59 +0000</pubDate>
-    <lastBuildDate>Mon, 22 Aug 2016 14:19:59 +0000</lastBuildDate>
+    <pubDate>Tue, 23 Aug 2016 03:24:58 +0000</pubDate>
+    <lastBuildDate>Tue, 23 Aug 2016 03:24:58 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>创建机器人项目</title>
+        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599733-creating-a-robot-project&quot;&gt;Creating a robot project&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;创建项目&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/creating-a-robot-project/1-6288290ebae7d86231fb220c3f6431ba98812c2076958d84b760c5c2f64aa40f.png&quot; width=&quot;640&quot; height=&quot;132&quot; alt=&quot;creating-a-robot-project/1.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;右键点击 Project Explorer 中的空白区域，选择 &lt;code&gt;New&lt;/code&gt; - &lt;code&gt;Project...&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;选择项目类型&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/creating-a-robot-project/2-fedc1bff39f1db539f2e4d081afa2fb01f4b533e6fdae4e2d4cea8c3d047278b.png&quot; width=&quot;526&quot; height=&quot;409&quot; alt=&quot;creating-a-robot-project/2.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;展开 WPILib Robot C++ Development / WPILib Robot Java Development 文件夹，选择合适的项目类型
+(Robot C++ Project 或 Robot Java Project)。你只能看到你安装过的项目类型。&lt;/p&gt;
+
+&lt;h2&gt;选择项目骨架&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/creating-a-robot-project/3-a49b157fa7baae3c30747e244f29a0c681f5f76d72715d2ebbee46e0590e3c21.png&quot; width=&quot;534&quot; height=&quot;332&quot; alt=&quot;creating-a-robot-project/3.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;在文本框中给项目命名，然后选择 Command-Based Robot 单选框。&lt;/p&gt;
+
+&lt;h2&gt;在 Project Explorer 中浏览项目股价&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/creating-a-robot-project/4-457f41a80af0cbbaf461d54746d447c6d89f791b292849584e085bf2b9dc531e.png&quot; width=&quot;474&quot; height=&quot;344&quot; alt=&quot;creating-a-robot-project/4.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;注意你现在可能选择的是其他项目。请选择一个目录下有 &lt;code&gt;commands&lt;/code&gt; 和 &lt;code&gt;subsystems&lt;/code&gt; 的项目。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 23 Aug 2016 03:14:44 +0000</pubDate>
+        <link>http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/creating-a-robot-project.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/creating-a-robot-project.html</guid>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        <category>编程</category>
+        
+        <category>翻译</category>
+        
+        
+        <category>command-based programming</category>
+        
+        <category>programming</category>
+        
+      </item>
     
       <item>
         <title>什么是指令式编程</title>
@@ -1012,342 +1060,6 @@ Xenial 星人于是不得不将远程仓库的所有 &lt;code&gt;Commit&lt;/code
         <pubDate>Fri, 08 Jul 2016 09:08:16 +0000</pubDate>
         <link>http://frc.hsefz.org/programming/2016/07/08/using-git.html</link>
         <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/08/using-git.html</guid>
-        
-        <category>zc的编程干货</category>
-        
-        <category>机器人</category>
-        
-        <category>Java</category>
-        
-        <category>编程</category>
-        
-        
-        <category>programming</category>
-        
-      </item>
-    
-      <item>
-        <title>手舞足蹈的 Xenial 星人 · 指令式机器人</title>
-        <description>&lt;p&gt;SkyZH 要对自己的机器人开始升级啦！因为之前的程序只能扫他扁平状的房间，而不能扫客厅，
-因此他非常恼火。他想要让机器人自动扫大厅，但是又懒得写自动寻路算法。终于有一天，
-他在 X购物 上购买的的 Xperia 手柄快递到家了！期待已久的他决定使用手柄控制机器人，
-玩 Xenial 冲突累了的时候就可以让机器人扫地了。&lt;/p&gt;
-
-&lt;p&gt;上次自动控制的代码是这个样子的：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSafetyEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;SkyZH 于是决定稍微修改一下程序。
-&lt;strong&gt;（注意：以下几段代码中的部分函数，比如 &lt;code&gt;getSpeed&lt;/code&gt; 和 &lt;code&gt;getDirection&lt;/code&gt; 并不是官方 API 中的，这是胡编乱造的。 o(^▽^)o）&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSafetyEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joystick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSpeed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joystick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDirection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.02&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;机器人要在按住手柄上的 &lt;code&gt;1&lt;/code&gt; 键时停下，并开始扫地。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSafetyEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joystick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSpeed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joystick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDirection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.02&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;SkyZH 有一个很奇怪的习惯。他凭感觉将扫地机器人开到任意一个地方，按下扫地键后，他才会关注那里到底是什么。
-如果机器人扫到他心爱的最新 Xenialware 笔记本电脑的话，他会很不开心的。因此松开 &lt;code&gt;1&lt;/code&gt; 键后，机器人应该立刻停下扫地工作。
-&lt;code&gt;milliseconds()&lt;/code&gt; 可以获取到程序运行的毫秒数，&lt;strong&gt;但官方文档并没有这个函数&lt;/strong&gt;。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSafetyEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joystick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSpeed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joystick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDirection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;myRobot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;milliseconds&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;milliseconds&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;milliseconds&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isHeld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;servo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.02&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;好麻烦啊！SkyZH 为了偷懒，决定采用指令式编程来解决这个问题。&lt;/p&gt;
-
-&lt;h2&gt;Xenial 星人的 INN&lt;/h2&gt;
-
-&lt;p&gt;Xenial 星人通过名为 INN 的系统进行身体各个器官的通讯。
-当 Xenial 星人想要起床时，INN 系统会从中心器官大脑向各个器官发送如下指令：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;腰部关节旋转到 90 度。（翻身，仰视）&lt;/li&gt;
-&lt;li&gt;等待腰部旋转完成。&lt;/li&gt;
-&lt;li&gt;腰关节旋转到 45 度。&lt;/li&gt;
-&lt;li&gt;小腿关节旋转到 90 度。（由于 INN 发送指令的速度非常快，因此 3~4 可以被认为是同一时间发出的）&lt;/li&gt;
-&lt;li&gt;等待 3~5 完成。&lt;/li&gt;
-&lt;li&gt;开始转动 XEN 器官。&lt;/li&gt;
-&lt;li&gt;等待两秒。&lt;/li&gt;
-&lt;li&gt;停止 XEN 器官旋转。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/xenial-1-d0c789da893bf63e0a6ac8a7b76eb41e6baf6d2368d4ef377dd11266368adf70.png&quot; width=&quot;963&quot; height=&quot;665&quot; alt=&quot;command-based-robot/xenial-1.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;总之最后 Xenial 人就变成这个样子了。&lt;/p&gt;
-
-&lt;p&gt;我们把这个过程分解成如下几个指令：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt; 初始操作：让腰部关节横轴旋转到 90 度。&lt;br&gt;
-结束条件：腰部关节横轴已经旋转到 90 度了。&lt;/li&gt;
-&lt;li&gt; 初始操作：腰关节纵轴旋转到 45 度。&lt;br&gt;
-结束条件：已经旋转到了 45 度。&lt;/li&gt;
-&lt;li&gt; 初始操作：小腿关节旋转到 90 度。&lt;br&gt;
-结束条件：小腿已经旋转到 90 度了。&lt;/li&gt;
-&lt;li&gt; 初始操作：转动 XEN 器官。&lt;br&gt;
-结束条件：指令执行了两秒。&lt;br&gt;
-终止操作：停止旋转 XEN 器官。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;code&gt;2&lt;/code&gt;, &lt;code&gt;3&lt;/code&gt; 并行，其他顺序执行。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/xenial-2-fc36582b34c71f65658137bd1519040ff923df78f538715a199a21e732e4c77b.png&quot; width=&quot;963&quot; height=&quot;665&quot; alt=&quot;command-based-robot/xenial-2.png&quot;&gt;&lt;/p&gt;
-
-&lt;h2&gt;开始 Command-based Programming&lt;/h2&gt;
-
-&lt;p&gt;SkyZH 想，我们也能利用这种 &lt;strong&gt;指令系统&lt;/strong&gt; 完成上面的扫地机器人。
-于是他决定把这些资料交给你，让你帮忙完成这个程序。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;wpilib&lt;/code&gt; 提供了一整套 Command-based 的类与函数，可以帮助你使用指令来编写机器人程序。&lt;/p&gt;
-
-&lt;p&gt;这个工程中最重要的两个基类就是 &lt;code&gt;Command/CommandGroup&lt;/code&gt; 和 &lt;code&gt;Subsystem&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;我们创建新工程来慢慢学习。&lt;/p&gt;
-
-&lt;h3&gt;入门&lt;/h3&gt;
-
-&lt;p&gt;打开 Eclipse，创建 &lt;code&gt;Robot Java Project&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-1-443422511fa9e7e9f7cc0375ffd095288c79c03121c2bd5a73a9d18ef04847eb.png&quot; width=&quot;684&quot; height=&quot;673&quot; alt=&quot;command-based-robot/tutorial-1.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;在 &lt;code&gt;robot&lt;/code&gt; 包中有三个类：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-2-6dcbb9cce0c50d97dcbe167b3f2b433c04442643ba8847646332d14fdebd7512.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/tutorial-2.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Robot&lt;/code&gt; 类是机器人的引导类。通过 &lt;code&gt;Robot&lt;/code&gt; 可以控制自动期间、手动期间所需要执行的指令。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-3-a8d1e8d161e35518d8021a6b7c88283fb23ec237784b1da490ca1e52e2cab01a.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/tutorial-3.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;RobotMap&lt;/code&gt; 类是一个常量类，在这里写入每种控制器或传感器的端口号，这样在创建对象时就不用记录端口号了。
-比如 &lt;code&gt;Servo servo = new Servo(RobotMap.CleanerServoPort);&lt;/code&gt; 另外在调试时也可以方便地更改端口号。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-4-08b6c3edced0b73c35d870ce21774a206d5b350b05e7b6f68187917c82a995c2.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/tutorial-4.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;OI&lt;/code&gt; 类里保存了机器人所有传感器控制器的对象。在 &lt;code&gt;Robot&lt;/code&gt; 类初始化时会创建一个 &lt;code&gt;OI&lt;/code&gt; 对象，
-我们可以通过 &lt;code&gt;OI&lt;/code&gt; 直接访问到机器人的所有设备。注意：&lt;code&gt;RobotMap&lt;/code&gt; 储存端口号，
-而 &lt;code&gt;OI&lt;/code&gt; 中才真正创建了 &lt;code&gt;Servo&lt;/code&gt;, &lt;code&gt;RobotDrive&lt;/code&gt; 等可以通过程序操控的对象。&lt;/p&gt;
-
-&lt;h3&gt;Subsystem (子系统)&lt;/h3&gt;
-
-&lt;p&gt;子系统绑定了机器人的各个部件，比如马达、舵机，并把它抽象成机械臂、发射塔等装置，提供更加简单接口。&lt;/p&gt;
-
-&lt;p&gt;在 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.subsystems&lt;/code&gt; 包中右键新建，选择 &lt;code&gt;Others&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/tutorial-5-09661d8653c106ada1d3aa7a093fbd24f596e8786d8927a236132a4cee3576fa.png&quot; width=&quot;684&quot; height=&quot;497&quot; alt=&quot;command-based-robot/tutorial-5.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;双击 &lt;code&gt;Subsystem&lt;/code&gt; 即可创建子系统。&lt;/p&gt;
-
-&lt;p&gt;扫地机器人上有一个很奇怪的部件叫做 &lt;code&gt;XEN&lt;/code&gt;，它是一个可以 360 度旋转的天线，使用马达控制。
-一般来说我们只需要它正转、反转、停止。因此我们可以这样抽象这个马达：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XenSubsystem&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Subsystem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;VictorSP&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VictorSP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RobotMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MotorXenPort&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initDefaultCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forward&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;xen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;backward&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;xen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;xen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;最后在 &lt;code&gt;RobotMap&lt;/code&gt; 中指定端口号。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RobotMap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MotorXenPort&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;在创建 &lt;code&gt;XenSubsystem&lt;/code&gt; 对象后，我们就可以调用 &lt;code&gt;xen.forward()&lt;/code&gt; 等函数了。在 &lt;code&gt;Robot&lt;/code&gt; 中创建 &lt;code&gt;Subsystem&lt;/code&gt;。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Robot&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IterativeRobot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XenSubsystem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xenSubsystem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XenSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Command (指令)&lt;/h3&gt;
-
-&lt;p&gt;我们可以使用指令控制子系统。在 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.commands&lt;/code&gt; 包中右键新建，选择 &lt;code&gt;Others&lt;/code&gt;。
-选择 &lt;code&gt;Command&lt;/code&gt;，输入名称即可创建指令。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XenCommand&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;XenCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isFinished&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;interrupted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;在 &lt;code&gt;XenCommand&lt;/code&gt; 中有以下几个成员函数。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;XenCommand()&lt;/code&gt; 是类的构造函数。在这里使用 &lt;code&gt;requires(...)&lt;/code&gt; 声明这个类所需要的子系统。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;initialize()&lt;/code&gt; 是初始化函数。第一次运行这个指令时会执行它。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;为什么又要初始化函数又要构造函数？类在创建对象时，机器人的各个部件可能还没有初始化好。
-要等机器人的事件系统完全运行时才能初始化。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;execute()&lt;/code&gt; 指令执行过程中不断调用这个函数。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;isFinished()&lt;/code&gt; 用于判断指令是否结束了。一般这里可以写“角度大于 180”或“时间到了”之类的语句。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;end()&lt;/code&gt; 是指令执行完毕后需要调用的函数。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;interrupted()&lt;/code&gt; 是指令被中断时调用的函数。比如手柄按钮按住时执行一个指令，指令没有执行完就松开了手柄，就会调用它。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;XenCommand&lt;/code&gt; 要实现 XEN 的转动。我们将这一操作抽象成 &lt;code&gt;Command&lt;/code&gt;:&lt;/p&gt;
-
-&lt;p&gt;初始操作：转动 XEN 器官。&lt;br&gt;
-结束条件：指令执行了两秒。&lt;br&gt;
-终止操作：停止旋转 XEN 器官。&lt;/p&gt;
-
-&lt;p&gt;可以使用 &lt;code&gt;setTimeout(double seconds)&lt;/code&gt; 设定定时器，&lt;code&gt;isTimedOut()&lt;/code&gt; 判断是否到时间。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XenCommand&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;XenCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;requires&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xenSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//声明依赖&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xenSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forward&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-     &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isFinished&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isTimedOut&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xenSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;interrupted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;最后在 &lt;code&gt;Robot&lt;/code&gt; 中将这个指令设定为自动阶段的默认指令。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autonomousInit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;autonomousCommand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XenCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;autonomousCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;最后的话&lt;/h3&gt;
-
-&lt;p&gt;FRC 机器人的 Command-based Robot 模式在国外的队伍中广泛使用。它的模块化、组件化的特点使得程序架构变得清楚，维护起来也更加方便。&lt;/p&gt;
-
-&lt;p&gt;除了 &lt;code&gt;Robot&lt;/code&gt; 引导机器人主程序，&lt;code&gt;OI&lt;/code&gt; 保存机器人所有的手柄相关设置，&lt;code&gt;RobotMap&lt;/code&gt; 保存所有常量、端口映射以外，
-&lt;code&gt;Subsystem&lt;/code&gt; 提供了抽象的功能，可以将一个控制器原来的十几个函数变成所需要的几个甚至一个函数，并增加可读性。
-(比如将 &lt;code&gt;VictorSP&lt;/code&gt; 抽象为 &lt;code&gt;XenSubsystem&lt;/code&gt;)。而 &lt;code&gt;Command&lt;/code&gt; 提供了操作 &lt;code&gt;Subsystem&lt;/code&gt; 的可能，
-使得我们可以通过发送指令的方式&lt;strong&gt;非阻塞地&lt;/strong&gt;执行命令，并且轻松地执行命令组。&lt;/p&gt;
-
-&lt;p&gt;UPDATE: 由于 &lt;code&gt;OI&lt;/code&gt; 对象创建时机器人还没有完全初始化完毕，因此传感器、控制器对象直接在 &lt;code&gt;Subsystem&lt;/code&gt; 中创建。相关代码已修改。&lt;/p&gt;
-
-&lt;h2&gt;练习&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt; 自学 &lt;code&gt;CommandGroup&lt;/code&gt;。创建一个指令组，让 &lt;code&gt;XEN&lt;/code&gt; 正转两秒，反转两秒。&lt;br&gt;
-&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/241903-creating-groups-of-commands&quot;&gt;教程&lt;/a&gt;
-&lt;a href=&quot;http://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/command/CommandGroup.html&quot;&gt;文档&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt; 创建一个待机指令，相当于 &lt;code&gt;Timer.delay()&lt;/code&gt;，让 &lt;code&gt;XEN&lt;/code&gt; 正转两秒，停两秒，反转两秒。&lt;br&gt;
-提示：想一想如何将一个操作抽象成 &lt;code&gt;Command&lt;/code&gt;? 一个 &lt;code&gt;Command&lt;/code&gt; 要有哪些要素？&lt;/li&gt;
-&lt;li&gt; 修改这个待机指令的构造函数，使得创建指令对象时可以指定待机指令的待机时长。让 &lt;code&gt;XEN&lt;/code&gt; 正转两秒，停两秒，反转两秒，停三秒，正转两秒。&lt;br&gt;
-提示：最后应该有这两句语句 &lt;code&gt;addSequential(new SuspendCommand(2))&lt;/code&gt; &lt;code&gt;addSequential(new SuspendCommand(3))&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt; 自行查阅 &lt;code&gt;Subsystem&lt;/code&gt; 相关文档，让 &lt;code&gt;XenSubsystem&lt;/code&gt; 在没有任何指令执行的情况下执行一个默认指令 (Default Command)，让 XEN 反转。&lt;/li&gt;
-&lt;li&gt; 尝试添加更多的控制器，比如底盘。&lt;br&gt;
-提示：回忆一下创建一个控制器需要依次更改哪些类？创建一个指令需要依次更改哪些类？&lt;/li&gt;
-&lt;li&gt; 学习使用并行执行指令组 (Parallel)，实现 &lt;code&gt;XEN&lt;/code&gt; 正方向转动两秒的同时让扫地机器人的底盘行走。&lt;/li&gt;
-&lt;li&gt; (选做) 尝试自己阅读传感器相关文档，创建一个基于陀螺仪 (Gyro) 的 &lt;code&gt;PIDSubsystem&lt;/code&gt;。&lt;br&gt;
-提示：&lt;code&gt;WPILib sensors&lt;/code&gt; 章节中讲传感器的用法，而 &lt;code&gt;PIDSubsystem&lt;/code&gt; 将如何创建传感器的子系统。&lt;/li&gt;
-&lt;li&gt; (选做) 添加底盘的默认指令，添加手柄，默认情况下底盘用手柄控制。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;请善用下列资料：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/c/88893&quot;&gt;Java Programming Guide - Command-based Programming 在线版&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://first.wpi.edu/FRC/roborio/release/docs/java/&quot;&gt;WPILib API Reference 在线版&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;第一个文档有 PDF 版。第二个文档可以在 Eclipse 中展开 &lt;code&gt;WPILib&lt;/code&gt; 包查看。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/command-based-robot/api-reference-1-628a288958d0b034872846ab67fa4d65e5905fb2b12144fe5e1b773fe28476e1.png&quot; width=&quot;1272&quot; height=&quot;847&quot; alt=&quot;command-based-robot/api-reference-1.png&quot;&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 08 Jul 2016 00:54:35 +0000</pubDate>
-        <link>http://frc.hsefz.org/programming/2016/07/08/command-based-robot.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/08/command-based-robot.html</guid>
         
         <category>zc的编程干货</category>
         
