@@ -5,13 +5,116 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Aug 2016 03:57:00 +0000</pubDate>
-    <lastBuildDate>Tue, 23 Aug 2016 03:57:00 +0000</lastBuildDate>
+    <pubDate>Tue, 23 Aug 2016 04:16:33 +0000</pubDate>
+    <lastBuildDate>Tue, 23 Aug 2016 04:16:33 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
+        <title>入门指令式机器人编程</title>
+        <description>&lt;p&gt;Zodiac 翻译了 2016 FRC Control System 中 Command-based 相关的文档。&lt;/p&gt;
+
+&lt;ul&gt;
+  
+    &lt;li&gt;
+      &lt;span class=&quot;post-meta&quot;&gt;
+        &lt;span class=&quot;m-r-1&quot;&gt;Aug 22, 2016&lt;/span&gt;
+        &lt;small&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
+        
+        &lt;/small&gt;
+      &lt;/span&gt;
+      &lt;h2&gt;
+        &lt;a class=&quot;post-link&quot; href=&quot;/command-based%20programming/programming/2016/08/22/what-is-command-based-programming.html&quot;&gt;什么是指令式编程&lt;/a&gt;
+      &lt;/h2&gt;
+    &lt;/li&gt;
+  
+    &lt;li&gt;
+      &lt;span class=&quot;post-meta&quot;&gt;
+        &lt;span class=&quot;m-r-1&quot;&gt;Aug 23, 2016&lt;/span&gt;
+        &lt;small&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
+        
+        &lt;/small&gt;
+      &lt;/span&gt;
+      &lt;h2&gt;
+        &lt;a class=&quot;post-link&quot; href=&quot;/command-based%20programming/programming/2016/08/23/creating-a-robot-project.html&quot;&gt;创建机器人项目&lt;/a&gt;
+      &lt;/h2&gt;
+    &lt;/li&gt;
+  
+    &lt;li&gt;
+      &lt;span class=&quot;post-meta&quot;&gt;
+        &lt;span class=&quot;m-r-1&quot;&gt;Aug 23, 2016&lt;/span&gt;
+        &lt;small&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
+        
+        &lt;/small&gt;
+      &lt;/span&gt;
+      &lt;h2&gt;
+        &lt;a class=&quot;post-link&quot; href=&quot;/command-based%20programming/programming/2016/08/23/adding-commands-and-subsystems-to-the-project.html&quot;&gt;向机器人项目中添加指令和子系统&lt;/a&gt;
+      &lt;/h2&gt;
+    &lt;/li&gt;
+  
+    &lt;li&gt;
+      &lt;span class=&quot;post-meta&quot;&gt;
+        &lt;span class=&quot;m-r-1&quot;&gt;Aug 23, 2016&lt;/span&gt;
+        &lt;small&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+        
+          &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
+        
+        &lt;/small&gt;
+      &lt;/span&gt;
+      &lt;h2&gt;
+        &lt;a class=&quot;post-link&quot; href=&quot;/command-based%20programming/programming/2016/08/23/simple-subsystems.html&quot;&gt;简单子系统&lt;/a&gt;
+      &lt;/h2&gt;
+    &lt;/li&gt;
+  
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 23 Aug 2016 04:00:36 +0000</pubDate>
+        <link>http://frc.hsefz.org/programming/2016/08/23/a-brief-introduction-to-command-based-robot.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/23/a-brief-introduction-to-command-based-robot.html</guid>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        <category>编程</category>
+        
+        
+        <category>programming</category>
+        
+      </item>
+    
+      <item>
         <title>简单子系统</title>
-        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599733-creating-a-robot-project&quot;&gt;Creating a robot project&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599735-simple-subsystems&quot;&gt;Simple Subsystems&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;创建子系统&lt;/h2&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java code&lt;/span&gt;
@@ -144,7 +247,7 @@
 
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/6-4e28c24e3a5bbfc47e5ecf1347457a159524ba5c23d69296852008d563d84e6b.png&quot; width=&quot;448&quot; height=&quot;262&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/6.png&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;我们可以在 &lt;code&gt;Commands&lt;/code&gt; (C++) 或 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.commands&lt;/code&gt; (Java) 中查看所有新建的子系统。欲了解如何完善一个指令，请参见“创建简单的指令”这篇文章。&lt;/p&gt;
+&lt;p&gt;我们可以在 &lt;code&gt;Commands&lt;/code&gt; (C++) 或 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.commands&lt;/code&gt; (Java) 目录中查看所有新建的子系统。欲了解如何完善一个指令，请参见“创建简单的指令”这篇文章。&lt;/p&gt;
 </description>
         <pubDate>Tue, 23 Aug 2016 03:24:19 +0000</pubDate>
         <link>http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/adding-commands-and-subsystems-to-the-project.html</link>
@@ -217,7 +320,7 @@
         <title>什么是指令式编程</title>
         <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599732-what-is-command-based-programming&quot;&gt;What is Command based programming&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;WPILib 支持通过“指令式编程” —— 一种帮助我们更好地管理机器人工程代码的设计模式 —— 来编写机器人程序。机器人程序和一般的视窗程序不同的地方有：&lt;/p&gt;
+&lt;p&gt;WPILib 支持通过“指令式编程”，一种帮助我们更好地管理机器人工程代码的设计模式，来编写机器人程序。机器人程序和一般的视窗程序不同的地方有：&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;行为按次序执行。比如射出飞盘、提升升降装置、在目标地点放置一个管子等等由许多小动作组合而成的&lt;strong&gt;一系列&lt;/strong&gt;动作。&lt;/li&gt;
@@ -280,7 +383,7 @@
 
 &lt;p&gt;复杂的指令是由一个个小的指令组合而成的。比如射击飞盘可能由“瞄准飞盘”、“向‘指令式编程’女神敬礼”、“扣动扳机”等一系列指令组成，一个接一个执行。可能这些一个接一个执行的指令中还有需要并行执行的指令。指令组是一个指令，但不需要自己定义 &lt;code&gt;isFinished()&lt;/code&gt; 和 &lt;code&gt;execute()&lt;/code&gt; 方法，因为它帮助我们接管一系列指令的执行。因此我们可以把许多小的指令组合起来，变成一个巨大的复杂的指令组。这种模块化思想是经常在软件工程中使用到的。每一个小指令都可以被单独测试，最后再测试指令组。指令组的相关教程可以在“创建指令组”这一篇教程中找到。&lt;/p&gt;
 
-&lt;p&gt;*（感谢 &lt;a href=&quot;https://github.com/SkyZH&quot;&gt;@SkyZH&lt;/a&gt; &lt;a href=&quot;https://github.com/incrediblink/&quot;&gt;@IncredibLink&lt;/a&gt; 翻译）&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;（感谢 &lt;a href=&quot;https://github.com/SkyZH&quot;&gt;@SkyZH&lt;/a&gt; &lt;a href=&quot;https://github.com/incrediblink/&quot;&gt;@IncredibLink&lt;/a&gt; 翻译）&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 22 Aug 2016 10:13:22 +0000</pubDate>
         <link>http://frc.hsefz.org/command-based%20programming/programming/2016/08/22/what-is-command-based-programming.html</link>
@@ -753,40 +856,6 @@ INN，他可以 &lt;strong&gt;按顺序&lt;/strong&gt; 或者 &lt;strong&gt;同�
         
         
         <category>team</category>
-        
-      </item>
-    
-      <item>
-        <title>创客营第零天</title>
-        <description>&lt;p&gt;今天各队员来到了奉贤中等职业学校，在放置好了机器人和所有零件后，我们将宿舍的床铺擦干净，并铺好了各自的床上用品。这里的住宿条件讲真不太好 orz = = 上铺还需要下铺的同学“放下来”（要不然爬梯子床会倒）……&lt;/p&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;col-md-6&quot;&gt;
-    &lt;img src=&quot;http://frc.hsefz.org/assets/crc-training-0/IMG_2668-eef12f48a8264cc14e36a5339a503982e3995828e5bf584581670fbf42495ad5.JPG&quot; width=&quot;667&quot; height=&quot;1000&quot; alt=&quot;crc-training-0/IMG_2668.JPG&quot;&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;col-md-6&quot;&gt;
-    &lt;img src=&quot;http://frc.hsefz.org/assets/crc-training-0/IMG_2657-6f2cfa848cb5323760e41f1fc150c68500c8ec4db51149733cd7fd6a1cef5af7.JPG&quot; class=&quot;m-b-1&quot; width=&quot;1000&quot; height=&quot;667&quot; alt=&quot;crc-training-0/IMG_2657.JPG&quot;&gt;
-
-    &lt;img src=&quot;http://frc.hsefz.org/assets/crc-training-0/IMG_2672-3b3ddb8786f84fb1e68ae28b15a6c93715bf2176d252df8d16c08cee781e6d85.JPG&quot; width=&quot;1000&quot; height=&quot;667&quot; alt=&quot;crc-training-0/IMG_2672.JPG&quot;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;今天晚上 6:30 左右我们开始参加创客营的入营培训活动，主要是强调了安全的事宜，特别是针对了安全老师巡查各教室的时候发现的安全隐患，比如护目镜的佩戴、手套的使用以及诸多应急情况的处理方式。一定程度上帮助我们发现了自身在人身保护方面的不足。毕竟，安全第一，一切活动都应该以安全作为第一要求、准则。&lt;/p&gt;
-
-&lt;p&gt;之后，主要是针对创客营时间安排、作息时间，以及 CRC 比赛的一些事宜（比如规则、一些活动）的通知。总的来说，能够对我们再创客营期间的生活、制作，以及 CRC 比赛有很大的帮助。&lt;/p&gt;
-</description>
-        <pubDate>Wed, 03 Aug 2016 07:10:09 +0000</pubDate>
-        <link>http://frc.hsefz.org/news/2016/08/03/first-day-training.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/news/2016/08/03/first-day-training.html</guid>
-        
-        <category>新闻</category>
-        
-        <category>创客营</category>
-        
-        <category>日常</category>
-        
-        
-        <category>news</category>
         
       </item>
     
