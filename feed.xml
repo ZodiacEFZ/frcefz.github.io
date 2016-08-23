@@ -5,15 +5,108 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Aug 2016 03:39:57 +0000</pubDate>
-    <lastBuildDate>Tue, 23 Aug 2016 03:39:57 +0000</lastBuildDate>
+    <pubDate>Tue, 23 Aug 2016 03:57:00 +0000</pubDate>
+    <lastBuildDate>Tue, 23 Aug 2016 03:57:00 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>简单子系统</title>
+        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599733-creating-a-robot-project&quot;&gt;Creating a robot project&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;创建子系统&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java code&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;usfirst&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;frc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;team1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;subsystems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;edu.wpi.first.wpilibj.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;edu.wpi.first.wpilibj.command.Subsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.usfirst.frc.team1.robot.RobotMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Claw&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Subsystem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;Victor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;motor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RobotMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;clawMotor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initDefaultCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;motor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;motor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;motor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这是一个很简单的控制机械爪子系统。在这个例子中，机械爪使用一个马达驱动张开或关闭，并且没有使用任何传感器（我们可以用这个例子练习编程，但是请不要在实际中这么设计机械爪）。机械爪张开和关闭的程度是计时实现的。三个方法 &lt;code&gt;open()&lt;/code&gt; &lt;code&gt;close()&lt;/code&gt; &lt;code&gt;stop()&lt;/code&gt; 可以驱动机械爪的马达。请注意，这里没有任何代码可以确认机械爪是否真的张开或关闭了。&lt;code&gt;open()&lt;/code&gt; 方法调用时，机械爪向打开的方向移动。&lt;code&gt;close()&lt;/code&gt; 方法使机械爪往关闭的方向移动。我们可以使用指令来控制机械爪究竟要花多少时间张开关闭。&lt;/p&gt;
+
+&lt;h2&gt;使用指令操纵机械爪&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java code&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;usfirst&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;frc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;team1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;commands&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;edu.wpi.first.wpilibj.command.Command&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.usfirst.frc.team1.robot.Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/**
+ *
+ */&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;OpenClaw&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;OpenClaw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;requires&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;claw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;claw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isFinished&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isTimedOut&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;claw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;interrupted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;指令可以帮助我们设置每个子系统操作的时间。多个指令可以使用一个子系统完成多个行为。机械爪就是一个例子。指令可以设置机械爪张开或关闭的时间参数。比如上面的指令就控制了机械爪张开。请注意，我们在这个指令中用 &lt;code&gt;setTimeout&lt;/code&gt; 函数设置了指令的执行时间为 0.9 秒。最后要在 &lt;code&gt;isFinished()&lt;/code&gt; 函数中判断是否到达了指定时间。关于如何使用指令，请参见“使用指令”这篇文章。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 23 Aug 2016 03:40:36 +0000</pubDate>
+        <link>http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/simple-subsystems.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/simple-subsystems.html</guid>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        <category>编程</category>
+        
+        <category>翻译</category>
+        
+        
+        <category>command-based programming</category>
+        
+        <category>programming</category>
+        
+      </item>
     
       <item>
         <title>向机器人项目中添加指令和子系统</title>
         <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599734-adding-commands-and-subsystems-to-the-project&quot;&gt;Adding Commands and Subsystems to the project&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;指令和子系统都是以类的形式被创建的。WPILib 开发插件内置了指令和子系统的程序模板。你可以直接添加它们。&lt;/p&gt;
+&lt;p&gt;指令和子系统都是以类的形式被创建的。WPILib 开发插件内置了指令和子系统的程序模板。我们可以直接添加。&lt;/p&gt;
 
 &lt;hr&gt;
 
@@ -33,7 +126,7 @@
 
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/3-1d52473e57a16c3d4d5860b9aab410aaecbda976dd386dd5fd284bcb10427d35.png&quot; width=&quot;312&quot; height=&quot;341&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/3.png&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;你可以在 &lt;code&gt;Subsystems&lt;/code&gt; (C++) 或 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.subsystems&lt;/code&gt; (Java) 目录中查看所有新建的子系统。欲了解如何完善一个子系统，请参见“简单的子系统”这篇文章。&lt;/p&gt;
+&lt;p&gt;我们可以在 &lt;code&gt;Subsystems&lt;/code&gt; (C++) 或 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.subsystems&lt;/code&gt; (Java) 目录中查看所有新建的子系统。欲了解如何完善一个子系统，请参见 &lt;a href=&quot;/command-based%20programming/programming/2016/08/23/simple-subsystems.html&quot;&gt;简单子系统&lt;/a&gt; 这篇文章。&lt;/p&gt;
 
 &lt;h2&gt;添加指令&lt;/h2&gt;
 
@@ -51,7 +144,7 @@
 
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/6-4e28c24e3a5bbfc47e5ecf1347457a159524ba5c23d69296852008d563d84e6b.png&quot; width=&quot;448&quot; height=&quot;262&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/6.png&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;你可以在 &lt;code&gt;Commands&lt;/code&gt; (C++) 或 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.commands&lt;/code&gt; (Java) 中查看所有新建的子系统。欲了解如何完善一个指令，请参见“创建简单的指令”这篇文章。&lt;/p&gt;
+&lt;p&gt;我们可以在 &lt;code&gt;Commands&lt;/code&gt; (C++) 或 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.commands&lt;/code&gt; (Java) 中查看所有新建的子系统。欲了解如何完善一个指令，请参见“创建简单的指令”这篇文章。&lt;/p&gt;
 </description>
         <pubDate>Tue, 23 Aug 2016 03:24:19 +0000</pubDate>
         <link>http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/adding-commands-and-subsystems-to-the-project.html</link>
@@ -87,7 +180,7 @@
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/creating-a-robot-project/2-fedc1bff39f1db539f2e4d081afa2fb01f4b533e6fdae4e2d4cea8c3d047278b.png&quot; width=&quot;526&quot; height=&quot;409&quot; alt=&quot;creating-a-robot-project/2.png&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;展开 WPILib Robot C++ Development / WPILib Robot Java Development 文件夹，选择合适的项目类型
-(Robot C++ Project 或 Robot Java Project)。你只能看到你安装过的项目类型。&lt;/p&gt;
+(Robot C++ Project 或 Robot Java Project)。这里只能看到安装过的项目类型。&lt;/p&gt;
 
 &lt;h2&gt;选择项目骨架&lt;/h2&gt;
 
@@ -99,7 +192,7 @@
 
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/creating-a-robot-project/4-457f41a80af0cbbaf461d54746d447c6d89f791b292849584e085bf2b9dc531e.png&quot; width=&quot;474&quot; height=&quot;344&quot; alt=&quot;creating-a-robot-project/4.png&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;注意你当前浏览的可能是其他项目。请选择一个目录下有 &lt;code&gt;commands&lt;/code&gt; 和 &lt;code&gt;subsystems&lt;/code&gt; 的项目。&lt;/p&gt;
+&lt;p&gt;注意当前浏览的可能是其他项目。请选择一个目录下有 &lt;code&gt;commands&lt;/code&gt; 和 &lt;code&gt;subsystems&lt;/code&gt; 的项目。&lt;/p&gt;
 </description>
         <pubDate>Tue, 23 Aug 2016 03:14:44 +0000</pubDate>
         <link>http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/creating-a-robot-project.html</link>
@@ -694,250 +787,6 @@ INN，他可以 &lt;strong&gt;按顺序&lt;/strong&gt; 或者 &lt;strong&gt;同�
         
         
         <category>news</category>
-        
-      </item>
-    
-      <item>
-        <title>和 Xenial 情感交流</title>
-        <description>&lt;h2&gt;那些年，那个扫地机器人&lt;/h2&gt;
-
-&lt;p&gt;SkyZH 研发了扫地机器人几个月后，终于意识到，只让扫地机器人自主扫地是远远不够的。
-SkyZH 决定开发一套通讯系统，使用 Xenialware 上的 APP 控制扫地机器人打扫的房间。&lt;/p&gt;
-
-&lt;p&gt;为了连接到机器人，SkyZH 引入了一套协议 &lt;code&gt;mDNS&lt;/code&gt;。
-&lt;code&gt;mDNS&lt;/code&gt; 帮助计算机快速连接到 RoboRIO 机器人。
-没有 &lt;code&gt;mDNS&lt;/code&gt; 协议，SkyZH 就必须在管理系统中获取机器人的 IP 地址，
-然后在 APP 中手动输入。引入了这个协议后，SkyZH 就可以直接通过网址访问机器人了！
-在烧写机器人固件时，SkyZH 确定了它的地址为 &lt;code&gt;roborio-2333-frc.local&lt;/code&gt;。
-于是他就可以直接通过 &lt;code&gt;roborio-2333-frc.local&lt;/code&gt; 这个地址解析出机器人的局域网 IP
-&lt;code&gt;10.23.33.xx&lt;/code&gt;，接着连接上去了。&lt;/p&gt;
-
-&lt;h2&gt;Networktables&lt;/h2&gt;
-
-&lt;p&gt;SkyZH 引入了 &lt;code&gt;Networktables&lt;/code&gt; 协议进行机器人数据的储存。
-SkyZH 可以在 &lt;code&gt;Networktables&lt;/code&gt; 中创建表格，并在表格中储存键值对。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Networktables&lt;/code&gt; 由服务器和客户端组成。服务器一般运行在 RoboRIO 控制器上，
-而客户端可以运行在任何地方。比如烧写在 RoboRIO 上的程序可以通过 &lt;code&gt;Networktables&lt;/code&gt;
-获取一个值，电脑上的 &lt;code&gt;SmartDashboard&lt;/code&gt; 可以通过 &lt;code&gt;Networktables&lt;/code&gt; 获取机器人的传感器数据，
-同时你也可以通过 Python 编写一个 &lt;code&gt;Networktables&lt;/code&gt; 程序。&lt;/p&gt;
-
-&lt;h3&gt;打开测试的 NetworkTable&lt;/h3&gt;
-
-&lt;p&gt;安装 WPIlib 插件之后，你就可以在 &lt;code&gt;&amp;lt;用户目录&amp;gt;/wpilib/tools&lt;/code&gt; 中找到应用程序。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/smartdashboard-1-1c96b6a098f1554aa9203ac3c9f211e353fdc531bbbe0013c955ce39ae3b5eba.png&quot; width=&quot;1196&quot; height=&quot;839&quot; alt=&quot;networking-roborio/smartdashboard-1.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;OutlineViewer&lt;/code&gt; 是一个 &lt;code&gt;Networktables&lt;/code&gt; 的监视工具。你可以在这个应用里看到所有的 &lt;code&gt;Networktables&lt;/code&gt; 数据。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/nt-1-fc8c72f3421c6a17ab4eecc5af5ecf73c38d413e7991c40947f8e3e7708513e8.png&quot; width=&quot;345&quot; height=&quot;176&quot; alt=&quot;networking-roborio/nt-1.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;地址填写 &lt;code&gt;localhost&lt;/code&gt;，当然在调试机器人时要填写 &lt;code&gt;roborio-xxxx-frc.local&lt;/code&gt;。
-本地调试则点击 &lt;code&gt;Start Server&lt;/code&gt; 运行服务器。调试机器人选择 &lt;code&gt;Start Client&lt;/code&gt; 运行客户端。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/nt-2-c688272d90f10bbc4bce0a0d91a9902f7767c6391a9826ee717c2beadb62a670.png&quot; width=&quot;584&quot; height=&quot;392&quot; alt=&quot;networking-roborio/nt-2.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;在这个界面中就可以监视所有数值。&lt;/p&gt;
-
-&lt;h3&gt;在机器人控制器上存储数据&lt;/h3&gt;
-
-&lt;p&gt;首先要从 Networktables 中获取一张表格。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;NetworkTable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ntable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NetworkTable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;接着就可以向表格中存储各种数据。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;ntable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;putNumber&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testInt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;233&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ntable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;putString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testString&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello, World!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;putString&lt;/code&gt;/&lt;code&gt;putNumber&lt;/code&gt; 在设置的键存在时，会覆盖之前的数据。但是，
-如果 &lt;code&gt;test&lt;/code&gt; 原先设置成数字 233，而后又 &lt;code&gt;putString(&amp;quot;test&amp;quot;, &amp;quot;Hello!&amp;quot;)&lt;/code&gt; 就会报错。
-键的类型是不能改变的。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/nt-3-6251d18fcda6b7ed911fa94aebcc7477ce61f0ae6ad91c3a8a0b2e67885a5518.png&quot; width=&quot;584&quot; height=&quot;392&quot; alt=&quot;networking-roborio/nt-3.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;获取数据也十分简单。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;ntable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getNumber&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testInt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ntable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testString&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Default String&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;函数的参数，第一个是要获取的键，第二个是如果该键不存在返回的默认值。&lt;/p&gt;
-
-&lt;h3&gt;远程操控&lt;/h3&gt;
-
-&lt;p&gt;视觉处理的数据经过控制器传输后，需要在电脑上处理。因此需要在电脑上远程连接 Networktables。&lt;/p&gt;
-
-&lt;p&gt;在使用 &lt;code&gt;getTable&lt;/code&gt; 前调用初始化函数即可。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;NetworkTable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTeam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9036&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;订阅事件&lt;/h3&gt;
-
-&lt;p&gt;通过 Networktables 的事件订阅机制，每当有值被修改时，都可以调用用户指定的函数。
-首先要定义一个回调接口，并在接口中编写回调函数。&lt;/p&gt;
-
-&lt;p&gt;定义类成员变量 &lt;code&gt;tableListener&lt;/code&gt;。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ITableListener&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tableListener&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ITableListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;valueChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ITable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isNew&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testInt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;在获取到 &lt;code&gt;Table&lt;/code&gt; 对象后，注册事件处理器。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;ntable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addTableListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tableListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;事务&lt;/h3&gt;
-
-&lt;p&gt;有一天 SkyZH 给扫地机器人编写了视觉处理确定打扫目标程序，程序返回了三个键值对的结果：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;(targetAngle, 180.0)
-(tragetPosition, 20)
-(tragetSpeed, 10)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;要进行存储，必然要经过以下几个步骤：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;putNumber(&quot;targetAngle&quot;, 180.0);
-...
-putNumber(&quot;tragetPosition&quot;, 20);
-...
-putNumber(&quot;tragetSpeed&quot;, 10);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;机器人要不断读取这些数据。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;getNumber(&quot;targetAngle&quot;, 0);
-...
-getNumber(&quot;tragetPosition&quot;, 0);
-...
-getNumber(&quot;tragetSpeed&quot;, 0);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;那么问题来了。假设储存程序执行了两次，而这一期间机器人又读取了数据：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;事件流
-1     targetAngle = 180
-2     targetPosition = 20
-3     targetSpeed = 10
-4     get targetAngle           (=180)
-5     get tragetPosition        (=20)
-6     get targetSpeed           (=10)
-7     targetAngle = 170
-8     targetPosition = 25
-9     targetSpeed = 13
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;一切正常。&lt;/p&gt;
-
-&lt;p&gt;但如果三个数据不是同时写入或同时读取，或者读取指令因为网络原因没有同时到达，可能造成这种队列：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;事件流
-1     targetAngle = 180
-2     targetPosition = 20
-3     targetSpeed = 10
-4     get targetAngle           (=180)
-5     targetAngle = 170
-6     targetPosition = 25
-7     get tragetPosition        (=25)
-8     get targetSpeed           (=10)
-9     targetSpeed = 13
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这样获取到的组合就是 &lt;code&gt;{ targetSpeed: 10, targetPosition: 25, targetAngle: 180 }&lt;/code&gt;，不是任何一次设置的值。&lt;/p&gt;
-
-&lt;p&gt;解决方法是将这些指令一起执行。中间不插入任何代码。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;......
-putNumber(&quot;targetAngle&quot;, 180.0);
-putNumber(&quot;tragetPosition&quot;, 20);
-putNumber(&quot;tragetSpeed&quot;, 10);
-......
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;......
-getNumber(&quot;targetAngle&quot;, 0);
-getNumber(&quot;tragetPosition&quot;, 0);
-getNumber(&quot;tragetSpeed&quot;, 0);
-......
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;或者再使用一个临时的键值对 &lt;code&gt;isTransferred&lt;/code&gt;，当数据全部设置完毕后设置为 &lt;code&gt;false&lt;/code&gt;，仅在此时才能获取数据。&lt;/p&gt;
-
-&lt;h3&gt;(拓展) 使用 Python 操作 Networktables&lt;/h3&gt;
-
-&lt;p&gt;我们使用这个开源项目操作 &lt;code&gt;Networktables&lt;/code&gt;。&lt;a href=&quot;https://github.com/robotpy/pynetworktables&quot;&gt;pynetworktables&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt; 安装 Python3&lt;/li&gt;
-&lt;li&gt; 将 Python 添加到环境变量中&lt;/li&gt;
-&lt;li&gt; 在命令提示符中运行 &lt;code&gt;pip install pynetworktables&lt;/code&gt;。如果速度很慢请使用国内 pip 镜像。&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;编写 Python 程序。    &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;networktables&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NetworkTable&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;dashboard&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NetworkTable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'SmartDashboard'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;dashboard&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;putNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'test'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2333&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;保存为 &lt;code&gt;test.py&lt;/code&gt;，在命令提示符中切换到当前目录，执行 &lt;code&gt;python test.py&lt;/code&gt;。最后一个 &lt;code&gt;while&lt;/code&gt; 循环保证数据录入后再退出程序。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2&gt;SmartDashboard&lt;/h2&gt;
-
-&lt;p&gt;除了使用 &lt;code&gt;Networktables&lt;/code&gt; 储存数据以外，&lt;code&gt;SmartDashboard&lt;/code&gt; 利用 &lt;code&gt;Networktables&lt;/code&gt;，
-通过配置文件，可以方便地将储存在 &lt;code&gt;Networktables&lt;/code&gt; 数据展示在屏幕上。
-&lt;code&gt;SmartDashboard&lt;/code&gt; 是机器人与计算机通讯的桥梁。&lt;/p&gt;
-
-&lt;h3&gt;打开 SmartDashboard&lt;/h3&gt;
-
-&lt;p&gt;安装 WPIlib 插件 之后，你就可以在 &lt;code&gt;&amp;lt;用户目录&amp;gt;/wpilib/tools&lt;/code&gt; 中找到应用程序。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/networking-roborio/smartdashboard-1-1c96b6a098f1554aa9203ac3c9f211e353fdc531bbbe0013c955ce39ae3b5eba.png&quot; width=&quot;1196&quot; height=&quot;839&quot; alt=&quot;networking-roborio/smartdashboard-1.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;OutlineViewer&lt;/code&gt; 是一个 &lt;code&gt;Networktables&lt;/code&gt; 的监视工具。你可以在这个应用里看到所有的 &lt;code&gt;Networktables&lt;/code&gt; 数据。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;SmartDashboard&lt;/code&gt; 是稳定的 &lt;code&gt;SmartDashboard&lt;/code&gt; 版本。推荐在比赛时使用。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;sfx&lt;/code&gt; 是一个美观大气但充满 BUG 的 &lt;code&gt;SmartDashboard&lt;/code&gt; 程序。在调试时可以用它进行数据分析。&lt;/p&gt;
-
-&lt;h3&gt;使用 SmartDashboard 显示调试数据&lt;/h3&gt;
-
-&lt;p&gt;SmartDashboard 是一个静态类，可以使用其中的静态函数向 SmartDashboard 发送数据。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;    &lt;span class=&quot;n&quot;&gt;SmartDashboard&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;putNumber&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;TestData&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;23333&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;在指令执行过程中不断调用发送数据的指令，数据就会不断刷新。在 &lt;code&gt;SmartDashboard&lt;/code&gt;
-上将该数据设置成折线图格式，就可以显示出一段时间内的该数据点的所有数值。&lt;/p&gt;
-
-&lt;h3&gt;为什么有 SmartDashboard 还要 Networktables?&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;SmartDashboard&lt;/code&gt; 是直接展现给操作员的面板，并且可以可视化展现调试数据。&lt;/p&gt;
-
-&lt;p&gt;而视觉处理、图像处理等的临时数据必须要存储在 &lt;code&gt;Networktables&lt;/code&gt; 才能进行进一步展现和处理。
-另外 &lt;code&gt;Networktables&lt;/code&gt; 提供了事件订阅功能，可以在其中的键值对发生更改时接收到通知。&lt;/p&gt;
-
-&lt;h2&gt;练习&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt; 阅读 &lt;code&gt;SmartDashboard&lt;/code&gt; 教程，学习如何查看现在运行的所有指令、现在 &lt;code&gt;DriveSubsystem&lt;/code&gt; 子系统执行的指令，
-以及如何手动运行一个指令。
-(&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/26401/l/255422-displaying-the-status-of-commands-and-subsystems&quot;&gt;教程&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt; 阅读 &lt;code&gt;SmartDashboard&lt;/code&gt; 教程，学习如何通过控制板选择自动阶段执行的指令。
-(关键: 添加 &lt;code&gt;SendableChooser&lt;/code&gt; 到控制板, &lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/26401&quot;&gt;教程&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt; 添加一个 &lt;code&gt;DebugSubsystem&lt;/code&gt; 以及 &lt;code&gt;DebugCommand&lt;/code&gt;，实现在机器人程序运行期间，不断向 &lt;code&gt;SmartDashboard&lt;/code&gt; 写入一个随机数值。
-(提示: 在 &lt;code&gt;DebugCommand&lt;/code&gt; 的 &lt;code&gt;execute&lt;/code&gt; 函数中进行数据存放)&lt;/li&gt;
-&lt;li&gt; 通过 &lt;code&gt;Networktables&lt;/code&gt; 读取 &lt;code&gt;Test&lt;/code&gt; 表格中的三个数据 &lt;code&gt;speedMax&lt;/code&gt;, &lt;code&gt;speedDelta&lt;/code&gt; 和 &lt;code&gt;speedMin&lt;/code&gt;。注意使用事务。&lt;/li&gt;
-&lt;li&gt; 在 DriverStation 的设置中将默认的调试面板改为 &lt;code&gt;SmartDashboard&lt;/code&gt; (调成 Java 模式)。&lt;/li&gt;
-&lt;li&gt; 在 &lt;code&gt;Networktables&lt;/code&gt; 中添加 &lt;code&gt;SubTable&lt;/code&gt; 并存储数据 &lt;a href=&quot;http://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/networktables/NetworkTable.html&quot;&gt;文档&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;请善用官方教程和 WPILib 文档：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809&quot;&gt;FRC Java Programming 在线版&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/26401&quot;&gt;SmartDashboard 教程 在线版&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://first.wpi.edu/FRC/roborio/release/docs/java/&quot;&gt;WPILib API Reference 在线版&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 24 Jul 2016 05:29:02 +0000</pubDate>
-        <link>http://frc.hsefz.org/programming/2016/07/24/networking-with-roborio.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/24/networking-with-roborio.html</guid>
-        
-        <category>zc的编程干货</category>
-        
-        <category>机器人</category>
-        
-        <category>Java</category>
-        
-        <category>编程</category>
-        
-        
-        <category>programming</category>
         
       </item>
     
