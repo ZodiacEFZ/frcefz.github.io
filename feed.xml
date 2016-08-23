@@ -5,9 +5,72 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Aug 2016 03:24:58 +0000</pubDate>
-    <lastBuildDate>Tue, 23 Aug 2016 03:24:58 +0000</lastBuildDate>
+    <pubDate>Tue, 23 Aug 2016 03:39:57 +0000</pubDate>
+    <lastBuildDate>Tue, 23 Aug 2016 03:39:57 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>向机器人项目中添加指令和子系统</title>
+        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599734-adding-commands-and-subsystems-to-the-project&quot;&gt;Adding Commands and Subsystems to the project&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;指令和子系统都是以类的形式被创建的。WPILib 开发插件内置了指令和子系统的程序模板。你可以直接添加它们。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;添加子系统&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/1-9ccf3ad98f5ca61566cea76f930568726062862b2938bc86bee1b32961efe9e7.png&quot; width=&quot;640&quot; height=&quot;224&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/1.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;右键点击项目名，并选择 New - Subsystem。&lt;/p&gt;
+
+&lt;h2&gt;命名子系统&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/2-aa272e32c6f31a635a1f540fe87825b0dd3f9ba70edc02d26ee961f1b883c0c5.png&quot; width=&quot;524&quot; height=&quot;431&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/2.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;在文本框中填写子系统名称。因为这个名称是程序中的类名，所以请指定一个符合编程语言语法的名称。&lt;/p&gt;
+
+&lt;h2&gt;所有子系统&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/3-1d52473e57a16c3d4d5860b9aab410aaecbda976dd386dd5fd284bcb10427d35.png&quot; width=&quot;312&quot; height=&quot;341&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/3.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;你可以在 &lt;code&gt;Subsystems&lt;/code&gt; (C++) 或 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.subsystems&lt;/code&gt; (Java) 目录中查看所有新建的子系统。欲了解如何完善一个子系统，请参见“简单的子系统”这篇文章。&lt;/p&gt;
+
+&lt;h2&gt;添加指令&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/4-9b12485ddf6d0647b7699674c7be53149196c2964b38c2b24ff297f7c04a7b6d.png&quot; width=&quot;640&quot; height=&quot;191&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/4.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;指令的添加步骤与子系统的添加类似。右键点击项目名，选择 New - Command。&lt;/p&gt;
+
+&lt;h2&gt;命名指令&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/5-edd3c805e2be1bb7a3d5a186203a06dad58f8beaec2036695aefa6fe7067a66f.png&quot; width=&quot;524&quot; height=&quot;422&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/5.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code&gt;Class Name&lt;/code&gt; 中输入指令名。因为这个名称是程序中的类名，所以请指定一个符合编程语言语法的名称。&lt;/p&gt;
+
+&lt;h2&gt;所有指令&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/6-4e28c24e3a5bbfc47e5ecf1347457a159524ba5c23d69296852008d563d84e6b.png&quot; width=&quot;448&quot; height=&quot;262&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/6.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;你可以在 &lt;code&gt;Commands&lt;/code&gt; (C++) 或 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.commands&lt;/code&gt; (Java) 中查看所有新建的子系统。欲了解如何完善一个指令，请参见“创建简单的指令”这篇文章。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 23 Aug 2016 03:24:19 +0000</pubDate>
+        <link>http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/adding-commands-and-subsystems-to-the-project.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/adding-commands-and-subsystems-to-the-project.html</guid>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        <category>编程</category>
+        
+        <category>翻译</category>
+        
+        
+        <category>command-based programming</category>
+        
+        <category>programming</category>
+        
+      </item>
     
       <item>
         <title>创建机器人项目</title>
@@ -32,11 +95,11 @@
 
 &lt;p&gt;在文本框中给项目命名，然后选择 Command-Based Robot 单选框。&lt;/p&gt;
 
-&lt;h2&gt;在 Project Explorer 中浏览项目股价&lt;/h2&gt;
+&lt;h2&gt;在 Project Explorer 中浏览项目骨架&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/creating-a-robot-project/4-457f41a80af0cbbaf461d54746d447c6d89f791b292849584e085bf2b9dc531e.png&quot; width=&quot;474&quot; height=&quot;344&quot; alt=&quot;creating-a-robot-project/4.png&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;注意你现在可能选择的是其他项目。请选择一个目录下有 &lt;code&gt;commands&lt;/code&gt; 和 &lt;code&gt;subsystems&lt;/code&gt; 的项目。&lt;/p&gt;
+&lt;p&gt;注意你当前浏览的可能是其他项目。请选择一个目录下有 &lt;code&gt;commands&lt;/code&gt; 和 &lt;code&gt;subsystems&lt;/code&gt; 的项目。&lt;/p&gt;
 </description>
         <pubDate>Tue, 23 Aug 2016 03:14:44 +0000</pubDate>
         <link>http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/creating-a-robot-project.html</link>
@@ -71,6 +134,8 @@
 &lt;/ol&gt;
 
 &lt;p&gt;在编写机器人行为时，我们应该避免使用非模块化、非结构化的方法，而应使用指令式编程，因为她（是的！指令式编程在我心中就是如女神般的存在！）支持上述所有特性，使编写复杂的机器人行为更为简单方便。&lt;/p&gt;
+
+&lt;hr&gt;
 
 &lt;h2&gt;指令和子系统&lt;/h2&gt;
 
@@ -862,204 +927,6 @@ getNumber(&quot;tragetSpeed&quot;, 0);
         <pubDate>Sun, 24 Jul 2016 05:29:02 +0000</pubDate>
         <link>http://frc.hsefz.org/programming/2016/07/24/networking-with-roborio.html</link>
         <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/24/networking-with-roborio.html</guid>
-        
-        <category>zc的编程干货</category>
-        
-        <category>机器人</category>
-        
-        <category>Java</category>
-        
-        <category>编程</category>
-        
-        
-        <category>programming</category>
-        
-      </item>
-    
-      <item>
-        <title>Xenial 的代码仓库 · 使用 git</title>
-        <description>&lt;p&gt;很久以前，在 Xenial 星球上，人们都使用 XBrick 编写代码。一个名为 WindHub 软件公司迅猛发展，
-从无到有，从一个人到十个人，从十个人到一百个人。要不是英勇的 ttt (又称 3t 卫士) 阻止了 CEO SkyZH 的阴谋，
-Xenial 星球早就变成可怕程序猿的天下了！
-刚开始 WindHub 公司里的 Xenial 人使用 Brick Device 储存源代码，
-每天早晨都有一场例会，CEO SkyZH 当场收集 Brick Device，
-在自己的 Xenialware 上查看每个人新增的程序段，
-然后合并，拷贝给大家。终于有一天，SkyZH 累了，
-于是他引入了 git 这种版本管理工具，开辟了一片新天地。
-git 仓库就被建在被 Xenial 人奉为 &lt;em&gt;被遗忘的角落&lt;/em&gt; 中央。&lt;/p&gt;
-
-&lt;h2&gt;下载与安装&lt;/h2&gt;
-
-&lt;p&gt;git 是一个源代码管理工具。我们可以使用图形化界面的 git 进行源代码管理。&lt;/p&gt;
-
-&lt;p&gt;在 &lt;a href=&quot;https://git-scm.com/&quot;&gt;git 官网&lt;/a&gt; 下载。点击 &lt;code&gt;Downloads for Windows&lt;/code&gt; 即可。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/download-1-a592e59ab4bd5a4eef960b8d5beaa69a4467cf633257f3b1d12be21b8b3451fc.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/download-1.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;安装全部采用默认选项即可。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-1-557dfde398fa26b79389e949052abc4647199cb879c4ef417e423474fa1017ef.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-1.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-2-9b80d6e4268e2a5b3d6df4d9fe6bd0feba878d8fd3e32e1e43e4958df999105a.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-2.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-3-fba2a929d8b72bc536b6d266b375db50634ac1d33673c2515714d9b3a2a246b6.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-3.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-4-047bedd569c85fe49b86d5272c30703ea48a481e20dd735be0d16456a0eb5734.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-4.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-5-812b60ecc881c6215e14917f2f0aa64cf827cd9ac38b00341153f06f14b9a96e.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-5.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/install-6-254bbb7d394b8b513558451615fa8bfbdaa9e070c4eda707273c253239b38c5b.png&quot; width=&quot;582&quot; height=&quot;476&quot; alt=&quot;using-git/install-6.png&quot;&gt;&lt;/p&gt;
-
-&lt;h2&gt;注册 GitHub 账号 &amp;amp; 设置密钥&lt;/h2&gt;
-
-&lt;p&gt;在 &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt; 上注册你的账号，请记住邮箱、用户名。&lt;/p&gt;
-
-&lt;p&gt;点击右上头像 - &lt;code&gt;Settings&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-1-61fcd190f035f3bb5b24abd048b811a9da9bd0cf24586e25b14926c37f32fbcc.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/use-github-1.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;选择 &lt;code&gt;SSH and GPG keys&lt;/code&gt;，点击 &lt;code&gt;New SSH Key&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-2-53c9905d3ccd64246024bc105a3318fc2bf38512e05d28a18bacd0c160cae385.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/use-github-2.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;在 &lt;code&gt;C:\Users\&amp;lt;用户名&amp;gt;\workspace&lt;/code&gt; (即你的 Eclipse 的 workspace 位置) 内点击右键打开 &lt;code&gt;Git GUI&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-3-54b1b42c8f7be1673f2803f97382a1052e1c3456b1116702023942ba4575d007.png&quot; width=&quot;1211&quot; height=&quot;859&quot; alt=&quot;using-git/use-github-3.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;选择 &lt;code&gt;Show SSH Key&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-4-026978bf96ae5f541e831f090f6814f08eae0e7e309a0dbe8f701e652e616963.png&quot; width=&quot;561&quot; height=&quot;288&quot; alt=&quot;using-git/use-github-4.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;选择 &lt;code&gt;Generate Key&lt;/code&gt; 密码留空点 OK。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-5-101f8986c1e409f4a00c9f67edb431a45743048fd7af017b87b7514577481782.png&quot; width=&quot;506&quot; height=&quot;347&quot; alt=&quot;using-git/use-github-5.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;将文本框内密钥拷贝到 GitHub 上，点击 &lt;code&gt;Add SSH Key&lt;/code&gt;。输入密码即可。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-6-c9512daf1cb7c7a00512f9e45cb3e14ff4555f51ab8465ec23830edceb839fe2.png&quot; width=&quot;486&quot; height=&quot;323&quot; alt=&quot;using-git/use-github-6.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/use-github-7-d1cf62f89ff3f2a615e5650e825d99037371ead3e779a207e3685a484d7c9d7c.png&quot; width=&quot;1436&quot; height=&quot;765&quot; alt=&quot;using-git/use-github-7.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;现在你就可以不用输入密码，通过这个 SSH 密钥连接到远程的代码仓库了。&lt;/p&gt;
-
-&lt;h2&gt;Xenial 的代码仓库&lt;/h2&gt;
-
-&lt;p&gt;Xenial 使用一种非常高级的仓库管理程序。仓库建在一个名为 &lt;em&gt;被遗忘的角落&lt;/em&gt; 的城区。
-这里的人们天天只穿着运动鞋、鸭舌帽、短袖、牛仔裤，背着双肩包。
-每天都坐在 Xenialware 前编程序。仓库就在 &lt;em&gt;被遗忘的角落&lt;/em&gt; 的中心地带。&lt;/p&gt;
-
-&lt;p&gt;Xenial 星人使用一种非常高级的方法编程序。他们使用 XBrick 编写程序。
-Xenial 星人将不同类型的方块按特定的顺序排列好，然后就能使用 Xenialware 执行程序。
-他们用 git 这种高级的运输工具将方块运输到中心仓库。&lt;/p&gt;
-
-&lt;p&gt;git 将每一次向仓库存数据的 &lt;strong&gt;内容&lt;/strong&gt; 叫做 &lt;code&gt;Commit(提交)&lt;/code&gt;。
-&lt;code&gt;Commit&lt;/code&gt; 保存了程序相对于上次提交更改的部分。
-创建了一个 &lt;code&gt;Commit&lt;/code&gt; 后，git 通过 &lt;code&gt;Push (推送)&lt;/code&gt; 的方式将 &lt;code&gt;Commit&lt;/code&gt; 从本地运输到远程仓库。
-如果远程仓库无法接受这次 &lt;code&gt;Commit&lt;/code&gt;，它就不能被成功 &lt;code&gt;Push&lt;/code&gt;。
-Xenial 星人于是不得不将远程仓库的所有 &lt;code&gt;Commit&lt;/code&gt; 拉取下来 &lt;code&gt;Merge (合并)&lt;/code&gt; 到自己的程序里，
-再尝试提交。&lt;/p&gt;
-
-&lt;p&gt;后来这套机制也被用在人类的代码管理上。人类使用 &lt;code&gt;git&lt;/code&gt; 建设了分布式的源代码管理库。&lt;/p&gt;
-
-&lt;h2&gt;获取代码仓库 &amp;amp; 提交更改。&lt;/h2&gt;
-
-&lt;p&gt;在 Eclipse workspace 文件夹内右键打开 &lt;code&gt;Git GUI&lt;/code&gt;，点击 &lt;code&gt;Clone Existing Repository&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/clone-1-d129caa892b6ae5c83186303c31600038aa7cb920f38b5a203365b17a8aea7f1.png&quot; width=&quot;545&quot; height=&quot;341&quot; alt=&quot;using-git/clone-1.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;输入远程仓库的地址 &lt;code&gt;git@github.com:SkyZH/BreezeRobot.git&lt;/code&gt;，以及目标目录 &lt;code&gt;BreezeRobot&lt;/code&gt;。
-点击 &lt;code&gt;Clone&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;注意：这个远程仓库需要经过授权才能访问。请联系 SkyZH。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/clone-2-19c688251627bd75a0f8fb5954c1e994d56af931d63d7348e96e8b20c3d22bca.png&quot; width=&quot;760&quot; height=&quot;341&quot; alt=&quot;using-git/clone-2.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;可能会出现一个弹框询问是否要信任 &lt;code&gt;GitHub&lt;/code&gt;，输入 &lt;code&gt;yes&lt;/code&gt; 点击 OK。&lt;/p&gt;
-
-&lt;p&gt;以后都可以在 &lt;code&gt;workspace/BreezeRobot&lt;/code&gt; 目录下右击 - &lt;code&gt;Git GUI&lt;/code&gt; 打开 &lt;code&gt;仓库管理视图&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/clone-3-139d85c680f0d46434ae774a5d9b1b99fe14df9a58f4b5c69d3ed3e7f2e9108e.png&quot; width=&quot;1105&quot; height=&quot;684&quot; alt=&quot;using-git/clone-3.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;现在我们将这个项目导入到 Eclipse 中。选择 &lt;code&gt;File&lt;/code&gt; - &lt;code&gt;Import&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/import-1-8c4014d1df6add75c6946af3cfeb8252da3a3ae7b71008cd859cdc6d5c80ab18.png&quot; width=&quot;1275&quot; height=&quot;849&quot; alt=&quot;using-git/import-1.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;选择 &lt;code&gt;Existing Projects into Workspace&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/import-2-0fde3ce9881b09c988e3691be75df1d507f4fe9983d13d8104149d598fd46af9.png&quot; width=&quot;684&quot; height=&quot;542&quot; alt=&quot;using-git/import-2.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;点击 &lt;code&gt;Browse...&lt;/code&gt; 选择目录，点击 Finish 即可完成导入。
-在左侧 &lt;code&gt;Package Explorer&lt;/code&gt; 中就能找到导入的项目。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/import-3-a3f1bb116a8b73a4493eb013d3deac9eefa3301df1464505c847aa8e52dd18fe.png&quot; width=&quot;694&quot; height=&quot;840&quot; alt=&quot;using-git/import-3.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;现在在 Eclipse 中随便编辑一个文件，比如 &lt;code&gt;Robot.java&lt;/code&gt;。保存后回到 &lt;code&gt;Git GUI&lt;/code&gt;。
-点击 &lt;code&gt;Rescan&lt;/code&gt; - &lt;code&gt;Stage Changed&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-1-c8d5e3327cb152ccedbee2998fa1b3106cff36fab4de64860cf216d16bba0896.png&quot; width=&quot;1105&quot; height=&quot;684&quot; alt=&quot;using-git/push-1.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;在 &lt;code&gt;Commit Message&lt;/code&gt; 中输入本次提交的说明。 (&lt;em&gt;比如：Add xxx, Modify xxx, Delete xxx&lt;/em&gt;)
-然后点击 &lt;code&gt;Commit&lt;/code&gt;，再点击 &lt;code&gt;Push&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-2-4334747ce92eb56c147945b974620ebdabf3a408c6e71a7f752b84c40ef1daa2.png&quot; width=&quot;601&quot; height=&quot;559&quot; alt=&quot;using-git/push-2.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;再次点击 &lt;code&gt;Push&lt;/code&gt; 即可。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-4-cdc9d6a5245329dee528966b44ecbf94d5ad7e0383a07908079b4ba40d975a86.png&quot; width=&quot;837&quot; height=&quot;363&quot; alt=&quot;using-git/fix-error-4.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;绿色代表推送成功。然后在项目的 &lt;a href=&quot;https://github.com/SkyZH/BreezeRobot/&quot;&gt;GitHub 主页&lt;/a&gt; 上就可以看到最新的程序。
-点击 &lt;code&gt;xx Commits&lt;/code&gt; 可以看到你提交的记录。&lt;/p&gt;
-
-&lt;p&gt;那么 &lt;code&gt;Rescan&lt;/code&gt;, &lt;code&gt;Stage&lt;/code&gt;, &lt;code&gt;Commit&lt;/code&gt;, &lt;code&gt;Push&lt;/code&gt; 分别有什么作用呢？&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Rescan&lt;/code&gt; 扫描所有被修改过的文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-3-d6c11aa37d8977caef5f4038483a831e20b001f046d2f4dfc6a5d86054afc2bd.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-3.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Stage&lt;/code&gt; 将修改过的文件记录下来。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-4-a1802ed7248d394443541d85a6622ee6885753692c1ec9dfd293577cf816cfe9.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-4.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Commit&lt;/code&gt; 把本地的程序保存到本地的代码仓库中。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-5-e48e91a81459c2ca79382db6c50becb86500fb8ac179040fa2f47f452333c8c9.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-5.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Push&lt;/code&gt; 将本地代码仓库同步到远程代码仓库中。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/push-6-159dd35125650c19b6e995967e1b408693ac64c44cb0a7bbc164d09caee2e950.png&quot; width=&quot;958&quot; height=&quot;704&quot; alt=&quot;using-git/push-6.png&quot;&gt;&lt;/p&gt;
-
-&lt;h2&gt;修复错误&lt;/h2&gt;
-
-&lt;p&gt;如果在点击 &lt;code&gt;Push&lt;/code&gt; 看到如下视图，这意味着你的本地仓库并不是最新的。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-1-99782132d2e391491d69043eaebaef6796bcbc86433cdc4ed670187714bbc652.png&quot; width=&quot;837&quot; height=&quot;384&quot; alt=&quot;using-git/fix-error-1.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;点击 &lt;code&gt;Remote&lt;/code&gt; - &lt;code&gt;Fetch from&lt;/code&gt; - &lt;code&gt;origin&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-2-cec9560b2699eed0d4a28cceed23e1f6055c0704c6da8f74a93dd7c109b8aa1c.png&quot; width=&quot;1119&quot; height=&quot;699&quot; alt=&quot;using-git/fix-error-2.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;成功后点击 &lt;code&gt;Merge&lt;/code&gt; - &lt;code&gt;Local Merge&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-3-a68b3f69edccb4cd4604fc2dae7b7d346aa65c1a6d832a96eb0e7dcde6a0ee41.png&quot; width=&quot;1127&quot; height=&quot;693&quot; alt=&quot;using-git/fix-error-3.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;成功后再点击 Push 即可。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-4-cdc9d6a5245329dee528966b44ecbf94d5ad7e0383a07908079b4ba40d975a86.png&quot; width=&quot;837&quot; height=&quot;363&quot; alt=&quot;using-git/fix-error-4.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;然后在项目的 &lt;a href=&quot;https://github.com/SkyZH/BreezeRobot/&quot;&gt;GitHub 主页&lt;/a&gt; 上就可以看到最新的程序。&lt;/p&gt;
-
-&lt;h2&gt;修复不了错误&lt;/h2&gt;
-
-&lt;p&gt;在项目根目录下右键 - &lt;code&gt;Git Bash&lt;/code&gt;，输入：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git reset --hard origin/master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/using-git/fix-error-5-f6ff116ec65ff53f636c431dd3447f892c904ed38f1c440975a4ff65fc83f86d.png&quot; width=&quot;923&quot; height=&quot;232&quot; alt=&quot;using-git/fix-error-5.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;你本地所作的所有更改会全部消失，变成远程代码仓库的最新代码&lt;/strong&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 08 Jul 2016 09:08:16 +0000</pubDate>
-        <link>http://frc.hsefz.org/programming/2016/07/08/using-git.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/07/08/using-git.html</guid>
         
         <category>zc的编程干货</category>
         
