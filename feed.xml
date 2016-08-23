@@ -5,8 +5,8 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Aug 2016 04:16:33 +0000</pubDate>
-    <lastBuildDate>Tue, 23 Aug 2016 04:16:33 +0000</lastBuildDate>
+    <pubDate>Tue, 23 Aug 2016 04:29:57 +0000</pubDate>
+    <lastBuildDate>Tue, 23 Aug 2016 04:29:57 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -355,7 +355,7 @@
 
 &lt;p&gt;有时我们需要几个行为同时执行来实现指定功能。在先前图中的例子里，可能需要在机械手腕转动的同时提升升降装置。我们可以通过&lt;strong&gt;指令组&lt;/strong&gt;来启动数个并行执行的指令，甚至可以通过指令组来启动数个并行执行的指令组。&lt;/p&gt;
 
-&lt;h1&gt;指令被以何种方式执行 —— 指令调度&lt;/h1&gt;
+&lt;h2&gt;指令被以何种方式执行 —— 指令调度&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/what-is-command-based-programming/4-adad6a6c340930857fa36ef5705f2490996a36eefe391affcf7ddfcbc44bb66a.png&quot; width=&quot;477&quot; height=&quot;514&quot; alt=&quot;what-is-command-based-programming/4.png&quot;&gt;&lt;/p&gt;
 
