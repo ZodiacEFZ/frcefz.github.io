@@ -5,107 +5,342 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Aug 2016 12:00:01 +0000</pubDate>
-    <lastBuildDate>Wed, 24 Aug 2016 12:00:01 +0000</lastBuildDate>
+    <pubDate>Wed, 24 Aug 2016 15:23:04 +0000</pubDate>
+    <lastBuildDate>Wed, 24 Aug 2016 15:23:04 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>入门指令式机器人编程</title>
-        <description>&lt;p&gt;Zodiac 翻译了 2016 FRC Control System 中 Command-based 相关的文档。&lt;/p&gt;
+        <title>从零开始的机器人编程入门</title>
+        <description>&lt;ul&gt;
+  
+  
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Jul 7, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/07/programming-with-wpilib.html&quot;&gt;来自 Xenial 星的召唤 · FRC 机器人编程入门&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
 
-&lt;ul&gt;
-  
-    &lt;li&gt;
-      &lt;span class=&quot;post-meta&quot;&gt;
-        &lt;span class=&quot;m-r-1&quot;&gt;Aug 22, 2016&lt;/span&gt;
-        &lt;small&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
-        
-        &lt;/small&gt;
-      &lt;/span&gt;
-      &lt;h2&gt;
-        &lt;a class=&quot;post-link&quot; href=&quot;/command-based%20programming/programming/2016/08/22/what-is-command-based-programming.html&quot;&gt;什么是指令式编程&lt;/a&gt;
-      &lt;/h2&gt;
-    &lt;/li&gt;
-  
-    &lt;li&gt;
-      &lt;span class=&quot;post-meta&quot;&gt;
-        &lt;span class=&quot;m-r-1&quot;&gt;Aug 23, 2016&lt;/span&gt;
-        &lt;small&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
-        
-        &lt;/small&gt;
-      &lt;/span&gt;
-      &lt;h2&gt;
-        &lt;a class=&quot;post-link&quot; href=&quot;/command-based%20programming/programming/2016/08/23/creating-a-robot-project.html&quot;&gt;创建机器人项目&lt;/a&gt;
-      &lt;/h2&gt;
-    &lt;/li&gt;
-  
-    &lt;li&gt;
-      &lt;span class=&quot;post-meta&quot;&gt;
-        &lt;span class=&quot;m-r-1&quot;&gt;Aug 23, 2016&lt;/span&gt;
-        &lt;small&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
-        
-        &lt;/small&gt;
-      &lt;/span&gt;
-      &lt;h2&gt;
-        &lt;a class=&quot;post-link&quot; href=&quot;/command-based%20programming/programming/2016/08/23/adding-commands-and-subsystems-to-the-project.html&quot;&gt;向机器人项目中添加指令和子系统&lt;/a&gt;
-      &lt;/h2&gt;
-    &lt;/li&gt;
-  
-    &lt;li&gt;
-      &lt;span class=&quot;post-meta&quot;&gt;
-        &lt;span class=&quot;m-r-1&quot;&gt;Aug 23, 2016&lt;/span&gt;
-        &lt;small&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
-        
-          &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
-        
-        &lt;/small&gt;
-      &lt;/span&gt;
-      &lt;h2&gt;
-        &lt;a class=&quot;post-link&quot; href=&quot;/command-based%20programming/programming/2016/08/23/simple-subsystems.html&quot;&gt;简单子系统&lt;/a&gt;
-      &lt;/h2&gt;
-    &lt;/li&gt;
-  
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Jul 7, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/07/object-oriented-programming.html&quot;&gt;漂亮和丑陋的 Xenial 星人 · Java 面向对象入门&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Jul 8, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/08/command-based-robot.html&quot;&gt;手舞足蹈的 Xenial 星人 · 指令式机器人&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Jul 8, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/08/using-git.html&quot;&gt;Xenial 的代码仓库 · 使用 git&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Jul 24, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/24/networking-with-roborio.html&quot;&gt;和 Xenial 情感交流&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Aug 16, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#zyz的编程干货&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/08/16/command-group.html&quot;&gt;CommandGroup · 指令组&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+
 &lt;/ul&gt;
 </description>
-        <pubDate>Tue, 23 Aug 2016 04:00:36 +0000</pubDate>
-        <link>http://frc.hsefz.org/programming/2016/08/23/a-brief-introduction-to-command-based-robot.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/23/a-brief-introduction-to-command-based-robot.html</guid>
+        <pubDate>Tue, 23 Aug 2016 14:43:55 +0000</pubDate>
+        <link>http://frc.hsefz.org/showcase/programming/2016/08/23/zodiac-programming-guide.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/showcase/programming/2016/08/23/zodiac-programming-guide.html</guid>
         
         <category>机器人</category>
         
         <category>Java</category>
         
         <category>编程</category>
+        
+        
+        <category>showcase</category>
+        
+        <category>programming</category>
+        
+      </item>
+    
+      <item>
+        <title>入门指令式机器人编程</title>
+        <description>&lt;p&gt;Zodiac 翻译的 2016 FRC Control System 中 Command-based 相关的文档。&lt;/p&gt;
+
+&lt;ul&gt;
+  
+  
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Aug 22, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#C++&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/08/22/what-is-command-based-programming.html&quot;&gt;什么是指令式编程&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Aug 23, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#C++&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/08/23/creating-a-robot-project.html&quot;&gt;创建机器人项目&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Aug 23, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#C++&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/08/23/adding-commands-and-subsystems-to-the-project.html&quot;&gt;向机器人项目中添加指令和子系统&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Aug 23, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#C++&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/08/23/simple-subsystems.html&quot;&gt;简单子系统&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Aug 23, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#C++&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/08/23/PIDSubsystem-for-builtin-PID-control.html&quot;&gt;PID 子系统&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 23 Aug 2016 04:00:36 +0000</pubDate>
+        <link>http://frc.hsefz.org/showcase/programming/2016/08/23/a-brief-introduction-to-command-based-robot.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/showcase/programming/2016/08/23/a-brief-introduction-to-command-based-robot.html</guid>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        <category>编程</category>
+        
+        
+        <category>showcase</category>
+        
+        <category>programming</category>
+        
+      </item>
+    
+      <item>
+        <title>PID 子系统</title>
+        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599736-pidsubsystems-for-built-in-pid-control&quot;&gt;PIDSubsystems for built-in PID control&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果我们在编程时用到这样一个子系统：来自传感器的返回值直接用来控制电机的速度或位置，那么我们就可以使用 PID 子系统。可能会用到 PID 子系统的例子有：用电位器指定高度的升降装置，用编码器调整速度的射球装置，以及用电位器来确定旋转度数的机械手腕。&lt;/p&gt;
+
+&lt;p&gt;WPILib 中本来就有 &lt;code&gt;PIDController&lt;/code&gt;，但是为了能够方便地在指令式编程中使用它，我们可以使用 &lt;code&gt;PIDSubsystem&lt;/code&gt;。一个 PID 子系统其实就是一个内置了 &lt;code&gt;PIDController&lt;/code&gt; 的子系统，并且提供了可以协调传感器和机械的成员方法。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java code&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;usfirst&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;frc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;team1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;subsystems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;edu.wpi.first.wpilibj.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;edu.wpi.first.wpilibj.command.PIDSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.usfirst.frc.team1.robot.RobotMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Wrist&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PIDSubsystem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 这个子系统继承自 PIDSubsystem&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;Victor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;motor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RobotMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;wristMotor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;AnalogInput&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RobotMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;wristPot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Wrist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wrist&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 构造函数传递子系统名称和在计算输出时会用到的 P I D 三个参数。&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;setAbsoluteTolerance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.05&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;getPIDController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setContinuous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initDefaultCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;returnPIDInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAverageVoltage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 这个函数作为子系统对于传感器参数的反馈。&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;usePIDOutput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;motor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;pidWrite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 在这里执行 PID 传感器参数应用在电机上的程序。&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Tue, 23 Aug 2016 03:40:36 +0000</pubDate>
+        <link>http://frc.hsefz.org/programming/2016/08/23/PIDSubsystem-for-builtin-PID-control.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/23/PIDSubsystem-for-builtin-PID-control.html</guid>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        <category>C++</category>
+        
+        <category>编程</category>
+        
+        <category>翻译</category>
         
         
         <category>programming</category>
@@ -145,7 +380,7 @@
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这是一个很简单的控制机械爪子系统。在这个例子中，机械爪使用一个马达驱动张开或关闭，并且没有使用任何传感器（我们可以用这个例子练习编程，但是请不要在实际中这么设计机械爪）。机械爪张开和关闭的程度是计时实现的。三个方法 &lt;code&gt;open()&lt;/code&gt; &lt;code&gt;close()&lt;/code&gt; &lt;code&gt;stop()&lt;/code&gt; 可以驱动机械爪的马达。请注意，这里没有任何代码可以确认机械爪是否真的张开或关闭了。&lt;code&gt;open()&lt;/code&gt; 方法调用时，机械爪向打开的方向移动。&lt;code&gt;close()&lt;/code&gt; 方法使机械爪往关闭的方向移动。我们可以使用指令来控制机械爪究竟要花多少时间张开关闭。&lt;/p&gt;
+&lt;p&gt;这是一个很简单的控制机械爪的子系统。在这个例子中，机械爪使用一个马达驱动张开或关闭，并且没有使用任何传感器（我们可以用这个例子练习编程，但是请不要在实际中这么设计机械爪）。机械爪张开和关闭的程度是计时实现的。三个方法 &lt;code&gt;open()&lt;/code&gt; &lt;code&gt;close()&lt;/code&gt; &lt;code&gt;stop()&lt;/code&gt; 可以驱动机械爪的马达。请注意，这里没有任何代码可以确认机械爪是否真的张开或关闭了。&lt;code&gt;open()&lt;/code&gt; 方法调用时，机械爪向打开的方向移动。&lt;code&gt;close()&lt;/code&gt; 方法使机械爪往关闭的方向移动。我们可以使用指令来控制机械爪究竟要花多少时间张开关闭。&lt;/p&gt;
 
 &lt;h2&gt;使用指令操纵机械爪&lt;/h2&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java code&lt;/span&gt;
@@ -187,19 +422,19 @@
 &lt;p&gt;指令可以帮助我们设置每个子系统操作的时间。多个指令可以使用一个子系统完成多个行为。机械爪就是一个例子。指令可以设置机械爪张开或关闭的时间参数。比如上面的指令就控制了机械爪张开。请注意，我们在这个指令中用 &lt;code&gt;setTimeout&lt;/code&gt; 函数设置了指令的执行时间为 0.9 秒。最后要在 &lt;code&gt;isFinished()&lt;/code&gt; 函数中判断是否到达了指定时间。关于如何使用指令，请参见“使用指令”这篇文章。&lt;/p&gt;
 </description>
         <pubDate>Tue, 23 Aug 2016 03:40:36 +0000</pubDate>
-        <link>http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/simple-subsystems.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/simple-subsystems.html</guid>
+        <link>http://frc.hsefz.org/programming/2016/08/23/simple-subsystems.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/23/simple-subsystems.html</guid>
         
         <category>机器人</category>
         
         <category>Java</category>
         
+        <category>C++</category>
+        
         <category>编程</category>
         
         <category>翻译</category>
         
-        
-        <category>command-based programming</category>
         
         <category>programming</category>
         
@@ -229,7 +464,7 @@
 
 &lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/3-1d52473e57a16c3d4d5860b9aab410aaecbda976dd386dd5fd284bcb10427d35.png&quot; width=&quot;312&quot; height=&quot;341&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/3.png&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;我们可以在 &lt;code&gt;Subsystems&lt;/code&gt; (C++) 或 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.subsystems&lt;/code&gt; (Java) 目录中查看所有新建的子系统。欲了解如何完善一个子系统，请参见 &lt;a href=&quot;/command-based%20programming/programming/2016/08/23/simple-subsystems.html&quot;&gt;简单子系统&lt;/a&gt; 这篇文章。&lt;/p&gt;
+&lt;p&gt;我们可以在 &lt;code&gt;Subsystems&lt;/code&gt; (C++) 或 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.subsystems&lt;/code&gt; (Java) 目录中查看所有新建的子系统。欲了解如何完善一个子系统，请参见 &lt;a href=&quot;/programming/2016/08/23/simple-subsystems.html&quot;&gt;简单子系统&lt;/a&gt; 这篇文章。&lt;/p&gt;
 
 &lt;h2&gt;添加指令&lt;/h2&gt;
 
@@ -250,19 +485,19 @@
 &lt;p&gt;我们可以在 &lt;code&gt;Commands&lt;/code&gt; (C++) 或 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.commands&lt;/code&gt; (Java) 目录中查看所有新建的子系统。欲了解如何完善一个指令，请参见“创建简单的指令”这篇文章。&lt;/p&gt;
 </description>
         <pubDate>Tue, 23 Aug 2016 03:24:19 +0000</pubDate>
-        <link>http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/adding-commands-and-subsystems-to-the-project.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/adding-commands-and-subsystems-to-the-project.html</guid>
+        <link>http://frc.hsefz.org/programming/2016/08/23/adding-commands-and-subsystems-to-the-project.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/23/adding-commands-and-subsystems-to-the-project.html</guid>
         
         <category>机器人</category>
         
         <category>Java</category>
         
+        <category>C++</category>
+        
         <category>编程</category>
         
         <category>翻译</category>
         
-        
-        <category>command-based programming</category>
         
         <category>programming</category>
         
@@ -298,19 +533,19 @@
 &lt;p&gt;注意当前浏览的可能是其他项目。请选择一个目录下有 &lt;code&gt;commands&lt;/code&gt; 和 &lt;code&gt;subsystems&lt;/code&gt; 的项目。&lt;/p&gt;
 </description>
         <pubDate>Tue, 23 Aug 2016 03:14:44 +0000</pubDate>
-        <link>http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/creating-a-robot-project.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/command-based%20programming/programming/2016/08/23/creating-a-robot-project.html</guid>
+        <link>http://frc.hsefz.org/programming/2016/08/23/creating-a-robot-project.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/23/creating-a-robot-project.html</guid>
         
         <category>机器人</category>
         
         <category>Java</category>
         
+        <category>C++</category>
+        
         <category>编程</category>
         
         <category>翻译</category>
         
-        
-        <category>command-based programming</category>
         
         <category>programming</category>
         
@@ -386,19 +621,19 @@
 &lt;p&gt;&lt;em&gt;（感谢 &lt;a href=&quot;https://github.com/SkyZH&quot;&gt;@SkyZH&lt;/a&gt; &lt;a href=&quot;https://github.com/incrediblink/&quot;&gt;@IncredibLink&lt;/a&gt; 翻译）&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 22 Aug 2016 10:13:22 +0000</pubDate>
-        <link>http://frc.hsefz.org/command-based%20programming/programming/2016/08/22/what-is-command-based-programming.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/command-based%20programming/programming/2016/08/22/what-is-command-based-programming.html</guid>
+        <link>http://frc.hsefz.org/programming/2016/08/22/what-is-command-based-programming.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/22/what-is-command-based-programming.html</guid>
         
         <category>机器人</category>
         
         <category>Java</category>
         
+        <category>C++</category>
+        
         <category>编程</category>
         
         <category>翻译</category>
         
-        
-        <category>command-based programming</category>
         
         <category>programming</category>
         
@@ -591,271 +826,6 @@ INN，他可以 &lt;strong&gt;按顺序&lt;/strong&gt; 或者 &lt;strong&gt;同�
         
         
         <category>programming</category>
-        
-      </item>
-    
-      <item>
-        <title>开源项目 / Open Source Projects</title>
-        <description>&lt;div class=&quot;container&quot;&gt;
-  &lt;h1 class=&quot;display-4&quot;&gt;开源项目 / Open Source Projects&lt;/h1&gt;
-  &lt;h2&gt;Stronghold 2016&lt;/h2&gt;
-  &lt;p&gt;We are happy to announce that all of our projects in Stronghold 2016 are open-sourced.&lt;/p&gt;
-  &lt;div class=&quot;card-columns m-t-3&quot;&gt;
-    
-      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
-        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-          &lt;h4&gt;BreezeRobot&lt;/h4&gt;
-          &lt;p&gt;Robot Program for Stronghold 2016
-&lt;/p&gt;
-          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/BreezeRobot&quot;&gt;Learn More&lt;/a&gt;
-        &lt;/blockquote&gt;
-      &lt;/div&gt;
-    
-      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
-        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-          &lt;h4&gt;Vision MJPEG Proxy&lt;/h4&gt;
-          &lt;p&gt;Proxy will set up a web server to serve WebDashboard static files and proxy requests to vision camera server so as to make it possible for multiple clients to gain access to vision camera at the same time.
-&lt;/p&gt;
-          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/stronghold-vision-mjpeg-proxy&quot;&gt;Learn More&lt;/a&gt;
-        &lt;/blockquote&gt;
-      &lt;/div&gt;
-    
-      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
-        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-          &lt;h4&gt;Vision OpenCV&lt;/h4&gt;
-          &lt;p&gt;Vision process with OpenCV by Zodiac.
-&lt;/p&gt;
-          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/stronghold-vision-opencv&quot;&gt;Learn More&lt;/a&gt;
-        &lt;/blockquote&gt;
-      &lt;/div&gt;
-    
-      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
-        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-          &lt;h4&gt;Vision WebDashboard&lt;/h4&gt;
-          &lt;p&gt;Vision dashboard for Zodiac.
-&lt;/p&gt;
-          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/stronghold-vision-webdashboard&quot;&gt;Learn More&lt;/a&gt;
-        &lt;/blockquote&gt;
-      &lt;/div&gt;
-    
-      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
-        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-          &lt;h4&gt;Video Capture&lt;/h4&gt;
-          &lt;p&gt;Capture video from an mjpg stream and extract them into image sequence.
-&lt;/p&gt;
-          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/stronghold-video-capture&quot;&gt;Learn More&lt;/a&gt;
-        &lt;/blockquote&gt;
-      &lt;/div&gt;
-    
-      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
-        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-          &lt;h4&gt;Website&lt;/h4&gt;
-          &lt;p&gt;Zodiac Website source code.
-&lt;/p&gt;
-          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/website&quot;&gt;Learn More&lt;/a&gt;
-        &lt;/blockquote&gt;
-      &lt;/div&gt;
-    
-      &lt;div class=&quot;card card-block card-primary-info text-xs-center member-info&quot;&gt;
-        &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-          &lt;h4&gt;Vision Script&lt;/h4&gt;
-          &lt;p&gt;Process Management with PM2 on Raspberry Pi to start vision process.
-&lt;/p&gt;
-          &lt;a class=&quot;btn btn-outline-primary&quot; href=&quot;https://github.com/ZodiacEFZ/stronghold-vision-script&quot;&gt;Learn More&lt;/a&gt;
-        &lt;/blockquote&gt;
-      &lt;/div&gt;
-    
-  &lt;/div&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Sat, 13 Aug 2016 13:42:45 +0000</pubDate>
-        <link>http://frc.hsefz.org/team/2016/08/13/open-source.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/team/2016/08/13/open-source.html</guid>
-        
-        <category>队伍</category>
-        
-        <category>开源</category>
-        
-        
-        <category>team</category>
-        
-      </item>
-    
-      <item>
-        <title>队员介绍 / Team Member</title>
-        <description>&lt;div class=&quot;container m-t-3&quot;&gt;
-  &lt;h1 class=&quot;display-4&quot;&gt;队员介绍 / Team Member&lt;/h1&gt;
-  &lt;div class=&quot;card-columns m-t-3&quot;&gt;
-    
-      
-      &lt;div class=&quot;card card-outline-success text-xs-center member-info&quot;&gt;
-        
-        
-        
-        
-        
-        &lt;div class=&quot;card-block&quot;&gt;
-          &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-            &lt;h4&gt;Albert Chen (陈向东)&lt;/h4&gt;
-            &lt;p&gt;From Engineer Technology Department of No.2 High school of East China Normal University. A Master Degree in Educational Technology of East China Normal University.
-&lt;/p&gt;
-            &lt;footer&gt;&lt;em&gt;Mentor&lt;/em&gt;&lt;/footer&gt;
-          &lt;/blockquote&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    
-      
-      &lt;div class=&quot;card card-outline-info text-xs-center member-info&quot;&gt;
-        
-        
-        
-        
-        
-        &lt;div class=&quot;card-block&quot;&gt;
-          &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-            &lt;h4&gt;Clark (陈谦路)&lt;/h4&gt;
-            &lt;p&gt;运动达人，昆虫控，喜欢捣鼓电子和机械。不过感觉只要是团队合作都很喜欢。&lt;br&gt; I have a wide variety of hobbies which allows me to negotiate with different groups of the team quite easily. Also my double personality, serious when working and silly when playing, helps me get along with my teammates well.
-&lt;/p&gt;
-            &lt;footer&gt;&lt;em&gt;Captain&lt;/em&gt;&lt;/footer&gt;
-          &lt;/blockquote&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    
-      
-      &lt;div class=&quot;card card-outline-info text-xs-center member-info&quot;&gt;
-        
-        
-        
-        
-        
-        &lt;div class=&quot;card-block&quot;&gt;
-          &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-            &lt;h4&gt;GuoZL (郭子梁)&lt;/h4&gt;
-            &lt;p&gt;我渣渣，涉猎较广泛。爱膜蛤 +1，兼任小学生手工副队长助理。&lt;br&gt; I have a broad mind, to an extend. In addition to help our group leader to do some team work, I also do a lot of &lt;em&gt;interesting&lt;/em&gt; handcrafts (for instance, the bumper and our wooden moat).
-&lt;/p&gt;
-            &lt;footer&gt;&lt;em&gt;Vice Captain&lt;/em&gt;&lt;/footer&gt;
-          &lt;/blockquote&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    
-      
-      &lt;div class=&quot;card card-outline-warning text-xs-center member-info&quot;&gt;
-        
-        
-        
-        
-          &lt;img class=&quot;card-img-top member-info-avatar&quot; src=&quot;https://www.gravatar.com/avatar/be0abc52003c2eb5006b5923f3486a61.jpg?s=512&quot;&gt;
-        
-        
-        &lt;div class=&quot;card-block&quot;&gt;
-          &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-            &lt;h4&gt;SkyZH (迟遲)&lt;/h4&gt;
-            &lt;p&gt;不会写程序，补番大魔王，爱膜蛤。&lt;br&gt; Experienced in software engineering. Maintain several open source projects. Focus on vision process.
-&lt;/p&gt;
-            &lt;footer&gt;&lt;em&gt;Leader of Programming&lt;br&gt;Web Engineer&lt;/em&gt;&lt;/footer&gt;
-          &lt;/blockquote&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    
-      
-      &lt;div class=&quot;card  text-xs-center member-info&quot;&gt;
-        
-        
-        
-        
-        
-        &lt;div class=&quot;card-block&quot;&gt;
-          &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-            &lt;h4&gt;Xinjia (新家正太)&lt;/h4&gt;
-            &lt;p&gt;喜欢工科，Inventor 玩得还不错，课余喜欢踢球和赛车游戏。&lt;br&gt; Good at robot controlling and CAD. Help the team figure out the way of building our robot.
-&lt;/p&gt;
-            &lt;footer&gt;&lt;em&gt;Member of Electronical&lt;br&gt;Driver&lt;/em&gt;&lt;/footer&gt;
-          &lt;/blockquote&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    
-      
-      &lt;div class=&quot;card card-outline-info text-xs-center member-info&quot;&gt;
-        
-        
-        
-        
-        
-        &lt;div class=&quot;card-block&quot;&gt;
-          &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-            &lt;h4&gt;闵天淏 16 男&lt;/h4&gt;
-            &lt;p&gt;MDZZ。&lt;br&gt; Phylosophy。&lt;br&gt; 队里负责锯木头以及布艺，简单来说就是技工。 单机游戏，烧耳机。 羽毛球，过度热爱公路车导致牙齿疼痛。 在交响乐团吹大管。
-&lt;/p&gt;
-            &lt;footer&gt;&lt;em&gt;Vice Captain&lt;/em&gt;&lt;/footer&gt;
-          &lt;/blockquote&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    
-      
-      &lt;div class=&quot;card card-outline-warning text-xs-center member-info&quot;&gt;
-        
-        
-        
-        
-        
-        &lt;div class=&quot;card-block&quot;&gt;
-          &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-            &lt;h4&gt;David Wang (汪达玮)&lt;/h4&gt;
-            &lt;p&gt;Having no experienced skill, except strong ability to arrange wires, but learning fast. Preferring to solving problems efficiently. Believing that safety comes first, friendship comes second, competition comes the third.
-&lt;/p&gt;
-            &lt;footer&gt;&lt;em&gt;Leader of Electronical&lt;br&gt;Safety Captain&lt;/em&gt;&lt;/footer&gt;
-          &lt;/blockquote&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    
-      
-      &lt;div class=&quot;card  text-xs-center member-info&quot;&gt;
-        
-        
-        
-        
-        
-        &lt;div class=&quot;card-block&quot;&gt;
-          &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-            &lt;h4&gt;杨致远&lt;/h4&gt;
-            &lt;p&gt;机械工，酷爱足球和机器人，善于切割板材，制作零件。喜欢工程。
-&lt;/p&gt;
-            &lt;footer&gt;&lt;em&gt;Member of Electronical&lt;/em&gt;&lt;/footer&gt;
-          &lt;/blockquote&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    
-      
-      &lt;div class=&quot;card  text-xs-center member-info&quot;&gt;
-        
-        
-        
-        
-        
-        &lt;div class=&quot;card-block&quot;&gt;
-          &lt;blockquote class=&quot;card-blockquote&quot;&gt;
-            &lt;h4&gt;Rocka Zhou (周亦哲)&lt;/h4&gt;
-            &lt;p&gt;新人一枚，喜爱工程，乐于编程，MC忠粉。 Focus on robotics logic, and some other programming issues. Helpful in mechanic designing. Know how to use CAD.
-&lt;/p&gt;
-            &lt;footer&gt;&lt;em&gt;Member of Programming&lt;/em&gt;&lt;/footer&gt;
-          &lt;/blockquote&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    
-
-  &lt;/div&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Wed, 10 Aug 2016 13:22:19 +0000</pubDate>
-        <link>http://frc.hsefz.org/team/2016/08/10/team-member.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/team/2016/08/10/team-member.html</guid>
-        
-        <category>队伍</category>
-        
-        <category>介绍</category>
-        
-        
-        <category>team</category>
         
       </item>
     
