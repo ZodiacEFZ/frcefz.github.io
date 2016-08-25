@@ -5,13 +5,120 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 25 Aug 2016 14:55:48 +0000</pubDate>
-    <lastBuildDate>Thu, 25 Aug 2016 14:55:48 +0000</lastBuildDate>
+    <pubDate>Thu, 25 Aug 2016 15:08:26 +0000</pubDate>
+    <lastBuildDate>Thu, 25 Aug 2016 15:08:26 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
+        <title>手柄事件触发指令</title>
+        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599739-running-commands-on-joystick-input&quot;&gt;Running commands on Joystick input&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我们可以在手柄按钮被按下、放开、或者当按钮被按下时触发指令执行。只需要几行代码就可以实现这个功能。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;OI 类&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/running-commands-on-joystick-input/1-53812d3bf78512796d77bc24992dfb6ab5b08a44c6bdf3698939b14844b5d3c5.png&quot; width=&quot;640&quot; height=&quot;76&quot; alt=&quot;running-commands-on-joystick-input/1.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;指令式编程的模板里含有一个叫 &lt;code&gt;OI&lt;/code&gt; 的类。在这里可以定义所有操作接口。如果使用 RobotBuilder 的话，这个文件可以在 &lt;code&gt;org.usfirst.frc####.NAME&lt;/code&gt; 包中找到。&lt;/p&gt;
+
+&lt;h2&gt;创建手柄实例和按钮实例&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;OI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;joy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Joystick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button6&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button7&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button8&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;joy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java Code&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;OI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Create the joystick and the 8 buttons on it&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Joystick&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;leftJoy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Joystick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Button&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leftJoy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leftJoy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leftJoy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leftJoy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leftJoy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button6&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leftJoy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button7&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leftJoy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;button8&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JoystickButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leftJoy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这个例子里，手柄被接在端口 1 上，接着定义了八个在这个手柄上的按钮来操纵机器人的各个部分。在测试时这样设定十分方便。当然我们也可以在 SmartDashboard 上添加执行某个指令的按钮。&lt;/p&gt;
+
+&lt;h2&gt;将按钮关联到指令上&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WhenPressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PrepareToGrab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;button2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WhenPressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Grab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;button3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WhenPressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DriveToDistance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;button4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WhenPressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PlaceSoda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;button6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WhenPressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DriveToDistance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;button8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WhenPressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Stow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;button7&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WhenPressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SodaDelivery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java Code&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;OI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;whenPressed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PrepareToGrab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;button2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;whenPressed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Grab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;button3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;whenPressed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DriveToDistance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;button4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;whenPressed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PlaceSoda&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;button6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;whenPressed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DriveToDistance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;button8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;whenPressed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Stow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;button7&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;whenPressed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SodaDelivery&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在这个例子里，大部分的手柄按钮都被关联到指令上了。当按钮按下时，对应的指令就会被运行。通过这种方式，我们可以在手动阶段方便地给按钮指派一个任务，按下即执行。&lt;/p&gt;
+
+&lt;h2&gt;其他的使用方法&lt;/h2&gt;
+
+&lt;p&gt;除了使用 &lt;code&gt;whenPressed()&lt;/code&gt; 方法指派指令以外，我们还可以使用其他方法触发指令：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在按钮被放开时执行一个指令 &lt;code&gt;whenReleased()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在按钮被按下时执行一个指令 &lt;code&gt;whileHeld()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;按钮按一下切换指令的开始/停止 &lt;code&gt;toggleWhenPressed()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;按下按钮停止某个指令 &lt;code&gt;cancelWhenPressed()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;另外，指令也可以通过我们自己定义的触发器 (Trigger) 执行。触发器（和按钮）都是以大约 20 毫秒的周期被检测的。&lt;/p&gt;
+</description>
+        <pubDate>Thu, 25 Aug 2016 14:55:32 +0000</pubDate>
+        <link>http://frc.hsefz.org/programming/2016/08/25/running-commands-on-joystick-input.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/25/running-commands-on-joystick-input.html</guid>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        <category>C++</category>
+        
+        <category>编程</category>
+        
+        <category>翻译</category>
+        
+        
+        <category>programming</category>
+        
+      </item>
+    
+      <item>
         <title>创建指令组</title>
-        <description>&lt;p&gt;我们所创建的操纵机器人机械的指令，可以被组合在一起完成更复杂的行为。这种组合指令的方式非常简单，我们接下来将介绍它。&lt;/p&gt;
+        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599738-creating-groups-of-commands&quot;&gt;Creating groups of commands&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我们所创建的操纵机器人机械的指令，可以被组合在一起完成更复杂的行为。这种组合指令的方式非常简单，我们接下来将介绍它。&lt;/p&gt;
 
 &lt;hr&gt;
 
@@ -683,6 +790,28 @@
     &lt;/h2&gt;
   &lt;/li&gt;
 
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Aug 25, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#C++&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/08/25/running-commands-on-joystick-input.html&quot;&gt;手柄事件触发指令&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
 
 &lt;/ul&gt;
 </description>
@@ -992,81 +1121,6 @@
         
         
         <category>programming</category>
-        
-      </item>
-    
-      <item>
-        <title>论如何维护 Zodiac 官网</title>
-        <description>&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;首先需要注册一个 &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt; 账号。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;访问 &lt;a href=&quot;https://github.com/ZodiacEFZ/website/&quot;&gt;https://github.com/ZodiacEFZ/website/&lt;/a&gt; ，点击 Fork 把这个项目拷贝到自己的账户下。
-&lt;strong&gt;（这之后的操作都是在自己的项目里操作的！）&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/make-website/website-1-7e7a232fe8665849d169d146fd8194052496d7f91f591919879cca27771b789f.png&quot; width=&quot;1412&quot; height=&quot;636&quot; alt=&quot;make-website/website-1.png&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在拷贝后的网站 &lt;code&gt;_posts&lt;/code&gt; 文件夹下点击 &lt;code&gt;Create New File&lt;/code&gt; 创建文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/make-website/website-2-fb05f2821733ecfe8739495522ad298df0d5a98153acb63cbf5b224ea4880042.png&quot; width=&quot;1412&quot; height=&quot;636&quot; alt=&quot;make-website/website-2.png&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;文件名设置为 &lt;code&gt;2016-08-04-first-day-training.markdown&lt;/code&gt; (格式为 &lt;code&gt;日期-英文-名&lt;/code&gt;)。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/make-website/website-3-5c9537bb45badca54a5bca7b1f73c97f42b079449e0a20fa4c62cad4e78ae4e9.png&quot; width=&quot;1412&quot; height=&quot;636&quot; alt=&quot;make-website/website-3.png&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在开头复制文件头    &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;创客营第一天&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2016-08-03 15:10:09 +0800&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;news&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;新闻 创客营 日常&lt;/span&gt;
-&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;把 &lt;code&gt;date&lt;/code&gt; 改成当前时间，&lt;code&gt;categories&lt;/code&gt; 只能写英文无空格。    &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/make-website/website-4-6626ff3e35766b8db019ef3e49d4095f6ffa9d449af696a7d575e0f3abc190e0.png&quot; width=&quot;1412&quot; height=&quot;636&quot; alt=&quot;make-website/website-4.png&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;空一行直接开始写文章。Markdown 语法相关请参见 &lt;a href=&quot;http://www.jianshu.com/p/q81RER&quot;&gt;http://www.jianshu.com/p/q81RER&lt;/a&gt;
-(如果不习惯使用 GitHub 的编辑器，可以在 &lt;a href=&quot;https://stackedit.io&quot;&gt;StackEdit&lt;/a&gt; 上编辑完成后拷贝过来)。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/make-website/website-5-8b15a9318c6a1aa5979fe3e71adb5150da5aa67e9970052c9a4bd7a7ec995669.png&quot; width=&quot;1412&quot; height=&quot;636&quot; alt=&quot;make-website/website-5.png&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;点击 &lt;code&gt;Preview&lt;/code&gt; 可以预览当前文章。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/make-website/website-6-ee25183cca627d7e9844ec4d21bc352ac2a43d87a2adda550644a07fde6f5bd1.png&quot; width=&quot;1412&quot; height=&quot;636&quot; alt=&quot;make-website/website-6.png&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;如果需要插入图片，请先新建一个在与文章名字相同的目录的文件 &lt;code&gt;_assets/img/first-day-training/dummy.txt&lt;/code&gt;，再把压缩后的图片上传到 &lt;code&gt;_assets/img/first-day-training&lt;/code&gt; 目录下。文件名不要出现中文字符。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/make-website/website-7-11eca0557aaf2f404993508c6f976d22d99556db47c06e3b4aca0e08499b1f36.png&quot; width=&quot;1412&quot; height=&quot;636&quot; alt=&quot;make-website/website-7.png&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在文章中引入图片，换行空行后直接插入代码：&lt;br&gt;
-&lt;code&gt;&amp;#123;&amp;#37; img first-day-training/test-picture.jpg &amp;#37;&amp;#125;&lt;/code&gt;    &lt;/p&gt;
-
-&lt;p&gt;这里 &lt;code&gt;first-day-training/test-picture.jpg&lt;/code&gt; 是图片相对于 img 目录的位置。注意图片无法直接在 GitHub 上预览文章时显示。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/make-website/website-8-ed4dc485c31078d6e6b48e1350087c12979da9896a5aa738033cd0b8d24c2950.png&quot; width=&quot;1412&quot; height=&quot;636&quot; alt=&quot;make-website/website-8.png&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;点击 &lt;code&gt;Commit New File&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/make-website/website-9-6bf7e90cb59d391c3e564c8b44f63472ab26ff5351f2e7e307a2a27be94296d6.png&quot; width=&quot;1412&quot; height=&quot;636&quot; alt=&quot;make-website/website-9.png&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;文章的文字和图片都上传完毕后，点击项目导航栏中的 &lt;code&gt;New Pull Request&lt;/code&gt;，在提交信息中填写这次更改的内容（比如&lt;code&gt;添加了创客营第一天的新闻&lt;/code&gt;），再点击 &lt;code&gt;Create Pull Request&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/make-website/website-10-25839d29306fdc2399ab31eccb121f481d4d764012ba5facaba3a8cb1098c634.png&quot; width=&quot;1412&quot; height=&quot;636&quot; alt=&quot;make-website/website-10.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/make-website/website-11-bf9294be271b98593fddaaba373e7b54551c6bd7eb745dbfde6fbdaf05a17812.png&quot; width=&quot;1412&quot; height=&quot;887&quot; alt=&quot;make-website/website-11.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/make-website/website-12-f0c833591db468ea37dda063e41b1c91b4b50dde6725fdcf1b23588927a87488.png&quot; width=&quot;1412&quot; height=&quot;887&quot; alt=&quot;make-website/website-12.png&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在这里可以看到审核状况 &lt;a href=&quot;https://github.com/ZodiacEFZ/website/pulls&quot;&gt;https://github.com/ZodiacEFZ/website/pulls&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;本人审核后即可自动部署到网站上。部署完毕后在 Slack 的 &lt;code&gt;#business&lt;/code&gt; 中会有通知。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/make-website/website-13-112b65850fc5f004b2040da82b7df04c0bc630408bef23e1ecd0a7b782e74a30.png&quot; width=&quot;1204&quot; height=&quot;649&quot; alt=&quot;make-website/website-13.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;其中 &lt;strong&gt;GitHub&lt;/strong&gt; 出现 &lt;code&gt;1 new commit&lt;/code&gt; 表示审核已经通过，大约三分钟后出现 &lt;strong&gt;Travis&lt;/strong&gt; &lt;code&gt;Build #93 (036ff5c) of ZodiacEFZ/website@master by SkyZH passed in 4 min 39 sec&lt;/code&gt; 表示已经将修改同步到网站上。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Fri, 19 Aug 2016 05:02:26 +0000</pubDate>
-        <link>http://frc.hsefz.org/team/2016/08/19/make-website.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/team/2016/08/19/make-website.html</guid>
-        
-        <category>队伍</category>
-        
-        <category>网站</category>
-        
-        <category>维护</category>
-        
-        
-        <category>team</category>
         
       </item>
     
