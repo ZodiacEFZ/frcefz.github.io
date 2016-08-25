@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://frc.hsefz.org/programming/2016/08/25/running-commands-during-the-autonomous-period.html</loc>
+<lastmod>2016-08-25T15:04:38+00:00</lastmod>
+</url>
+<url>
 <loc>http://frc.hsefz.org/programming/2016/08/25/running-commands-on-joystick-input.html</loc>
 <lastmod>2016-08-25T14:55:32+00:00</lastmod>
 </url>
