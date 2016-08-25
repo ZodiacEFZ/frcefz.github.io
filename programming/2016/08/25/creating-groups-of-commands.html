@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en"><head> <script>var _speedMark=new Date</script><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><title>创建指令组</title><meta name="description" content="我们所创建的操纵机器人机械的指令，可以被组合在一起完成更复杂的行为。这种组合指令的方式非常简单，我们接下来将介绍它。"><meta name="keywords" Content="Zodiac,FIRST,FRC,9036,机器人,竞赛,队伍"><link href="https://fonts.googleapis.com/css?family=Amiko:600|Oxygen" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.css" rel="stylesheet"><link type="text/css" rel="stylesheet" href="http://frc.hsefz.org/assets/main-106a44f02d2d36b8e599f93d726d29477d4da9a0ff61d7529ce166a7712c7177.css"><link type="text/css" rel="stylesheet" href="http://frc.hsefz.org/assets/syntax-dce7d9260ac86556c0676ffb6d97e9f17b9edcbc99d8a98eeae91f062c109a4b.css"><link rel="canonical" href="http://frc.hsefz.org/programming/2016/08/25/creating-groups-of-commands.html"><link rel="alternate" type="application/rss+xml" title="Team 9036 | Zodiac" href="http://frc.hsefz.org/feed.xml"><link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/manifest.json"><meta name="msapplication-TileColor" content="#f0ad4e"><meta name="msapplication-TileImage" content="/ms-icon-144x144.png"><meta name="theme-color" content="#f0ad4e"></head><body><header> <nav class="navbar navbar-light navbar-main"> <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-frc-efz-main"> ☰ </button><div class="collapse navbar-toggleable-xs" id="navbar-frc-efz-main"> <a class="navbar-brand" href="/">Team 9036 | Zodiac</a><div class="nav navbar-nav"> <a class="nav-item nav-link" href="/index.html">Welcome</a> <a class="nav-item nav-link" href="/team/2016/08/10/team-member.html">Members</a> <a class="nav-item nav-link" href="/post.html">Posts</a></div></div></nav> </header><section id="main"><div class="jumbotron jumbotron-fluid"><div class="container"><div class="row"><div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2"> <header class="post-header"><h1 class="post-title display-4" itemprop="name headline">创建指令组</h1><p class="post-meta"><time datetime="2016-08-25T14:24:18+00:00" itemprop="datePublished">Aug 25, 2016</time></p><ul class="list-inline"><li class="list-inline-item"> <span class="h3"><span class="tag tag-warning">programming</span></span></li><li class="list-inline-item">#机器人</li><li class="list-inline-item">#Java</li><li class="list-inline-item">#C++</li><li class="list-inline-item">#编程</li><li class="list-inline-item">#翻译</li></ul> </header></div></div></div></div><div class="container"><div class="row"><div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2"> <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><div class="post-content" itemprop="articleBody"><p>我们所创建的操纵机器人机械的指令，可以被组合在一起完成更复杂的行为。这种组合指令的方式非常简单，我们接下来将介绍它。</p><hr><h2>创建执行复杂行为的指令</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code
+</span>
+<span class="cp">#include "PlaceSoda.h"
+</span>
+<span class="n">PlaceSoda</span><span class="o">::</span><span class="n">PlaceSoda</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">AddSequential</span><span class="p">(</span><span class="k">new</span> <span class="n">SetElevatorSetpoint</span><span class="p">(</span><span class="n">TABLE_HEIGHT</span><span class="p">));</span>
+    <span class="n">AddSequential</span><span class="p">(</span><span class="k">new</span> <span class="n">SetWristSetpoint</span><span class="p">(</span><span class="n">PICKUP</span><span class="p">));</span>
+    <span class="n">AddSequential</span><span class="p">(</span><span class="k">new</span> <span class="n">OpenClaw</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Java Code</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PlaceSoda</span> <span class="kd">extends</span> <span class="n">CommandGroup</span> <span class="o">{</span>
+
+    <span class="kd">public</span>  <span class="nf">PlaceSoda</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">addSequential</span><span class="o">(</span><span class="k">new</span> <span class="n">SetElevatorSetpoint</span><span class="o">(</span><span class="n">Elevator</span><span class="o">.</span><span class="na">TABLE_HEIGHT</span><span class="o">));</span>
+        <span class="n">addSequential</span><span class="o">(</span><span class="k">new</span> <span class="n">SetWristSetpoint</span><span class="o">(</span><span class="n">Wrist</span><span class="o">.</span><span class="na">PICKUP</span><span class="o">));</span>
+        <span class="n">addSequential</span><span class="o">(</span><span class="k">new</span> <span class="n">OpenClaw</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>这是一个把易拉罐放在桌子上的例子。完成这个行为，需要：</p><div class="highlight"><pre><code class="language-" data-lang="">1. 机器人升降装置提升到桌面高度以上
+2. 机械手腕角度设置到合适位置
+3. 张开机械爪
+</code></pre></div><p>这些动作都要一个接一个执行以保证易拉罐不会掉下来。 <code>addSequential()</code> 方法将一个指令（或指令组）作为传参，在这个指令组执行时，这些指令就会一个接一个执行。</p><h2>创建并行执行的指令组</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code
+</span>
+<span class="cp">#include "PrepareToGrab.h"
+</span>
+<span class="n">PrepareToGrab</span><span class="o">::</span><span class="n">PrepareToGrab</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">AddParallel</span><span class="p">(</span><span class="k">new</span> <span class="n">SetWristSetpoint</span><span class="p">(</span><span class="n">PICKUP</span><span class="p">));</span>
+    <span class="n">AddParallel</span><span class="p">(</span><span class="k">new</span> <span class="n">SetElevatorSetpoint</span><span class="p">(</span><span class="n">BOTTOM</span><span class="p">));</span>
+    <span class="n">AddParallel</span><span class="p">(</span><span class="k">new</span> <span class="n">OpenClaw</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Java Code</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PrepareToGrab</span> <span class="kd">extends</span> <span class="n">CommandGroup</span> <span class="o">{</span>
+
+    <span class="kd">public</span>  <span class="nf">PrepareToGrab</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">addParallel</span><span class="o">(</span><span class="k">new</span> <span class="n">SetWristSetpoint</span><span class="o">(</span><span class="n">Wrist</span><span class="o">.</span><span class="na">PICKUP</span><span class="o">));</span>
+        <span class="n">addParallel</span><span class="o">(</span><span class="k">new</span> <span class="n">SetElevatorSetpoint</span><span class="o">(</span><span class="n">Elevator</span><span class="o">.</span><span class="na">BOTTOM</span><span class="o">));</span>
+        <span class="n">addParallel</span><span class="o">(</span><span class="k">new</span> <span class="n">OpenClaw</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>为了让程序效率更高，我们经常需要把几个指令同时执行。在这个例子里，机器人要准备抓取一个易拉罐。因为机器人当前什么也没有抓住，所以所有的关节都可以同时移动而不需要像上面那个例子一样考虑易拉罐掉下来。所有的指令都并行执行，因此所有的马达都在同时运作，并且每个指令都在 <code>isFinished()</code> 返回真的时候结束。指令可以已任何顺序排列，步骤是：</p><div class="highlight"><pre><code class="language-" data-lang="">1. 机械手腕角度设置到合适角度
+2. 机器人升降装置提升到合适位置
+3. 张开机械爪
+</code></pre></div><h2>混合使用并行和顺序指令</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code
+</span>
+<span class="cp">#include "Grab.h"
+</span>
+<span class="n">Grab</span><span class="o">::</span><span class="n">Grab</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">AddSequential</span><span class="p">(</span><span class="k">new</span> <span class="n">CloseClaw</span><span class="p">());</span>
+    <span class="n">AddSequential</span><span class="p">(</span><span class="k">new</span> <span class="n">SetElevatorSetpoint</span><span class="p">(</span><span class="n">STOW</span><span class="p">));</span>
+    <span class="n">AddSequential</span><span class="p">(</span><span class="k">new</span> <span class="n">SetWristSetpoint</span><span class="p">(</span><span class="n">STOW</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Java Code</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Grab</span> <span class="kd">extends</span> <span class="n">CommandGroup</span> <span class="o">{</span>
+
+    <span class="kd">public</span>  <span class="nf">Grab</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">addSequential</span><span class="o">(</span><span class="k">new</span> <span class="n">CloseClaw</span><span class="o">());</span>
+        <span class="n">addParallel</span><span class="o">(</span><span class="k">new</span> <span class="n">SetElevatorSetpoint</span><span class="o">(</span><span class="n">Elevator</span><span class="o">.</span><span class="na">STOW</span><span class="o">));</span>
+        <span class="n">addSequential</span><span class="o">(</span><span class="k">new</span> <span class="n">SetWristSetpoint</span><span class="o">(</span><span class="n">Wrist</span><span class="o">.</span><span class="na">STOW</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>有时一些指令需要在其他指令完成之后才能执行。在这个例子里，易拉罐被抓紧了，之后升降装置和机械手腕才可以移动到存放位置。在这个例子里，机械手腕和升降装置必须等到易拉罐被抓住以后才能移动，但这两个操作是可以同时执行的。因此：</p><div class="highlight"><pre><code class="language-" data-lang="">1. 关闭机械爪，其他指令等待
+2. 升降装置移动
+3. 与此同时机械手腕移动
+</code></pre></div></div><div class="alert alert-info" role="alert"> Team 9036 | Zodiac 的原创内容遵循 <a class="alert-link" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 协议</a>。您可以自由分享、演绎，但不可用于商业用途。转载时请保留链接和协议。</div> </article><div class="discuss-wrapper"><div class="m-t-3"><div id="disqus_thread"></div> <script>var disqus_config=function(){this.page.url="http://frc.hsefz.org/programming/2016/08/25/creating-groups-of-commands.html",this.page.identifier="/programming/2016/08/25/creating-groups-of-commands",this.page.title="\u521b\u5efa\u6307\u4ee4\u7ec4"};!function(){var t=document,e=t.createElement("script");e.src="//zodiac-efz-robotics.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div></div></div></div></div></section><footer class="footer"><div class="container"><ul class="list-inline"><li class="list-inline-item">By Zodiac</li><li class="list-inline-item"><a class="text-xs-right" href="http://www.miitbeian.gov.cn/">沪ICP备05003394号-12</a></li></ul></div> </footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/vendors/jquery.easings.min.js"></script><script src="https://tajs.qq.com/stats?sId=57249037" charset="UTF-8" async defer></script></body></html>
