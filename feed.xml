@@ -5,146 +5,9 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Aug 2016 16:25:11 +0000</pubDate>
-    <lastBuildDate>Wed, 24 Aug 2016 16:25:11 +0000</lastBuildDate>
+    <pubDate>Thu, 25 Aug 2016 00:15:33 +0000</pubDate>
+    <lastBuildDate>Thu, 25 Aug 2016 00:15:33 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
-    
-      <item>
-        <title></title>
-        <description>&lt;p&gt;由 Zodiac 推出的从零开始的 FRC 机器人入门教程。&lt;/p&gt;
-
-&lt;ul&gt;
-  
-  
-  &lt;li&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;
-      &lt;span class=&quot;m-r-1&quot;&gt;Jul 7, 2016&lt;/span&gt;
-      &lt;small&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
-      
-      &lt;/small&gt;
-    &lt;/span&gt;
-    &lt;h2&gt;
-      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/07/programming-with-wpilib.html&quot;&gt;来自 Xenial 星的召唤 · FRC 机器人编程入门&lt;/a&gt;
-    &lt;/h2&gt;
-  &lt;/li&gt;
-
-  &lt;li&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;
-      &lt;span class=&quot;m-r-1&quot;&gt;Jul 7, 2016&lt;/span&gt;
-      &lt;small&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
-      
-      &lt;/small&gt;
-    &lt;/span&gt;
-    &lt;h2&gt;
-      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/07/object-oriented-programming.html&quot;&gt;漂亮和丑陋的 Xenial 星人 · Java 面向对象入门&lt;/a&gt;
-    &lt;/h2&gt;
-  &lt;/li&gt;
-
-  &lt;li&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;
-      &lt;span class=&quot;m-r-1&quot;&gt;Jul 8, 2016&lt;/span&gt;
-      &lt;small&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
-      
-      &lt;/small&gt;
-    &lt;/span&gt;
-    &lt;h2&gt;
-      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/08/command-based-robot.html&quot;&gt;手舞足蹈的 Xenial 星人 · 指令式机器人&lt;/a&gt;
-    &lt;/h2&gt;
-  &lt;/li&gt;
-
-  &lt;li&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;
-      &lt;span class=&quot;m-r-1&quot;&gt;Jul 8, 2016&lt;/span&gt;
-      &lt;small&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
-      
-      &lt;/small&gt;
-    &lt;/span&gt;
-    &lt;h2&gt;
-      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/08/using-git.html&quot;&gt;Xenial 的代码仓库 · 使用 git&lt;/a&gt;
-    &lt;/h2&gt;
-  &lt;/li&gt;
-
-  &lt;li&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;
-      &lt;span class=&quot;m-r-1&quot;&gt;Jul 24, 2016&lt;/span&gt;
-      &lt;small&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
-      
-      &lt;/small&gt;
-    &lt;/span&gt;
-    &lt;h2&gt;
-      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/24/networking-with-roborio.html&quot;&gt;和 Xenial 情感交流&lt;/a&gt;
-    &lt;/h2&gt;
-  &lt;/li&gt;
-
-  &lt;li&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;
-      &lt;span class=&quot;m-r-1&quot;&gt;Aug 16, 2016&lt;/span&gt;
-      &lt;small&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#zyz的编程干货&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
-      
-        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
-      
-      &lt;/small&gt;
-    &lt;/span&gt;
-    &lt;h2&gt;
-      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/08/16/command-group.html&quot;&gt;CommandGroup · 指令组&lt;/a&gt;
-    &lt;/h2&gt;
-  &lt;/li&gt;
-
-
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 24 Aug 2016 16:25:11 +0000</pubDate>
-        <link>http://frc.hsefz.org/2016/08/24/2016-08-24-zodiac-programming-guide.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/2016/08/24/2016-08-24-zodiac-programming-guide.html</guid>
-        
-        
-      </item>
     
       <item>
         <title>创建简单指令</title>
@@ -344,6 +207,153 @@
         
         <category>翻译</category>
         
+        
+        <category>programming</category>
+        
+      </item>
+    
+      <item>
+        <title>RE: 从零开始的编程入门</title>
+        <description>&lt;p&gt;由 Zodiac 推出的从零开始的 FRC 机器人入门教程。&lt;/p&gt;
+
+&lt;ul&gt;
+  
+  
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Jul 7, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/07/programming-with-wpilib.html&quot;&gt;来自 Xenial 星的召唤 · FRC 机器人编程入门&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Jul 7, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/07/object-oriented-programming.html&quot;&gt;漂亮和丑陋的 Xenial 星人 · Java 面向对象入门&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Jul 8, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/08/command-based-robot.html&quot;&gt;手舞足蹈的 Xenial 星人 · 指令式机器人&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Jul 8, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/08/using-git.html&quot;&gt;Xenial 的代码仓库 · 使用 git&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Jul 24, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#zc的编程干货&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/07/24/networking-with-roborio.html&quot;&gt;和 Xenial 情感交流&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Aug 16, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#zyz的编程干货&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/08/16/command-group.html&quot;&gt;CommandGroup · 指令组&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
+
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 23 Aug 2016 14:43:55 +0000</pubDate>
+        <link>http://frc.hsefz.org/showcase/programming/2016/08/23/zodiac-programming-guide.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/showcase/programming/2016/08/23/zodiac-programming-guide.html</guid>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        <category>编程</category>
+        
+        
+        <category>showcase</category>
         
         <category>programming</category>
         
