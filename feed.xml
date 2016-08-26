@@ -5,9 +5,69 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Aug 2016 15:13:07 +0000</pubDate>
-    <lastBuildDate>Fri, 26 Aug 2016 15:13:07 +0000</lastBuildDate>
+    <pubDate>Fri, 26 Aug 2016 15:20:33 +0000</pubDate>
+    <lastBuildDate>Fri, 26 Aug 2016 15:20:33 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>默认指令</title>
+        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599742-default-commands&quot;&gt;Default Commands&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有些情况下我们需要一个子系统不断调用一个指令。如果当前的指令结束了，如何让子系统自动唤起一个指令呢？这就是默认指令干的事情。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;什么是默认指令？&lt;/h2&gt;
+
+&lt;p&gt;每个子系统可以指定一个默认指令，在这个子系统没有其他指令执行的时候唤起。最常见的例子就是由手柄操控的底盘子系统。这个指令可以被其他的开车指令中断（比如“精确驾驶模式”，自动对齐/瞄准等），但是在这些指令完成后，手柄操纵底盘的指令应该再次重新执行。&lt;/p&gt;
+
+&lt;h2&gt;设置默认指令&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
+&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &quot;ExampleSubsystem.h&quot;
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ExampleSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleSubsystem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 把子系统需要用到的机械在这里定义好，指令调用子系统中的机械。
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;ExampleSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InitDefaultCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 在这里定义默认指令
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;SetDefaultCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyDefaultCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java Code&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ExampleSubsystem&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Subsystem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// 把子系统需要用到的机械在这里定义好，指令调用子系统中的机械。&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initDefaultCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 在这里定义默认指令&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;setDefaultCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyDefaultCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;所有子系统都应该包含一个方法 &lt;code&gt;initDefaultCommand()&lt;/code&gt;，在这里声明子系统的默认指令。如果这个子系统不需要默认指令，把这个方法留空就行。如果需要给子系统指派默认指令，在这个方法里调用 &lt;code&gt;setDefaultCommand()&lt;/code&gt; 函数，将指令实例作为参数传入。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 26 Aug 2016 15:11:51 +0000</pubDate>
+        <link>http://frc.hsefz.org/programming/2016/08/26/default-commands.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/26/default-commands.html</guid>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        <category>C++</category>
+        
+        <category>编程</category>
+        
+        <category>翻译</category>
+        
+        
+        <category>programming</category>
+        
+      </item>
     
       <item>
         <title>将顺序自动程序转换成指令式自动程序</title>
@@ -1290,6 +1350,28 @@
     &lt;/h2&gt;
   &lt;/li&gt;
 
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Aug 26, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#C++&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/08/26/default-commands.html&quot;&gt;默认指令&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
 
 &lt;/ul&gt;
 </description>
@@ -1387,69 +1469,6 @@
         <pubDate>Tue, 23 Aug 2016 03:40:36 +0000</pubDate>
         <link>http://frc.hsefz.org/programming/2016/08/23/simple-subsystems.html</link>
         <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/23/simple-subsystems.html</guid>
-        
-        <category>机器人</category>
-        
-        <category>Java</category>
-        
-        <category>C++</category>
-        
-        <category>编程</category>
-        
-        <category>翻译</category>
-        
-        
-        <category>programming</category>
-        
-      </item>
-    
-      <item>
-        <title>向机器人项目中添加指令和子系统</title>
-        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599734-adding-commands-and-subsystems-to-the-project&quot;&gt;Adding Commands and Subsystems to the project&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;指令和子系统都是以类的形式被创建的。WPILib 开发插件内置了指令和子系统的程序模板。我们可以直接添加。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2&gt;添加子系统&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/1-9ccf3ad98f5ca61566cea76f930568726062862b2938bc86bee1b32961efe9e7.png&quot; width=&quot;640&quot; height=&quot;224&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/1.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;右键点击项目名，并选择 New - Subsystem。&lt;/p&gt;
-
-&lt;h2&gt;命名子系统&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/2-aa272e32c6f31a635a1f540fe87825b0dd3f9ba70edc02d26ee961f1b883c0c5.png&quot; width=&quot;524&quot; height=&quot;431&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/2.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;在文本框中填写子系统名称。因为这个名称是程序中的类名，所以请指定一个符合编程语言语法的名称。&lt;/p&gt;
-
-&lt;h2&gt;所有子系统&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/3-1d52473e57a16c3d4d5860b9aab410aaecbda976dd386dd5fd284bcb10427d35.png&quot; width=&quot;312&quot; height=&quot;341&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/3.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;我们可以在 &lt;code&gt;Subsystems&lt;/code&gt; (C++) 或 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.subsystems&lt;/code&gt; (Java) 目录中查看所有新建的子系统。欲了解如何完善一个子系统，请参见 &lt;a href=&quot;/programming/2016/08/23/simple-subsystems.html&quot;&gt;简单子系统&lt;/a&gt; 这篇文章。&lt;/p&gt;
-
-&lt;h2&gt;添加指令&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/4-9b12485ddf6d0647b7699674c7be53149196c2964b38c2b24ff297f7c04a7b6d.png&quot; width=&quot;640&quot; height=&quot;191&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/4.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;指令的添加步骤与子系统的添加类似。右键点击项目名，选择 New - Command。&lt;/p&gt;
-
-&lt;h2&gt;命名指令&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/5-edd3c805e2be1bb7a3d5a186203a06dad58f8beaec2036695aefa6fe7067a66f.png&quot; width=&quot;524&quot; height=&quot;422&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/5.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;在 &lt;code&gt;Class Name&lt;/code&gt; 中输入指令名。因为这个名称是程序中的类名，所以请指定一个符合编程语言语法的名称。&lt;/p&gt;
-
-&lt;h2&gt;所有指令&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/adding-commands-and-subsystems-to-the-project/6-4e28c24e3a5bbfc47e5ecf1347457a159524ba5c23d69296852008d563d84e6b.png&quot; width=&quot;448&quot; height=&quot;262&quot; alt=&quot;adding-commands-and-subsystems-to-the-project/6.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;我们可以在 &lt;code&gt;Commands&lt;/code&gt; (C++) 或 &lt;code&gt;org.usfirst.frc.teamxxxx.robot.commands&lt;/code&gt; (Java) 目录中查看所有新建的子系统。欲了解如何完善一个指令，请参见“&lt;a href=&quot;/programming/2016/08/24/create-simple-command.html&quot;&gt;创建简单指令&lt;/a&gt;”这篇文章。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 23 Aug 2016 03:24:19 +0000</pubDate>
-        <link>http://frc.hsefz.org/programming/2016/08/23/adding-commands-and-subsystems-to-the-project.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/23/adding-commands-and-subsystems-to-the-project.html</guid>
         
         <category>机器人</category>
         
