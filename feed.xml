@@ -5,9 +5,92 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Aug 2016 15:58:56 +0000</pubDate>
-    <lastBuildDate>Fri, 26 Aug 2016 15:58:56 +0000</lastBuildDate>
+    <pubDate>Sat, 27 Aug 2016 03:52:29 +0000</pubDate>
+    <lastBuildDate>Sat, 27 Aug 2016 03:52:29 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>同步两个指令</title>
+        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599743-synchronizing-two-commands&quot;&gt;Synchronizing two commands&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;指令可以使用指令组来组合。简单的指令被添加到指令组后，可以指定是顺序执行（一个接一个执行）还是并行执行（下一个指令和这个指令被同时开始执行）。偶尔我们需要两个并行指令完成以后执行下一个指令。这一篇文章里将会讲到。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;创建一个顺序并行共存的指令组&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
+&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &quot;CoopBridgeAutonomous.h&quot;
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;CoopBridgeAutonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CoopBridgeAutonomous&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;// SmartDashboard-&amp;gt;PutDouble(&quot;Camera Time&quot;, 5.0);
+&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SetTipperState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;READY_STATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;AddParallel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SetVirtualSetpoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HYBRID_LOCATION&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DriveToBridge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;AddParallel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContinuousCollect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SetTipperState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DOWN_STATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+     &lt;span class=&quot;c1&quot;&gt;// addParallel(new WaitThenShoot());
+&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TurnToTargetLowPassFilterHybrid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FireSequence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MoveBallToShooter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java Code&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CoopBridgeAutonomous&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CommandGroup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;CoopBridgeAutonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//SmartDashboard.putDouble(&quot;Camera Time&quot;, 5.0);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;addSequential&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SetTipperState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BridgeTipper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;READY_STATE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;addParallel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SetVirtualSetpoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SetVirtualSetpoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;HYBRID_LOCATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 2&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;addSequential&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DriveToBridge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;addParallel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContinuousCollect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;addSequential&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SetTipperState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BridgeTipper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;DOWN_STATE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// addParallel(new WaitThenShoot());&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;addSequential&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TurnToTargetLowPassFilterHybrid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;addSequential&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FireSequence&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;addSequential&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MoveBallToShooter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在这个例子里，一些指令并行，一些指令顺序执行。这些指令组成了指令组 &lt;code&gt;CoopBridgeAutonomous()&lt;/code&gt; (1)。第一个指令 &lt;code&gt;SetTipperState&lt;/code&gt; 在 &lt;code&gt;SetVirtualSetpoint&lt;/code&gt; 开始前执行 (2)。在 &lt;code&gt;SetVirtualSetpoint&lt;/code&gt; 指令完成前，&lt;code&gt;DriveToBridge&lt;/code&gt; 指令立刻被调度了，因此两个指令同时执行。这个例子可以大概解释一下指令组是如何调度指令的。&lt;/p&gt;
+
+&lt;h2&gt;流程图&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/synchronizing-two-commands/1-56e3ce7caabd087bfdaf69a0d011da8f3a82d67f7600937c1598fa496253cb0a.png&quot; width=&quot;358&quot; height=&quot;328&quot; alt=&quot;synchronizing-two-commands/1.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;以上的代码可以绘制成这样的流程图。请注意，并行添加的指令与之后的指令没有依赖关系。也就是说，即使现在已经在运行 &lt;code&gt;MoveBallToShooter&lt;/code&gt; 指令了，并行的指令可能仍然在执行。主指令序列中（右侧的指令分支）的指令需要使用其他并行指令所需要的子系统时，并行指令才会被停止。比如，&lt;code&gt;FireSequence&lt;/code&gt; 需要 &lt;code&gt;SetVirtualSetpoint&lt;/code&gt; 指令所需要的子系统，那么 &lt;code&gt;SetVirtualSetpoint&lt;/code&gt; 指令会在 &lt;code&gt;FireSequence&lt;/code&gt; 指令被执行前才停止。&lt;/p&gt;
+
+&lt;h2&gt;让一个指令等待之前的所有指令完成后执行&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://frc.hsefz.org/assets/synchronizing-two-commands/2-cf39412ed65f08add1409314abb1790013f41f8b9fc1ed1000734d3036c0ec48.png&quot; width=&quot;396&quot; height=&quot;371&quot; alt=&quot;synchronizing-two-commands/2.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;如果有一个顺序指令要等待两个并行指令完成后再执行，我们可以把用 &lt;code&gt;addParallel()&lt;/code&gt; 这两个指令加到一个指令组里。接着这个指令组就能原先的指令组中作为顺序指令执行。这样的话，一个指令就可以等待多个并行指令全部结束后再执行了。&lt;/p&gt;
+
+&lt;p&gt;这个例子里 &lt;code&gt;Move to Bridge&lt;/code&gt; 指令组包含了 &lt;code&gt;SetVirtualSetpoint&lt;/code&gt; 和 &lt;code&gt;DriveToBridge&lt;/code&gt; 两个指令。等到两个指令全部完成后，下一个顺序指令才会被执行。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 27 Aug 2016 03:17:14 +0000</pubDate>
+        <link>http://frc.hsefz.org/programming/2016/08/27/synchronizing-two-commands.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/27/synchronizing-two-commands.html</guid>
+        
+        <category>机器人</category>
+        
+        <category>Java</category>
+        
+        <category>C++</category>
+        
+        <category>编程</category>
+        
+        <category>翻译</category>
+        
+        
+        <category>programming</category>
+        
+      </item>
     
       <item>
         <title>默认指令</title>
@@ -1372,6 +1455,28 @@
     &lt;/h2&gt;
   &lt;/li&gt;
 
+  &lt;li&gt;
+    &lt;span class=&quot;post-meta&quot;&gt;
+      &lt;span class=&quot;m-r-1&quot;&gt;Aug 27, 2016&lt;/span&gt;
+      &lt;small&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#机器人&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#Java&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#C++&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#编程&lt;/span&gt;
+      
+        &lt;span class=&quot;text-muted&quot;&gt;#翻译&lt;/span&gt;
+      
+      &lt;/small&gt;
+    &lt;/span&gt;
+    &lt;h2&gt;
+      &lt;a class=&quot;post-link&quot; href=&quot;/programming/2016/08/27/synchronizing-two-commands.html&quot;&gt;同步两个指令&lt;/a&gt;
+    &lt;/h2&gt;
+  &lt;/li&gt;
+
 
 &lt;/ul&gt;
 </description>
@@ -1387,99 +1492,6 @@
         
         
         <category>showcase</category>
-        
-        <category>programming</category>
-        
-      </item>
-    
-      <item>
-        <title>简单子系统</title>
-        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599735-simple-subsystems&quot;&gt;Simple Subsystems&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;创建子系统&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java code&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;usfirst&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;frc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;team1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;subsystems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;edu.wpi.first.wpilibj.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;edu.wpi.first.wpilibj.command.Subsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.usfirst.frc.team1.robot.RobotMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Claw&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Subsystem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;Victor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;motor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RobotMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;clawMotor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initDefaultCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;motor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;motor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;motor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这是一个很简单的控制机械爪的子系统。在这个例子中，机械爪使用一个马达驱动张开或关闭，并且没有使用任何传感器（我们可以用这个例子练习编程，但是请不要在实际中这么设计机械爪）。机械爪张开和关闭的程度是计时实现的。三个方法 &lt;code&gt;open()&lt;/code&gt; &lt;code&gt;close()&lt;/code&gt; &lt;code&gt;stop()&lt;/code&gt; 可以驱动机械爪的马达。请注意，这里没有任何代码可以确认机械爪是否真的张开或关闭了。&lt;code&gt;open()&lt;/code&gt; 方法调用时，机械爪向打开的方向移动。&lt;code&gt;close()&lt;/code&gt; 方法使机械爪往关闭的方向移动。我们可以使用指令来控制机械爪究竟要花多少时间张开关闭。&lt;/p&gt;
-
-&lt;h2&gt;使用指令操纵机械爪&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java code&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;usfirst&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;frc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;team1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;commands&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;edu.wpi.first.wpilibj.command.Command&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.usfirst.frc.team1.robot.Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/**
- *
- */&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;OpenClaw&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;OpenClaw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;requires&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;claw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;claw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isFinished&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isTimedOut&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;claw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;interrupted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;指令可以帮助我们设置每个子系统操作的时间。多个指令可以使用一个子系统完成多个行为。机械爪就是一个例子。指令可以设置机械爪张开或关闭的时间参数。比如上面的指令就控制了机械爪张开。请注意，我们在这个指令中用 &lt;code&gt;setTimeout&lt;/code&gt; 函数设置了指令的执行时间为 0.9 秒。最后要在 &lt;code&gt;isFinished()&lt;/code&gt; 函数中判断是否到达了指定时间。关于如何使用指令，请参见“使用指令”这篇文章。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 23 Aug 2016 03:40:36 +0000</pubDate>
-        <link>http://frc.hsefz.org/programming/2016/08/23/simple-subsystems.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/23/simple-subsystems.html</guid>
-        
-        <category>机器人</category>
-        
-        <category>Java</category>
-        
-        <category>C++</category>
-        
-        <category>编程</category>
-        
-        <category>翻译</category>
-        
         
         <category>programming</category>
         
