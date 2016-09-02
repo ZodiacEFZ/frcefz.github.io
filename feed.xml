@@ -5,9 +5,34 @@
     <description>Team 9036 Zodiac is an FRC Team set up in May, 2016.</description>
     <link>http://frc.hsefz.org/</link>
     <atom:link href="http://frc.hsefz.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Aug 2016 06:05:36 +0000</pubDate>
-    <lastBuildDate>Mon, 29 Aug 2016 06:05:36 +0000</lastBuildDate>
+    <pubDate>Fri, 02 Sep 2016 09:37:38 +0000</pubDate>
+    <lastBuildDate>Fri, 02 Sep 2016 09:37:38 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>RE: 从零开始的 C++ 工程</title>
+        <description>&lt;p&gt;由 Zodiac 推出的从零开始的 C++ 工程入门教程，帮助您写出模块化的工业级 C++ 项目。&lt;/p&gt;
+
+&lt;ul&gt;
+  
+  
+
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 01 Sep 2016 09:21:33 +0000</pubDate>
+        <link>http://frc.hsefz.org/showcase/programming/2016/09/01/starting-a-cpp-project.html</link>
+        <guid isPermaLink="true">http://frc.hsefz.org/showcase/programming/2016/09/01/starting-a-cpp-project.html</guid>
+        
+        <category>C++</category>
+        
+        <category>编程</category>
+        
+        
+        <category>showcase</category>
+        
+        <category>programming</category>
+        
+      </item>
     
       <item>
         <title>使用限位开关限制行为</title>
@@ -1389,62 +1414,6 @@
         <pubDate>Wed, 24 Aug 2016 15:20:08 +0000</pubDate>
         <link>http://frc.hsefz.org/programming/2016/08/24/create-simple-command.html</link>
         <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/24/create-simple-command.html</guid>
-        
-        <category>机器人</category>
-        
-        <category>Java</category>
-        
-        <category>C++</category>
-        
-        <category>编程</category>
-        
-        <category>翻译</category>
-        
-        
-        <category>programming</category>
-        
-      </item>
-    
-      <item>
-        <title>PID 子系统</title>
-        <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599736-pidsubsystems-for-built-in-pid-control&quot;&gt;PIDSubsystems for built-in PID control&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果我们在编程时用到这样一个子系统：来自传感器的返回值直接用来控制电机的速度或位置，那么我们就可以使用 PID 子系统。可能会用到 PID 子系统的例子有：用电位器指定高度的升降装置，用编码器调整速度的射球装置，以及用电位器来确定旋转度数的机械手腕。&lt;/p&gt;
-
-&lt;p&gt;WPILib 中本来就有 &lt;code&gt;PIDController&lt;/code&gt;，但是为了能够方便地在指令式编程中使用它，我们可以使用 &lt;code&gt;PIDSubsystem&lt;/code&gt;。一个 PID 子系统其实就是一个内置了 &lt;code&gt;PIDController&lt;/code&gt; 的子系统，并且提供了可以协调传感器和机械的成员方法。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java code&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;usfirst&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;frc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;team1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;subsystems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;edu.wpi.first.wpilibj.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;edu.wpi.first.wpilibj.command.PIDSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.usfirst.frc.team1.robot.RobotMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Wrist&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PIDSubsystem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 这个子系统继承自 PIDSubsystem&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;Victor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;motor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RobotMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;wristMotor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;AnalogInput&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RobotMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;wristPot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Wrist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wrist&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 构造函数传递子系统名称和在计算输出时会用到的 P I D 三个参数。&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;setAbsoluteTolerance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.05&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;getPIDController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setContinuous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initDefaultCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;returnPIDInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAverageVoltage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 这个函数作为子系统对于传感器参数的反馈。&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;usePIDOutput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;motor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;pidWrite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 在这里执行 PID 传感器参数应用在电机上的程序。&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-        <pubDate>Wed, 24 Aug 2016 14:40:36 +0000</pubDate>
-        <link>http://frc.hsefz.org/programming/2016/08/24/PIDSubsystem-for-builtin-PID-control.html</link>
-        <guid isPermaLink="true">http://frc.hsefz.org/programming/2016/08/24/PIDSubsystem-for-builtin-PID-control.html</guid>
         
         <category>机器人</category>
         
