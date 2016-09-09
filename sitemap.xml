@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://frc.hsefz.org/team/2016/09/09/using-slack-and-trello.html</loc>
+<lastmod>2016-09-09T15:09:16+00:00</lastmod>
+</url>
+<url>
 <loc>http://frc.hsefz.org/showcase/programming/2016/09/01/starting-a-cpp-project.html</loc>
 <lastmod>2016-09-01T09:21:33+00:00</lastmod>
 </url>
