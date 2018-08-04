@@ -5,9 +5,9 @@
     <description>Team 6353 Zodiac is a FIRST Robotics Competition Team.</description>
     <link>http://www.team6353.com/</link>
     <atom:link href="http://www.team6353.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 12 Nov 2016 05:53:47 +0000</pubDate>
-    <lastBuildDate>Sat, 12 Nov 2016 05:53:47 +0000</lastBuildDate>
-    <generator>Jekyll v3.3.0</generator>
+    <pubDate>Sat, 04 Aug 2018 07:05:41 +0000</pubDate>
+    <lastBuildDate>Sat, 04 Aug 2018 07:05:41 +0000</lastBuildDate>
+    <generator>Jekyll v3.8.3</generator>
     
       <item>
         <title>大雄与云之国 · Slack 与 Trello 注册</title>
@@ -130,8 +130,8 @@
 &lt;p&gt;限位开关有“大概开启”和“大概关闭”两个输出。一般限位开关都被连接在 &lt;code&gt;Digital Input&lt;/code&gt; 接口和地线上。电子输入端口有上拉电阻，保证限位开关开启时，输入是 1，限位开关关闭时，输入是 0（输入被连接到地线）。图中的限位开关有开启和关闭输出值。&lt;/p&gt;
 
 &lt;h2&gt;轮询限位开关关闭&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;cp&quot;&gt;#include &quot;RobotTemplate.h&quot;
 #include &quot;WPILib.h&quot;
 &lt;/span&gt;
@@ -177,8 +177,8 @@
 &lt;p&gt;我们可以写一个非常简单的小程序不断读取限位开关直到它的返回值从 1 (开启) 变为 0 (闭合)。但是我们的程序不可能在这个等待期间不干其他事情，比如要读取手柄输入。这个例子只是限位开关的最基本用法，程序等待时，其他事情不发生。&lt;/p&gt;
 
 &lt;h2&gt;指令式编程等待限位开关闭合&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;cp&quot;&gt;#include &quot;ArmUp.h&quot;
 &lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;ArmUp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArmUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -242,8 +242,8 @@
 &lt;p&gt;&lt;em&gt;请注意，机械（这个例子里的机械臂）有惯性，不能立刻停止，所以保证一切正常一定要使机械臂慢速移动。&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2&gt;使用计数器判断限位开关是否闭合&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;cp&quot;&gt;#include &quot;WPILIB.h&quot;
 #include &quot;Arm.h&quot;
 &lt;/span&gt;
@@ -328,8 +328,8 @@
 &lt;p&gt;上面的子系统使用计数器捕捉限位开关操作，等待计数器数值改变。限位开关闭合时，计数器会增加，指令就能捕捉到。&lt;/p&gt;
 
 &lt;h2&gt;编写一个计数器判断限位开关闭合的指令&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;cp&quot;&gt;#include &quot;ArmUp.h&quot;
 &lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;ArmUp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArmUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -441,8 +441,8 @@
 &lt;/ol&gt;
 
 &lt;h2&gt;优化指令组&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;n&quot;&gt;Pickup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Pickup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CommandGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Pickup&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CloseClaw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;AddParallel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SetWristSetpoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
@@ -477,8 +477,8 @@
 &lt;p&gt;指令可以通过 Java 中 &lt;code&gt;schedule()&lt;/code&gt; 方法，或者 C++ 中 &lt;code&gt;Schedule()&lt;/code&gt; 方法在指令实例中被调度。这可以使得新添加的指令被加入调度器当前即将执行的指令列表中。这个功能在程序需要在某些条件下在某个指令中调用其他指令时十分有用。新调度的指令会被添加到新指令列表中。这些指令会在下一次调度器刷新时执行。新创建的指令不会在和添加时的同一个周期中执行。它会在下一次 &lt;code&gt;Scheduler.run()&lt;/code&gt; 时（大约 20 毫秒后）执行。&lt;/p&gt;
 
 &lt;h2&gt;从调度器中移除所有正在执行的指令&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;n&quot;&gt;Scheduler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RemoveAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java Code&lt;/span&gt;
 
@@ -528,21 +528,21 @@
 &lt;hr&gt;
 
 &lt;h2&gt;创建一个顺序并行共存的指令组&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;cp&quot;&gt;#include &quot;CoopBridgeAutonomous.h&quot;
 &lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;CoopBridgeAutonomous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CoopBridgeAutonomous&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-     &lt;span class=&quot;c1&quot;&gt;// SmartDashboard-&amp;gt;PutDouble(&quot;Camera Time&quot;, 5.0);
-&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SetTipperState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;READY_STATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;// SmartDashboard-&amp;gt;PutDouble(&quot;Camera Time&quot;, 5.0);&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SetTipperState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;READY_STATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
      &lt;span class=&quot;n&quot;&gt;AddParallel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SetVirtualSetpoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HYBRID_LOCATION&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
      &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DriveToBridge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
      &lt;span class=&quot;n&quot;&gt;AddParallel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContinuousCollect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
      &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SetTipperState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DOWN_STATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
 
-     &lt;span class=&quot;c1&quot;&gt;// addParallel(new WaitThenShoot());
-&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;// addParallel(new WaitThenShoot());&lt;/span&gt;
+
      &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TurnToTargetLowPassFilterHybrid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
      &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FireSequence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
      &lt;span class=&quot;n&quot;&gt;AddSequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MoveBallToShooter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
@@ -615,19 +615,19 @@
 &lt;p&gt;每个子系统可以指定一个默认指令，在这个子系统没有其他指令执行的时候唤起。最常见的例子就是由手柄操控的底盘子系统。这个指令可以被其他的开车指令中断（比如“精确驾驶模式”，自动对齐/瞄准等），但是在这些指令完成后，手柄操纵底盘的指令应该再次重新执行。&lt;/p&gt;
 
 &lt;h2&gt;设置默认指令&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;cp&quot;&gt;#include &quot;ExampleSubsystem.h&quot;
 &lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;ExampleSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleSubsystem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 把子系统需要用到的机械在这里定义好，指令调用子系统中的机械。
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 把子系统需要用到的机械在这里定义好，指令调用子系统中的机械。&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;ExampleSubsystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InitDefaultCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 在这里定义默认指令
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;SetDefaultCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyDefaultCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 在这里定义默认指令&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;SetDefaultCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyDefaultCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Java Code&lt;/span&gt;
 
@@ -667,27 +667,27 @@
         <description>&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;p&gt;原文：&lt;a href=&quot;http://wpilib.screenstepslive.com/s/4485/m/13809/l/599741-converting-a-simple-autonomous-program-to-a-command-based-autonomous-program&quot;&gt;Converting a Simple Autonomous program to a Command based autonomous program&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;含有循环的代码&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ / Java Code
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 瞄准
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SetTargetAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                   &lt;span class=&quot;c1&quot;&gt;// 初始化：准备需要执行的操作
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AtRightAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;// 条件：满足条件时循环一直执行
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;CorrectAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                 &lt;span class=&quot;c1&quot;&gt;// 执行：不断执行操作直到循环条件不成立
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                        &lt;span class=&quot;c1&quot;&gt;// 延时防止过高 CPU 占用
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;HoldAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                        &lt;span class=&quot;c1&quot;&gt;// 结束：执行扫尾操作，为其他操作准备
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 加速飞轮
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SetTargetSpeed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                   &lt;span class=&quot;c1&quot;&gt;// 初始化：准备需要执行的操作
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FastEnough&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;// 条件：满足条件时循环一直执行
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;SpeedUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                      &lt;span class=&quot;c1&quot;&gt;// 执行：不断执行操作直到循环条件不成立
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                        &lt;span class=&quot;c1&quot;&gt;// 延时防止过高 CPU 占用
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ / Java Code&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 瞄准&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;SetTargetAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                   &lt;span class=&quot;c1&quot;&gt;// 初始化：准备需要执行的操作&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AtRightAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;// 条件：满足条件时循环一直执行&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;CorrectAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                 &lt;span class=&quot;c1&quot;&gt;// 执行：不断执行操作直到循环条件不成立&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                        &lt;span class=&quot;c1&quot;&gt;// 延时防止过高 CPU 占用&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;HoldAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                        &lt;span class=&quot;c1&quot;&gt;// 结束：执行扫尾操作，为其他操作准备&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 加速飞轮&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;SetTargetSpeed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                   &lt;span class=&quot;c1&quot;&gt;// 初始化：准备需要执行的操作&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FastEnough&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;// 条件：满足条件时循环一直执行&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;SpeedUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                      &lt;span class=&quot;c1&quot;&gt;// 执行：不断执行操作直到循环条件不成立&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;                        &lt;span class=&quot;c1&quot;&gt;// 延时防止过高 CPU 占用&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;HoldSpeed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// 飞盘射击
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Shoot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 结束：执行扫尾操作，为其他操作准备
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;c1&quot;&gt;// 飞盘射击&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Shoot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 结束：执行扫尾操作，为其他操作准备&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;以上代码先瞄准，然后加速飞轮，最后在理想速度时把飞盘射出。代码包含了三个不同的行为：瞄准，加速飞轮，以及射击。前两个动作符合指令的四要素：&lt;/p&gt;
 
 &lt;ol&gt;
@@ -700,8 +700,8 @@
 &lt;p&gt;即使我们认为最后一个行为不需要手动结束，只要一个初始化操作就行了，但我们也要严格地加上一个结束条件。最明显的结束条件就是完成了发射任务，或者自动阶段已经结束。&lt;/p&gt;
 
 &lt;h2&gt;重写为指令&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;cp&quot;&gt;#include &quot;AutonomousCommand.h&quot;
 &lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;AutonomousCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AutonomousCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -724,8 +724,8 @@
 &lt;p&gt;我们可以使用指令组将操作组合起来，每个操作都再定义一个自己的指令。首先，编写指令组，接着再分别写三个指令。这个代码十分简洁明了，它将会一个接一个完成三个指令。第三行瞄准，第四行加速飞轮，第五行设计。&lt;code&gt;addSequential()&lt;/code&gt; 方法使得这些指令一个接一个按次序执行。&lt;/p&gt;
 
 &lt;h2&gt;瞄准指令&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;cp&quot;&gt;#include &quot;Aim.h&quot;
 &lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;Aim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Aim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -733,32 +733,32 @@
      &lt;span class=&quot;n&quot;&gt;Requires&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;turret&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// 指令运行前调用
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Aim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 指令运行前调用&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Aim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;SetTargetAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// 指令执行时不断调用
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Aim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 指令执行时不断调用&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Aim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;CorrectAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// 指令不需要再执行时返回真
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Aim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IsFinished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 指令不需要再执行时返回真&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Aim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IsFinished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AtRightAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// IsFinished() 返回假后调用一次
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Aim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;End&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// IsFinished() 返回假后调用一次&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Aim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;End&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
      &lt;span class=&quot;n&quot;&gt;HoldAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// 当其他指令需要使用这个指令使用的子系统时调用
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Aim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Interrupted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 当其他指令需要使用这个指令使用的子系统时调用&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Aim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Interrupted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
      &lt;span class=&quot;n&quot;&gt;End&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -799,8 +799,8 @@
 &lt;p&gt;这个指令就是以之前我们提到的四个要素来构建的。它还有一个 &lt;code&gt;interrupted()&lt;/code&gt; 方法，我们将在之后讨论。另外需要注意的是，&lt;code&gt;isFinished()&lt;/code&gt; 的返回值恰好和循环条件相反，返回真指令停止，返回假继续执行。初始化、执行、扫尾和之前提到的一样，按照各自的需求编写就行了。&lt;/p&gt;
 
 &lt;h2&gt;飞轮加速指令&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;cp&quot;&gt;#include &quot;SpinUpShooter.h&quot;
 &lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;SpinUpShooter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SpinUpShooter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -864,8 +864,8 @@
 &lt;p&gt;飞轮加速指令的编写和瞄准指令极为类似。&lt;/p&gt;
 
 &lt;h2&gt;发射指令&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;cp&quot;&gt;#include &quot;Shoot.h&quot;
 &lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;Shoot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Shoot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -963,8 +963,8 @@
 &lt;hr&gt;
 
 &lt;h2&gt;创建自动阶段需要的指令&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WhenPressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PrepareToGrab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;button2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WhenPressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Grab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;button3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WhenPressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DriveToDistance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
@@ -1000,16 +1000,16 @@
 &lt;p&gt;在这个例子里，这六个指令一个接一个执行。&lt;/p&gt;
 
 &lt;h2&gt;指定指令组在自动阶段执行&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;n&quot;&gt;Command&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;autonomousCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IterativeRobot&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
     &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RobotInit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// 初始化自动阶段的自动指令
-&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;autonomousCommand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SodaDelivery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 初始化自动阶段的自动指令&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;autonomousCommand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SodaDelivery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;oi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1017,8 +1017,8 @@
 
     &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AutonomousInit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// 触发一个自动指令
-&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autonomousCommand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;autonomousCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 触发一个自动指令&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autonomousCommand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;autonomousCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
     &lt;span class=&quot;cm&quot;&gt;/*
@@ -1102,8 +1102,8 @@
 &lt;p&gt;指令式编程的模板里含有一个叫 &lt;code&gt;OI&lt;/code&gt; 的类。在这里可以定义所有操作接口。如果使用 RobotBuilder 的话，这个文件可以在 &lt;code&gt;org.usfirst.frc####.NAME&lt;/code&gt; 包中找到。&lt;/p&gt;
 
 &lt;h2&gt;创建手柄实例和按钮实例&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;n&quot;&gt;OI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;joy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Joystick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -1135,8 +1135,8 @@
 &lt;p&gt;这个例子里，手柄被接在端口 1 上，接着定义了八个在这个手柄上的按钮来操纵机器人的各个部分。在测试时这样设定十分方便。当然我们也可以在 SmartDashboard 上添加执行某个指令的按钮。&lt;/p&gt;
 
 &lt;h2&gt;将按钮关联到指令上&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;n&quot;&gt;button1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WhenPressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PrepareToGrab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;button2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WhenPressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Grab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;button3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WhenPressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DriveToDistance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
@@ -1201,8 +1201,8 @@
 &lt;hr&gt;
 
 &lt;h2&gt;创建执行复杂行为的指令&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;cp&quot;&gt;#include &quot;PlaceSoda.h&quot;
 &lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;PlaceSoda&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PlaceSoda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -1232,8 +1232,8 @@
 &lt;p&gt;这些动作都要一个接一个执行以保证易拉罐不会掉下来。 &lt;code&gt;addSequential()&lt;/code&gt; 方法将一个指令（或指令组）作为传参，在这个指令组执行时，这些指令就会一个接一个执行。&lt;/p&gt;
 
 &lt;h2&gt;创建并行执行的指令组&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;cp&quot;&gt;#include &quot;PrepareToGrab.h&quot;
 &lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;PrepareToGrab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PrepareToGrab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -1262,8 +1262,8 @@
 &lt;/ol&gt;
 
 &lt;h2&gt;混合使用并行和顺序指令&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code
-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// C++ Code&lt;/span&gt;
+
 &lt;span class=&quot;cp&quot;&gt;#include &quot;Grab.h&quot;
 &lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;Grab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Grab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;

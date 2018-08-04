@@ -1,25 +1,25 @@
-<!DOCTYPE html><html lang="en"><head> <script>var _speedMark=new Date</script><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><meta name="google-site-verification" content="nhDpSkTIYdq00-JRzlp4L4y0U0w9kzLJDYqxKUGiyzA"/><title>将顺序自动程序转换成指令式自动程序</title><meta name="description" content="原文：Converting a Simple Autonomous program to a Command based autonomous program"><meta name="keywords" Content="Zodiac,FIRST,FRC,9036,机器人,竞赛,队伍"><link href="https://fonts.googleapis.com/css?family=Amiko:600|Oxygen" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.css" rel="stylesheet"><link type="text/css" rel="stylesheet" href="http://www.team6353.com/assets/main-a53195cf187d76da3dcec3456818cd5f3909cbf4ff86b806f7ebf950f857f16e.css"><link type="text/css" rel="stylesheet" href="http://www.team6353.com/assets/syntax-dce7d9260ac86556c0676ffb6d97e9f17b9edcbc99d8a98eeae91f062c109a4b.css"><link rel="canonical" href="http://www.team6353.com/programming/2016/08/26/converting-a-simple-autonomous-program-to-a-command-based-autonomous-program.html"><link rel="alternate" type="application/rss+xml" title="Team 6353 | Zodiac" href="http://www.team6353.com/feed.xml"><link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/manifest.json"><meta name="msapplication-TileColor" content="#f0ad4e"><meta name="msapplication-TileImage" content="/ms-icon-144x144.png"><meta name="theme-color" content="#f0ad4e"></head><body><header> <nav class="navbar navbar-light navbar-main"> <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-frc-efz-main"> ☰ </button><div class="collapse navbar-toggleable-xs" id="navbar-frc-efz-main"> <a class="navbar-brand" href="/">Team 6353 | Zodiac</a><div class="nav navbar-nav"> <a class="nav-item nav-link" href="/index.html">Welcome</a> <a class="nav-item nav-link" href="/team/2016/08/10/team-member.html">Members</a> <a class="nav-item nav-link" href="/post.html">Posts</a></div></div></nav> </header><section id="main"><div class="jumbotron jumbotron-fluid"><div class="container"><div class="row"><div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2"> <header class="post-header"><h1 class="post-title display-4" itemprop="name headline">将顺序自动程序转换成指令式自动程序</h1><p class="post-meta"><time datetime="2016-08-26T14:31:06+00:00" itemprop="datePublished">Aug 26, 2016</time></p><ul class="list-inline"><li class="list-inline-item"> <span class="h3"><span class="tag tag-warning">programming</span></span></li><li class="list-inline-item">#机器人</li><li class="list-inline-item">#Java</li><li class="list-inline-item">#C++</li><li class="list-inline-item">#编程</li><li class="list-inline-item">#翻译</li></ul> </header></div></div></div></div><div class="container"><div class="row"><div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2"> <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><div class="post-content" itemprop="articleBody"><blockquote class="blockquote"><p>原文：<a href="http://wpilib.screenstepslive.com/s/4485/m/13809/l/599741-converting-a-simple-autonomous-program-to-a-command-based-autonomous-program">Converting a Simple Autonomous program to a Command based autonomous program</a></p></blockquote><h2>含有循环的代码</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ / Java Code
-</span>
-<span class="c1">// 瞄准
-</span><span class="n">SetTargetAngle</span><span class="p">();</span>                   <span class="c1">// 初始化：准备需要执行的操作
-</span><span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">AtRightAngle</span><span class="p">())</span> <span class="p">{</span>           <span class="c1">// 条件：满足条件时循环一直执行
-</span>    <span class="n">CorrectAngle</span><span class="p">();</span>                 <span class="c1">// 执行：不断执行操作直到循环条件不成立
-</span>    <span class="n">delay</span><span class="p">();</span>                        <span class="c1">// 延时防止过高 CPU 占用
-</span><span class="p">}</span>
-<span class="n">HoldAngle</span><span class="p">();</span>                        <span class="c1">// 结束：执行扫尾操作，为其他操作准备
-</span>
-<span class="c1">// 加速飞轮
-</span><span class="n">SetTargetSpeed</span><span class="p">();</span>                   <span class="c1">// 初始化：准备需要执行的操作
-</span><span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">FastEnough</span><span class="p">())</span> <span class="p">{</span>             <span class="c1">// 条件：满足条件时循环一直执行
-</span>    <span class="n">SpeedUp</span><span class="p">();</span>                      <span class="c1">// 执行：不断执行操作直到循环条件不成立
-</span>    <span class="n">delay</span><span class="p">();</span>                        <span class="c1">// 延时防止过高 CPU 占用
-</span><span class="p">}</span>
+<!DOCTYPE html><html lang="en"><head> <script>var _speedMark=new Date</script><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><meta name="google-site-verification" content="nhDpSkTIYdq00-JRzlp4L4y0U0w9kzLJDYqxKUGiyzA"/><title>将顺序自动程序转换成指令式自动程序</title><meta name="description" content="原文：Converting a Simple Autonomous program to a Command based autonomous program"><meta name="keywords" Content="Zodiac,FIRST,FRC,9036,机器人,竞赛,队伍"><link href="https://fonts.googleapis.com/css?family=Amiko:600|Oxygen" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.css" rel="stylesheet"><link type="text/css" rel="stylesheet" href="http://www.team6353.com/assets/main-14d6d43aba3b14ceb7c0f9a546f50fe02b6db659bba8ab3e73c8bdc7391c703f.css"><link type="text/css" rel="stylesheet" href="http://www.team6353.com/assets/syntax-dce7d9260ac86556c0676ffb6d97e9f17b9edcbc99d8a98eeae91f062c109a4b.css"><link rel="canonical" href="http://www.team6353.com/programming/2016/08/26/converting-a-simple-autonomous-program-to-a-command-based-autonomous-program.html"><link rel="alternate" type="application/rss+xml" title="Team 6353 | Zodiac" href="http://www.team6353.com/feed.xml"><link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/manifest.json"><meta name="msapplication-TileColor" content="#f0ad4e"><meta name="msapplication-TileImage" content="/ms-icon-144x144.png"><meta name="theme-color" content="#f0ad4e"></head><body><header> <nav class="navbar navbar-light navbar-main"> <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-frc-efz-main"> ☰ </button><div class="collapse navbar-toggleable-xs" id="navbar-frc-efz-main"> <a class="navbar-brand" href="/">Team 6353 | Zodiac</a><div class="nav navbar-nav"> <a class="nav-item nav-link" href="/index.html">Welcome</a> <a class="nav-item nav-link" href="/team/2016/08/10/team-member.html">Members</a> <a class="nav-item nav-link" href="/post.html">Posts</a></div></div></nav> </header><section id="main"><div class="jumbotron jumbotron-fluid"><div class="container"><div class="row"><div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2"> <header class="post-header"><h1 class="post-title display-4" itemprop="name headline">将顺序自动程序转换成指令式自动程序</h1><p class="post-meta"><time datetime="2016-08-26T14:31:06+00:00" itemprop="datePublished">Aug 26, 2016</time></p><ul class="list-inline"><li class="list-inline-item"> <span class="h3"><span class="tag tag-warning">programming</span></span></li><li class="list-inline-item">#机器人</li><li class="list-inline-item">#Java</li><li class="list-inline-item">#C++</li><li class="list-inline-item">#编程</li><li class="list-inline-item">#翻译</li></ul> </header></div></div></div></div><div class="container"><div class="row"><div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2"> <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><div class="post-content" itemprop="articleBody"><blockquote class="blockquote"><p>原文：<a href="http://wpilib.screenstepslive.com/s/4485/m/13809/l/599741-converting-a-simple-autonomous-program-to-a-command-based-autonomous-program">Converting a Simple Autonomous program to a Command based autonomous program</a></p></blockquote><h2>含有循环的代码</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ / Java Code</span>
+
+<span class="c1">// 瞄准</span>
+<span class="n">SetTargetAngle</span><span class="p">();</span>                   <span class="c1">// 初始化：准备需要执行的操作</span>
+<span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">AtRightAngle</span><span class="p">())</span> <span class="p">{</span>           <span class="c1">// 条件：满足条件时循环一直执行</span>
+    <span class="n">CorrectAngle</span><span class="p">();</span>                 <span class="c1">// 执行：不断执行操作直到循环条件不成立</span>
+    <span class="n">delay</span><span class="p">();</span>                        <span class="c1">// 延时防止过高 CPU 占用</span>
+<span class="p">}</span>
+<span class="n">HoldAngle</span><span class="p">();</span>                        <span class="c1">// 结束：执行扫尾操作，为其他操作准备</span>
+
+<span class="c1">// 加速飞轮</span>
+<span class="n">SetTargetSpeed</span><span class="p">();</span>                   <span class="c1">// 初始化：准备需要执行的操作</span>
+<span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">FastEnough</span><span class="p">())</span> <span class="p">{</span>             <span class="c1">// 条件：满足条件时循环一直执行</span>
+    <span class="n">SpeedUp</span><span class="p">();</span>                      <span class="c1">// 执行：不断执行操作直到循环条件不成立</span>
+    <span class="n">delay</span><span class="p">();</span>                        <span class="c1">// 延时防止过高 CPU 占用</span>
+<span class="p">}</span>
 <span class="n">HoldSpeed</span><span class="p">();</span>
 
-<span class="c1">// 飞盘射击
-</span><span class="n">Shoot</span><span class="p">();</span> <span class="c1">// 结束：执行扫尾操作，为其他操作准备
-</span></code></pre></div><p>以上代码先瞄准，然后加速飞轮，最后在理想速度时把飞盘射出。代码包含了三个不同的行为：瞄准，加速飞轮，以及射击。前两个动作符合指令的四要素：</p><ol><li>初始化：准备需要执行的操作。</li><li>条件：满足条件时循环一直执行。</li><li>执行：不断执行操作直到循环条件不成立。</li><li>结束：执行扫尾操作，为其他操作准备。</li></ol><p>即使我们认为最后一个行为不需要手动结束，只要一个初始化操作就行了，但我们也要严格地加上一个结束条件。最明显的结束条件就是完成了发射任务，或者自动阶段已经结束。</p><h2>重写为指令</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code
-</span>
+<span class="c1">// 飞盘射击</span>
+<span class="n">Shoot</span><span class="p">();</span> <span class="c1">// 结束：执行扫尾操作，为其他操作准备</span>
+</code></pre></div><p>以上代码先瞄准，然后加速飞轮，最后在理想速度时把飞盘射出。代码包含了三个不同的行为：瞄准，加速飞轮，以及射击。前两个动作符合指令的四要素：</p><ol><li>初始化：准备需要执行的操作。</li><li>条件：满足条件时循环一直执行。</li><li>执行：不断执行操作直到循环条件不成立。</li><li>结束：执行扫尾操作，为其他操作准备。</li></ol><p>即使我们认为最后一个行为不需要手动结束，只要一个初始化操作就行了，但我们也要严格地加上一个结束条件。最明显的结束条件就是完成了发射任务，或者自动阶段已经结束。</p><h2>重写为指令</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code</span>
+
 <span class="cp">#include "AutonomousCommand.h"
 </span>
 <span class="n">AutonomousCommand</span><span class="o">::</span><span class="n">AutonomousCommand</span><span class="p">()</span>
@@ -38,8 +38,8 @@
         <span class="n">addSequential</span><span class="o">(</span><span class="k">new</span> <span class="n">Shoot</span><span class="o">());</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><p>我们可以使用指令组将操作组合起来，每个操作都再定义一个自己的指令。首先，编写指令组，接着再分别写三个指令。这个代码十分简洁明了，它将会一个接一个完成三个指令。第三行瞄准，第四行加速飞轮，第五行设计。<code>addSequential()</code> 方法使得这些指令一个接一个按次序执行。</p><h2>瞄准指令</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code
-</span>
+</code></pre></div><p>我们可以使用指令组将操作组合起来，每个操作都再定义一个自己的指令。首先，编写指令组，接着再分别写三个指令。这个代码十分简洁明了，它将会一个接一个完成三个指令。第三行瞄准，第四行加速飞轮，第五行设计。<code>addSequential()</code> 方法使得这些指令一个接一个按次序执行。</p><h2>瞄准指令</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code</span>
+
 <span class="cp">#include "Aim.h"
 </span>
 <span class="n">Aim</span><span class="o">::</span><span class="n">Aim</span><span class="p">()</span>
@@ -47,32 +47,32 @@
      <span class="n">Requires</span><span class="p">(</span><span class="n">Robot</span><span class="o">::</span><span class="n">turret</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="c1">// 指令运行前调用
-</span><span class="kt">void</span> <span class="n">Aim</span><span class="o">::</span><span class="n">Initialize</span><span class="p">()</span>
+<span class="c1">// 指令运行前调用</span>
+<span class="kt">void</span> <span class="n">Aim</span><span class="o">::</span><span class="n">Initialize</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">SetTargetAngle</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="c1">// 指令执行时不断调用
-</span><span class="kt">void</span> <span class="n">Aim</span><span class="o">:</span><span class="n">Execute</span><span class="p">()</span>
+<span class="c1">// 指令执行时不断调用</span>
+<span class="kt">void</span> <span class="n">Aim</span><span class="o">:</span><span class="n">Execute</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">CorrectAngle</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="c1">// 指令不需要再执行时返回真
-</span><span class="kt">bool</span> <span class="n">Aim</span><span class="o">:</span><span class="n">IsFinished</span><span class="p">()</span>
+<span class="c1">// 指令不需要再执行时返回真</span>
+<span class="kt">bool</span> <span class="n">Aim</span><span class="o">:</span><span class="n">IsFinished</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="n">AtRightAngle</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="c1">// IsFinished() 返回假后调用一次
-</span><span class="kt">void</span> <span class="n">Aim</span><span class="o">::</span><span class="n">End</span><span class="p">()</span>
+<span class="c1">// IsFinished() 返回假后调用一次</span>
+<span class="kt">void</span> <span class="n">Aim</span><span class="o">::</span><span class="n">End</span><span class="p">()</span>
 <span class="p">{</span>
      <span class="n">HoldAngle</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="c1">// 当其他指令需要使用这个指令使用的子系统时调用
-</span><span class="kt">void</span> <span class="n">Aim</span><span class="o">:</span><span class="n">Interrupted</span><span class="p">()</span>
+<span class="c1">// 当其他指令需要使用这个指令使用的子系统时调用</span>
+<span class="kt">void</span> <span class="n">Aim</span><span class="o">:</span><span class="n">Interrupted</span><span class="p">()</span>
 <span class="p">{</span>
      <span class="n">End</span><span class="p">();</span>
 <span class="p">}</span>
@@ -109,8 +109,8 @@
         <span class="n">end</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><p>这个指令就是以之前我们提到的四个要素来构建的。它还有一个 <code>interrupted()</code> 方法，我们将在之后讨论。另外需要注意的是，<code>isFinished()</code> 的返回值恰好和循环条件相反，返回真指令停止，返回假继续执行。初始化、执行、扫尾和之前提到的一样，按照各自的需求编写就行了。</p><h2>飞轮加速指令</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code
-</span>
+</code></pre></div><p>这个指令就是以之前我们提到的四个要素来构建的。它还有一个 <code>interrupted()</code> 方法，我们将在之后讨论。另外需要注意的是，<code>isFinished()</code> 的返回值恰好和循环条件相反，返回真指令停止，返回假继续执行。初始化、执行、扫尾和之前提到的一样，按照各自的需求编写就行了。</p><h2>飞轮加速指令</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code</span>
+
 <span class="cp">#include "SpinUpShooter.h"
 </span>
 <span class="n">SpinUpShooter</span><span class="o">::</span><span class="n">SpinUpShooter</span><span class="p">()</span>
@@ -170,8 +170,8 @@
         <span class="n">end</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><p>飞轮加速指令的编写和瞄准指令极为类似。</p><h2>发射指令</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code
-</span>
+</code></pre></div><p>飞轮加速指令的编写和瞄准指令极为类似。</p><h2>发射指令</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code</span>
+
 <span class="cp">#include "Shoot.h"
 </span>
 <span class="n">Shoot</span><span class="o">::</span><span class="n">Shoot</span><span class="p">()</span>
