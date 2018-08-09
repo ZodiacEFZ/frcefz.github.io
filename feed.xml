@@ -5,8 +5,8 @@
     <description>Team 6353 Zodiac is a FIRST Robotics Competition Team.</description>
     <link>https://zodiacefz.github.io/</link>
     <atom:link href="https://zodiacefz.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 09 Aug 2018 10:39:42 +0000</pubDate>
-    <lastBuildDate>Thu, 09 Aug 2018 10:39:42 +0000</lastBuildDate>
+    <pubDate>Thu, 09 Aug 2018 10:57:10 +0000</pubDate>
+    <lastBuildDate>Thu, 09 Aug 2018 10:57:10 +0000</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -14,6 +14,18 @@
         <description>&lt;p&gt;各位小伙伴们大家好！Zodiac 官网终于更新了。&lt;/p&gt;
 
 &lt;p&gt;这是一条「公告」。&lt;/p&gt;
+
+&lt;p&gt;接下来我来迅速例举一下这次更新了啥：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;配色改成了原谅色&lt;/li&gt;
+&lt;li&gt;首页进行了板块更新&lt;/li&gt;
+&lt;li&gt;升级了 jekyll, jekyll-assets 的版本&lt;/li&gt;
+&lt;li&gt;升级了七牛云部署工具的版本&lt;/li&gt;
+&lt;li&gt;优化了 Travis 配置，一次部署只要 2 分钟&lt;/li&gt;
+&lt;li&gt;增加了公告板块&lt;/li&gt;
+&lt;li&gt;差不多就这些了吧&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Wed, 08 Aug 2018 07:16:20 +0000</pubDate>
         <link>https://zodiacefz.github.io/bulletin/2018/08/08/bulletin-example.html</link>
