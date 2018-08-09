@@ -1,4 +1,136 @@
-<!DOCTYPE html><html lang="en"><head> <script>var _speedMark=new Date</script><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><meta name="google-site-verification" content="nhDpSkTIYdq00-JRzlp4L4y0U0w9kzLJDYqxKUGiyzA"/><title>来自 Xenial 星的召唤 · FRC 机器人编程入门</title><meta name="description" content="很久以前在 Xenial 星上住着一群懒虫。它们整天什么事情都不想干，只想坐在沙发上玩 Xenial 冲突。终于有一天 Xenial 星上的人们发现自己的家里太脏太乱了，于是决定开发一款基于 wpilib 的扫地机器人。一位名为 SkyZH 的 Xenial 星人自告奋勇跳出来说，我可以做出扫地机器人！SkyZH..."><meta name="keywords" Content="Zodiac,FIRST,FRC,9036,机器人,竞赛,队伍"><link href="https://fonts.googleapis.com/css?family=Play|Amiko" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.css" rel="stylesheet"><link type="text/css" rel="stylesheet" href="http://www.team6353.com/assets/main-2eb1a6f2afe05556e851ac5ca85006a023df2ab21f73a4eb3a998a082819f04b.css"><link type="text/css" rel="stylesheet" href="http://www.team6353.com/assets/syntax-dce7d9260ac86556c0676ffb6d97e9f17b9edcbc99d8a98eeae91f062c109a4b.css"><link rel="canonical" href="http://www.team6353.com/programming/2016/07/07/programming-with-wpilib.html"><link rel="alternate" type="application/rss+xml" title="Team 6353 | Zodiac" href="http://www.team6353.com/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><meta name="msapplication-TileColor" content="#da532c"><meta name="theme-color" content="#ffffff"></head><body><header> <nav class="navbar navbar-light navbar-main"> <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-frc-efz-main"> ☰ </button><div class="collapse navbar-toggleable-xs" id="navbar-frc-efz-main"> <a class="navbar-brand" href="/">Team 6353 | Zodiac</a><div class="nav navbar-nav"> <a class="nav-item nav-link" href="/index.html">Welcome</a> <a class="nav-item nav-link" href="/team/2016/08/10/team-member.html">Members</a> <a class="nav-item nav-link" href="/post.html">Posts</a></div></div></nav> </header><section id="main"><div class="jumbotron jumbotron-fluid"><div class="container"><div class="row"><div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2"> <header class="post-header"><h1 class="post-title display-4" itemprop="name headline">来自 Xenial 星的召唤 · FRC 机器人编程入门</h1><p class="post-meta"><time datetime="2016-07-07T09:23:35+00:00" itemprop="datePublished">Jul 7, 2016</time></p><ul class="list-inline"><li class="list-inline-item"> <span class="h3"><span class="tag tag-success">programming</span></span></li><li class="list-inline-item">#zc的编程干货</li><li class="list-inline-item">#机器人</li><li class="list-inline-item">#Java</li><li class="list-inline-item">#编程</li></ul> </header></div></div></div></div><div class="container"><div class="row"><div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2"> <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><div class="post-content" itemprop="articleBody"><p>很久以前在 Xenial 星上住着一群懒虫。它们整天什么事情都不想干，只想坐在沙发上玩 Xenial 冲突。终于有一天 Xenial 星上的人们发现自己的家里太脏太乱了，于是决定开发一款基于 <code>wpilib</code> 的扫地机器人。一位名为 SkyZH 的 Xenial 星人自告奋勇跳出来说，我可以做出扫地机器人！SkyZH 真是一位勤劳勇敢的好同志。</p><p>可是好景不长，当他兴高采烈地搭好机器人底盘，设计好底盘上的设备的时候，发现自己不会写程序。</p><p>SkyZH 求助于聪明的你，希望你可以帮忙设计出这样的机器人。</p><hr><h2>创建机器人工程</h2><p><img src="http://www.team6353.com/assets/programming-with-wpilib/create-project-1-20ebe7bea5f993524b47afcf29e2eb44984d0ad7316c262c928e106a52e13768.png" width="1009" height="761" alt="programming-with-wpilib/create-project-1.png"></p><p>打开 Eclipse，选择 <code>File</code> - <code>New</code> - <code>Others</code></p><p><img src="http://www.team6353.com/assets/programming-with-wpilib/create-project-2-9f45188f86172c8011fa75ee2711b3fc22e987454f043b836d0b5d7520664db3.png" width="684" height="497" alt="programming-with-wpilib/create-project-2.png"></p><p>选择 <code>WPILib Robot Java Development</code> - <code>Robot Java Project</code></p><p><img src="http://www.team6353.com/assets/programming-with-wpilib/create-project-3-d55a0df2b02ce6c58b7c4623ee2b9748da9254ae18acf9505c349206c8129d50.png" width="684" height="673" alt="programming-with-wpilib/create-project-3.png"></p><p>填写项目名，选择 Sample Robot。</p><p><img src="http://www.team6353.com/assets/programming-with-wpilib/create-project-4-ef315daf17674562d856f7cbe84ecbc533a47c13ee60d7f927fd6645fe5cea7f.png" width="1006" height="757" alt="programming-with-wpilib/create-project-4.png"></p><p>如果界面没有反应，点击左侧边栏上的放大键。</p><p><img src="http://www.team6353.com/assets/programming-with-wpilib/create-project-5-b1c2d040cd0b43b3a3d62c163351141d0ed39dc6a64e7c54e8e847f4fdc6f08e.png" width="1008" height="760" alt="programming-with-wpilib/create-project-5.png"></p><p>在 <code>Package Explorer</code> 中找到刚才创建项目中的 <code>Robot.java</code></p><h2>编写逻辑</h2><p>新创建的机器人类中，删去多余的代码，有以下几个函数：</p><div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Robot</span> <span class="kd">extends</span> <span class="n">SampleRobot</span> <span class="o">{</span>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  
+  <script type="text/javascript">
+    var _speedMark = new Date();
+  </script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="google-site-verification" content="nhDpSkTIYdq00-JRzlp4L4y0U0w9kzLJDYqxKUGiyzA" />
+
+  
+  <title>来自 Xenial 星的召唤 · FRC 机器人编程入门</title>
+  <meta name="description" content="很久以前在 Xenial 星上住着一群懒虫。它们整天什么事情都不想干，只想坐在沙发上玩 Xenial 冲突。终于有一天 Xenial 星上的人们发现自己的家里太脏太乱了，于是决定开发一款基于 wpilib 的扫地机器人。一位名为 SkyZH 的 Xenial 星人自告奋勇跳出来说，我可以做出扫地机器人！SkyZH...">
+  <meta name="keywords" Content="Zodiac,FIRST,FRC,6353,机器人,竞赛,队伍">
+  
+  
+    <link href="https://fonts.googleapis.com/css?family=Play|Amiko" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" integrity="sha256-bx1P6LiTj8HZgfxmzH9WE1362yWd6usPVrInte0qa3M=" crossorigin="anonymous" href="/assets/main-6f1d4fe8b8938fc1d981fc66cc7f56135dfadb259deaeb0f56b227b5ed2a6b73.css">
+  <link rel="stylesheet" type="text/css" integrity="sha256-a+xG2IoHp6dfueGuXkub91mQ65CpVX5O5FT3CMUqI2k=" crossorigin="anonymous" href="/assets/syntax-6bec46d88a07a7a75fb9e1ae5e4b9bf75990eb90a9557e4ee454f708c52a2369.css">
+  <link rel="canonical" href="https://zodiacefz.github.io/programming/2016/07/07/programming-with-wpilib.html">
+  <link rel="alternate" type="application/rss+xml" title="Team 6353 | Zodiac" href="https://zodiacefz.github.io/feed.xml">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+
+  <body>
+
+    <header>
+  <nav class="navbar navbar-light navbar-main">
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-frc-efz-main">
+  &#9776;
+</button>
+<div class="collapse navbar-toggleable-xs" id="navbar-frc-efz-main">
+  <a class="navbar-brand" href="/">Team 6353 | Zodiac</a>
+  <div class="nav navbar-nav">
+    <a class="nav-item nav-link" href="/index.html">Welcome</a>
+    <a class="nav-item nav-link" href="/team/2016/08/10/team-member.html">Members</a>
+    <!--<a class="nav-item nav-link" href="#frc/robot">Robot</a>
+    <a class="nav-item nav-link" href="#frc/robot">Activities</a>-->
+    <a class="nav-item nav-link" href="/post.html">Posts</a>
+  </div>
+</div>
+
+  </nav>
+</header>
+
+
+    <section id="main">
+      <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+        <header class="post-header">
+          <h1 class="post-title display-4" itemprop="name headline">来自 Xenial 星的召唤 · FRC 机器人编程入门</h1>
+          <p class="post-meta"><time datetime="2016-07-07T09:23:35+00:00" itemprop="datePublished">Jul 7, 2016</time></p>
+          <ul class="list-inline">
+            
+              <li class="list-inline-item">
+                <span class="h3"><span class="tag tag-success">programming</span></span>
+              </li>
+            
+            
+            <li class="list-inline-item">#zc的编程干货</li>
+            
+            <li class="list-inline-item">#机器人</li>
+            
+            <li class="list-inline-item">#Java</li>
+            
+            <li class="list-inline-item">#编程</li>
+            
+          </ul>
+        </header>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-content" itemprop="articleBody">
+          <p>很久以前在 Xenial 星上住着一群懒虫。它们整天什么事情都不想干，只想坐在沙发上玩 Xenial 冲突。终于有一天 Xenial 星上的人们发现自己的家里太脏太乱了，于是决定开发一款基于 <code>wpilib</code> 的扫地机器人。一位名为 SkyZH 的 Xenial 星人自告奋勇跳出来说，我可以做出扫地机器人！SkyZH 真是一位勤劳勇敢的好同志。</p>
+
+<p>可是好景不长，当他兴高采烈地搭好机器人底盘，设计好底盘上的设备的时候，发现自己不会写程序。</p>
+
+<p>SkyZH 求助于聪明的你，希望你可以帮忙设计出这样的机器人。</p>
+
+<hr>
+
+<h2>创建机器人工程</h2>
+
+<p><img integrity="sha256-IOvnvqX5k1JLR6/PKeLrRJhNCtcxbCYsko4QalLhN2g=" crossorigin="anonymous" src="/assets/programming-with-wpilib/create-project-1-20ebe7bea5f993524b47afcf29e2eb44984d0ad7316c262c928e106a52e13768.png"></p>
+
+<p>打开 Eclipse，选择 <code>File</code> - <code>New</code> - <code>Others</code></p>
+
+<p><img integrity="sha256-n0UYj4YXLIAR+nXuJxGz/CLph0VPBDuDbQtddSBmTbM=" crossorigin="anonymous" src="/assets/programming-with-wpilib/create-project-2-9f45188f86172c8011fa75ee2711b3fc22e987454f043b836d0b5d7520664db3.png"></p>
+
+<p>选择 <code>WPILib Robot Java Development</code> - <code>Robot Java Project</code></p>
+
+<p><img integrity="sha256-1VoN8rAs5sWLfEYj7iuXSNqSVK4YrPlQXDSSBsgSnVA=" crossorigin="anonymous" src="/assets/programming-with-wpilib/create-project-3-d55a0df2b02ce6c58b7c4623ee2b9748da9254ae18acf9505c349206c8129d50.png"></p>
+
+<p>填写项目名，选择 Sample Robot。</p>
+
+<p><img integrity="sha256-7zFdrxdnRWLYVvfL6E7LxTOkfBPuYNf5J/1mRf5c6n8=" crossorigin="anonymous" src="/assets/programming-with-wpilib/create-project-4-ef315daf17674562d856f7cbe84ecbc533a47c13ee60d7f927fd6645fe5cea7f.png"></p>
+
+<p>如果界面没有反应，点击左侧边栏上的放大键。</p>
+
+<p><img integrity="sha256-scLQQM0LQ7Oj1iwWM1EUHQ7TncamTnxU6OhH9P3G8I4=" crossorigin="anonymous" src="/assets/programming-with-wpilib/create-project-5-b1c2d040cd0b43b3a3d62c163351141d0ed39dc6a64e7c54e8e847f4fdc6f08e.png"></p>
+
+<p>在 <code>Package Explorer</code> 中找到刚才创建项目中的 <code>Robot.java</code></p>
+
+<h2>编写逻辑</h2>
+
+<p>新创建的机器人类中，删去多余的代码，有以下几个函数：</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Robot</span> <span class="kd">extends</span> <span class="n">SampleRobot</span> <span class="o">{</span>
 
     <span class="kd">public</span> <span class="nf">Robot</span><span class="o">()</span> <span class="o">{</span>
     <span class="o">}</span>
@@ -15,19 +147,53 @@
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><p><code>public Robot()</code> 是类的初始化函数。 <code>public void robotInit()</code> 是机器人的初始化函数。 <code>public void autonomous()</code> 是机器人自动驾驶时的执行逻辑。 <code>public void operatorControl()</code> 是机器人人工操控时的执行逻辑。</p><p>SkyZH 首先希望能够操控底盘，让机器人在他扁平状的卧室里直线行走。那么我们需要干这么几件事情：</p><ol><li>在 <code>Robot</code> 类中声明所需要的控制器。</li><li>将控制器绑定在端口上。</li><li>在 <code>autonomous()</code> 函数中编写逻辑。</li></ol><p>机器人底盘通过 <code>RobotDrive</code> 类驱动。与此同时 SkyZH 的机器人采用的是 <code>VictorSP</code> 马达控制器。 <strong>前左，前右，后左，后右马达分别对应端口 <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>。</strong></p><h3>声明控制器</h3><div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Robot</span> <span class="kd">extends</span> <span class="n">SampleRobot</span> <span class="o">{</span>
+</code></pre></div>
+<p><code>public Robot()</code> 是类的初始化函数。
+<code>public void robotInit()</code> 是机器人的初始化函数。
+<code>public void autonomous()</code> 是机器人自动驾驶时的执行逻辑。
+<code>public void operatorControl()</code> 是机器人人工操控时的执行逻辑。</p>
+
+<p>SkyZH 首先希望能够操控底盘，让机器人在他扁平状的卧室里直线行走。那么我们需要干这么几件事情：</p>
+
+<ol>
+<li>在 <code>Robot</code> 类中声明所需要的控制器。</li>
+<li>将控制器绑定在端口上。</li>
+<li>在 <code>autonomous()</code> 函数中编写逻辑。</li>
+</ol>
+
+<p>机器人底盘通过 <code>RobotDrive</code> 类驱动。与此同时 SkyZH 的机器人采用的是 <code>VictorSP</code> 马达控制器。
+<strong>前左，前右，后左，后右马达分别对应端口 <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>。</strong></p>
+
+<h3>声明控制器</h3>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Robot</span> <span class="kd">extends</span> <span class="n">SampleRobot</span> <span class="o">{</span>
     <span class="n">RobotDrive</span> <span class="n">myRobot</span><span class="o">;</span>
 
     <span class="kd">public</span> <span class="nf">Robot</span><span class="o">()</span> <span class="o">{</span>
 
-</code></pre></div><h3>绑定控制器</h3><div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Robot</span> <span class="kd">extends</span> <span class="n">SampleRobot</span> <span class="o">{</span>
+</code></pre></div>
+<h3>绑定控制器</h3>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Robot</span> <span class="kd">extends</span> <span class="n">SampleRobot</span> <span class="o">{</span>
     <span class="n">RobotDrive</span> <span class="n">myRobot</span><span class="o">;</span>
 
     <span class="kd">public</span> <span class="nf">Robot</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">myRobot</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RobotDrive</span><span class="o">(</span><span class="k">new</span> <span class="n">VictorSP</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="k">new</span> <span class="n">VictorSP</span><span class="o">(</span><span class="mi">3</span><span class="o">),</span> <span class="k">new</span> <span class="n">VictorSP</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="k">new</span> <span class="n">VictorSP</span><span class="o">(</span><span class="mi">4</span><span class="o">));</span>
     <span class="o">}</span>
 
-</code></pre></div><p>注意：<code>RobotDrive</code> 初始化时的顺序是前左，后左，前右，后右。</p><p>这时我们发现 <code>VictorSP</code> 下出现了红线。这说明这句语句出了问题。我们可以点击左边的小灯泡让 Eclipse 自动解决。</p><p><img src="http://www.team6353.com/assets/programming-with-wpilib/bind-ctrl-1-5bf43cc9d68d82ee0def54bcecd1098a2431b9079b9d8e55720a0ae46ddd4df4.png" width="1272" height="760" alt="programming-with-wpilib/bind-ctrl-1.png"></p><p>双击 <code>Import VictorSP</code> 将没有包含的库包含进程序中。</p><p><img src="http://www.team6353.com/assets/programming-with-wpilib/bind-ctrl-2-bcc15c39ed3971dc040678e2004e4189b4c56616230caf6155fab64c1e9babd4.png" width="1341" height="773" alt="programming-with-wpilib/bind-ctrl-2.png"></p><h3>编写逻辑</h3><p>SkyZH 让机器人在房间里前进两秒，停两秒扫地，后退两秒，再停止两秒，不断循环。</p><div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">autonomous</span><span class="o">()</span> <span class="o">{</span>
+</code></pre></div>
+<p>注意：<code>RobotDrive</code> 初始化时的顺序是前左，后左，前右，后右。</p>
+
+<p>这时我们发现 <code>VictorSP</code> 下出现了红线。这说明这句语句出了问题。我们可以点击左边的小灯泡让 Eclipse 自动解决。</p>
+
+<p><img integrity="sha256-W/Q8ydaNgu4N71S87NEJiiQxuQebnY5VcgoK5G3dTfQ=" crossorigin="anonymous" src="/assets/programming-with-wpilib/bind-ctrl-1-5bf43cc9d68d82ee0def54bcecd1098a2431b9079b9d8e55720a0ae46ddd4df4.png"></p>
+
+<p>双击 <code>Import VictorSP</code> 将没有包含的库包含进程序中。</p>
+
+<p><img integrity="sha256-vMFcOe05cdwEBnjiAE5BibTFZhYjDK9hVfq2TB6bq9Q=" crossorigin="anonymous" src="/assets/programming-with-wpilib/bind-ctrl-2-bcc15c39ed3971dc040678e2004e4189b4c56616230caf6155fab64c1e9babd4.png"></p>
+
+<h3>编写逻辑</h3>
+
+<p>SkyZH 让机器人在房间里前进两秒，停两秒扫地，后退两秒，再停止两秒，不断循环。</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">autonomous</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">myRobot</span><span class="o">.</span><span class="na">setSafetyEnabled</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
         <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">myRobot</span><span class="o">.</span><span class="na">drive</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
@@ -37,12 +203,22 @@
             <span class="n">myRobot</span><span class="o">.</span><span class="na">drive</span><span class="o">(-</span><span class="mf">1.0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
             <span class="n">Timer</span><span class="o">.</span><span class="na">delay</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
             <span class="n">myRobot</span><span class="o">.</span><span class="na">drive</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
-            <span class="n">Timer</span><span class="o">.</span><span class="na">delay</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+            <span class="n">Timer</span><span class="o">.</span><span class="na">delay</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>  
         <span class="o">}</span>
 
     <span class="o">}</span>
 
-</code></pre></div><p>于是我们就写完了扫地机器人的行走程序啦！是不是很棒 QwQ。</p><h2>燃烧 Xenial 初号！扫地吧！</h2><p>SkyZH 说那就给这个机器人取个名字叫 Xenial 初号 吧。可是它还不能扫地啊。</p><p>扫帚的毛刷被固定在一个舵机上。让舵机不断转动就可以扫地了。舵机被接在端口 <code>5</code> 上。</p><h3>声明控制器 &amp; 绑定控制器</h3><div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Robot</span> <span class="kd">extends</span> <span class="n">SampleRobot</span> <span class="o">{</span>
+</code></pre></div>
+<p>于是我们就写完了扫地机器人的行走程序啦！是不是很棒 QwQ。</p>
+
+<h2>燃烧 Xenial 初号！扫地吧！</h2>
+
+<p>SkyZH 说那就给这个机器人取个名字叫 Xenial 初号 吧。可是它还不能扫地啊。</p>
+
+<p>扫帚的毛刷被固定在一个舵机上。让舵机不断转动就可以扫地了。舵机被接在端口 <code>5</code> 上。</p>
+
+<h3>声明控制器 &amp; 绑定控制器</h3>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Robot</span> <span class="kd">extends</span> <span class="n">SampleRobot</span> <span class="o">{</span>
     <span class="n">RobotDrive</span> <span class="n">myRobot</span><span class="o">;</span>
     <span class="n">Servo</span> <span class="n">servo</span><span class="o">;</span>
 
@@ -53,7 +229,11 @@
         <span class="n">servo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Servo</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
     <span class="o">}</span>
 
-</code></pre></div><h3>编写逻辑</h3><p>在机器人停下脚步时调用舵机转向。使用 <code>Timer.delay()</code> 等待几秒，保证舵机转到底。</p><div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">autonomous</span><span class="o">()</span> <span class="o">{</span>
+</code></pre></div>
+<h3>编写逻辑</h3>
+
+<p>在机器人停下脚步时调用舵机转向。使用 <code>Timer.delay()</code> 等待几秒，保证舵机转到底。</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">autonomous</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">myRobot</span><span class="o">.</span><span class="na">setSafetyEnabled</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
         <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">myRobot</span><span class="o">.</span><span class="na">drive</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
@@ -74,4 +254,77 @@
 
     <span class="o">}</span>
 
-</code></pre></div><h2>习题</h2><ol><li><p>阅读 <code>wpilib</code> <a href="http://first.wpi.edu/FRC/roborio/release/docs/java/">API 文档</a>，查找获取 <code>Servo</code> 现在的旋转角度的函数，将原来的 <code>Timer.delay(2)</code> ，改成使用 <code>while</code> 循环等待舵机转到指定角度。</p></li><li><p>尝试绑定 <code>Joystick</code> 手柄，当手柄按钮按下时再开始扫地。相关文档可以在 <a href="http://wpilib.screenstepslive.com/s/4485/m/13809/l/241881-joysticks">wpilib 官网</a> 或 <em>Java Programming Guide PDF</em> 中找到。</p></li></ol></div><div class="alert alert-info" role="alert"> Team 6353 | Zodiac 的原创内容遵循 <a class="alert-link" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 协议</a>。您可以自由分享、演绎，但不可用于商业用途。转载时请保留链接和协议。</div> </article><div class="discuss-wrapper"><div class="m-t-3"><div id="disqus_thread"></div> <script>var disqus_config=function(){this.page.url="http://www.team6353.com/programming/2016/07/07/programming-with-wpilib.html",this.page.identifier="/programming/2016/07/07/programming-with-wpilib",this.page.title="\u6765\u81ea Xenial \u661f\u7684\u53ec\u5524 \xb7 FRC \u673a\u5668\u4eba\u7f16\u7a0b\u5165\u95e8"};!function(){var i=document,t=i.createElement("script");t.src="//zodiac-efz-robotics.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(i.head||i.body).appendChild(t)}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div></div></div></div></div></section><footer class="footer"><div class="container"><ul class="list-inline"><li class="list-inline-item">By Zodiac</li><li class="list-inline-item"><a class="text-xs-right" href="http://www.miitbeian.gov.cn/">沪ICP备16041880号-1</a></li></ul></div> </footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/vendors/jquery.easings.min.js"></script><script src="https://tajs.qq.com/stats?sId=57249037" charset="UTF-8" async defer></script></body></html>
+</code></pre></div>
+<h2>习题</h2>
+
+<ol>
+<li><p>阅读 <code>wpilib</code> <a href="http://first.wpi.edu/FRC/roborio/release/docs/java/">API 文档</a>，查找获取 <code>Servo</code> 现在的旋转角度的函数，将原来的 <code>Timer.delay(2)</code> ，改成使用 <code>while</code> 循环等待舵机转到指定角度。</p></li>
+<li><p>尝试绑定 <code>Joystick</code> 手柄，当手柄按钮按下时再开始扫地。相关文档可以在 <a href="http://wpilib.screenstepslive.com/s/4485/m/13809/l/241881-joysticks">wpilib 官网</a> 或 <em>Java Programming Guide PDF</em> 中找到。</p></li>
+</ol>
+
+        </div>
+        <div class="alert alert-info" role="alert">
+          Team 6353 | Zodiac 的原创内容遵循 <a class="alert-link" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 协议</a>。您可以自由分享、演绎，但不可用于商业用途。转载时请保留链接和协议。
+        </div>
+      </article>
+      
+<div class="discuss-wrapper">
+  
+    <div class="m-t-3">
+  
+
+  
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+    this.page.url = "https://zodiacefz.github.io/programming/2016/07/07/programming-with-wpilib.html";
+    this.page.identifier = "/programming/2016/07/07/programming-with-wpilib";
+    this.page.title = "来自 Xenial 星的召唤 · FRC 机器人编程入门"
+  };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//zodiac-efz-robotics.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+</div>
+
+  
+</div>
+
+    </div>
+  </div>
+</div>
+
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <ul class="list-inline">
+      <li class="list-inline-item">By Zodiac</li>
+<li class="list-inline-item"><a class="text-xs-right" href="http://www.miitbeian.gov.cn/">沪ICP备16041880号-1</a></li>
+
+    </ul>
+  </div>
+</footer>
+
+
+    
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/vendors/jquery.easings.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://tajs.qq.com/stats?sId=57249037" charset="UTF-8" async defer></script>
+
+
+  </body>
+
+</html>

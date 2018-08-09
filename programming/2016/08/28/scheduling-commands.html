@@ -1,4 +1,133 @@
-<!DOCTYPE html><html lang="en"><head> <script>var _speedMark=new Date</script><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><meta name="google-site-verification" content="nhDpSkTIYdq00-JRzlp4L4y0U0w9kzLJDYqxKUGiyzA"/><title>指令调度</title><meta name="description" content="原文：Scheduling commands"><meta name="keywords" Content="Zodiac,FIRST,FRC,9036,机器人,竞赛,队伍"><link href="https://fonts.googleapis.com/css?family=Play|Amiko" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.css" rel="stylesheet"><link type="text/css" rel="stylesheet" href="http://www.team6353.com/assets/main-2eb1a6f2afe05556e851ac5ca85006a023df2ab21f73a4eb3a998a082819f04b.css"><link type="text/css" rel="stylesheet" href="http://www.team6353.com/assets/syntax-dce7d9260ac86556c0676ffb6d97e9f17b9edcbc99d8a98eeae91f062c109a4b.css"><link rel="canonical" href="http://www.team6353.com/programming/2016/08/28/scheduling-commands.html"><link rel="alternate" type="application/rss+xml" title="Team 6353 | Zodiac" href="http://www.team6353.com/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><meta name="msapplication-TileColor" content="#da532c"><meta name="theme-color" content="#ffffff"></head><body><header> <nav class="navbar navbar-light navbar-main"> <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-frc-efz-main"> ☰ </button><div class="collapse navbar-toggleable-xs" id="navbar-frc-efz-main"> <a class="navbar-brand" href="/">Team 6353 | Zodiac</a><div class="nav navbar-nav"> <a class="nav-item nav-link" href="/index.html">Welcome</a> <a class="nav-item nav-link" href="/team/2016/08/10/team-member.html">Members</a> <a class="nav-item nav-link" href="/post.html">Posts</a></div></div></nav> </header><section id="main"><div class="jumbotron jumbotron-fluid"><div class="container"><div class="row"><div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2"> <header class="post-header"><h1 class="post-title display-4" itemprop="name headline">指令调度</h1><p class="post-meta"><time datetime="2016-08-28T08:28:47+00:00" itemprop="datePublished">Aug 28, 2016</time></p><ul class="list-inline"><li class="list-inline-item"> <span class="h3"><span class="tag tag-success">programming</span></span></li><li class="list-inline-item">#机器人</li><li class="list-inline-item">#Java</li><li class="list-inline-item">#C++</li><li class="list-inline-item">#编程</li><li class="list-inline-item">#翻译</li></ul> </header></div></div></div></div><div class="container"><div class="row"><div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2"> <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><div class="post-content" itemprop="articleBody"><blockquote class="blockquote"><p>原文：<a href="http://wpilib.screenstepslive.com/s/4485/m/13809/l/599745-scheduling-commands">Scheduling commands</a></p></blockquote><p>指令会在事件触发、没有其他指令运行的子系统上默认指令、指令组中的指令、按钮按下、自动阶段等情况下被调度执行。即使许多指令可能看起来在并行运行，但是所有的指令都运行在一个线程（主机器人线程）中。这可以减少线程同步的种种困难。线程可能在 PID 循环、机器人通讯的地方用到。但是这些线程都不需要和主线程不断同步。这使得机器人程序更加稳定。</p><p>这些操作都由调度器 <code>Scheduler</code> 类实现。它有一个 <code>run()</code> 方法被周期性执行（一般就以 Driver Station 的更新频率执行，即每 20 毫秒一次），会处理所有正在执行的指令。这个操作由调用指令的 <code>execute()</code> 和 <code>isFinished()</code> 方法实现。如果 <code>isFinished()</code> 返回真，那么指令就会被标记为“将被删除”，并且在下一个周期把它移除。如果有很多指令同时运行，那么 <code>Scheduler.run()</code> 方法调用时，所有指令的 <code>execute()</code> 和 <code>isFinished()</code> 方法都会被调用。这和用多线程并没有什么区别。</p><hr><h2>剖析指令式程序</h2><p><img src="http://www.team6353.com/assets/scheduling-commands/1-98db8fa6e8c0189f70c1e56546942a8c144c23e01284e2319ab1209d4f4418f1.png" width="1026" height="730" alt="scheduling-commands/1.png"></p><p>这里展示了一个典型的指令式机器人程序的代码。<code>Scheduler.run()</code> 方法可以调用所有正在执行的指令的 <code>execute()</code> 和 <code>isFinished()</code> 方法。请忽略 Java 例子中的 <code>log()</code> 方法。</p><h2><code>Scheduler.run</code> 方法：指令生命周期</h2><p><img src="http://www.team6353.com/assets/scheduling-commands/2-29b81679f3498821e2d4b7e2f35950f61875a122764dde2bc0ea4915625aca7b.png" width="180" height="458" alt="scheduling-commands/2.png"></p><p>这些行为不论在 C++ <code>Scheduler.Run()</code> 的指令式程序中还是 Java <code>Scheduler.run()</code> 的指令式程序中都会调用。这些行为也会在 Driver Station 以 20 毫秒或 50 毫秒为周期刷新的时候执行。下面的伪代码说明了每次调用 <code>run()</code> 方法的时候会发生什么。</p><ol><li>按钮和触发器事件被不断询问，来判断是否有相关的指令需要被调度。如果触发器为真，指令被添加到即将执行的队列里。</li><li>枚举所有正在运行指令，调用它们的 <code>execute()</code> 和 <code>isFinished()</code> 函数。已经结束的指令会从正在执行指令的列表中移除。</li><li>把第一步即将执行队列里的指令，添加到正在执行的列表中。</li><li>对空闲的子系统，向正在执行的列表中添加默认指令。</li></ol><h2>优化指令组</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code</span>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  
+  <script type="text/javascript">
+    var _speedMark = new Date();
+  </script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="google-site-verification" content="nhDpSkTIYdq00-JRzlp4L4y0U0w9kzLJDYqxKUGiyzA" />
+
+  
+  <title>指令调度</title>
+  <meta name="description" content="原文：Scheduling commands">
+  <meta name="keywords" Content="Zodiac,FIRST,FRC,6353,机器人,竞赛,队伍">
+  
+  
+    <link href="https://fonts.googleapis.com/css?family=Play|Amiko" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" integrity="sha256-bx1P6LiTj8HZgfxmzH9WE1362yWd6usPVrInte0qa3M=" crossorigin="anonymous" href="/assets/main-6f1d4fe8b8938fc1d981fc66cc7f56135dfadb259deaeb0f56b227b5ed2a6b73.css">
+  <link rel="stylesheet" type="text/css" integrity="sha256-a+xG2IoHp6dfueGuXkub91mQ65CpVX5O5FT3CMUqI2k=" crossorigin="anonymous" href="/assets/syntax-6bec46d88a07a7a75fb9e1ae5e4b9bf75990eb90a9557e4ee454f708c52a2369.css">
+  <link rel="canonical" href="https://zodiacefz.github.io/programming/2016/08/28/scheduling-commands.html">
+  <link rel="alternate" type="application/rss+xml" title="Team 6353 | Zodiac" href="https://zodiacefz.github.io/feed.xml">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+
+  <body>
+
+    <header>
+  <nav class="navbar navbar-light navbar-main">
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-frc-efz-main">
+  &#9776;
+</button>
+<div class="collapse navbar-toggleable-xs" id="navbar-frc-efz-main">
+  <a class="navbar-brand" href="/">Team 6353 | Zodiac</a>
+  <div class="nav navbar-nav">
+    <a class="nav-item nav-link" href="/index.html">Welcome</a>
+    <a class="nav-item nav-link" href="/team/2016/08/10/team-member.html">Members</a>
+    <!--<a class="nav-item nav-link" href="#frc/robot">Robot</a>
+    <a class="nav-item nav-link" href="#frc/robot">Activities</a>-->
+    <a class="nav-item nav-link" href="/post.html">Posts</a>
+  </div>
+</div>
+
+  </nav>
+</header>
+
+
+    <section id="main">
+      <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+        <header class="post-header">
+          <h1 class="post-title display-4" itemprop="name headline">指令调度</h1>
+          <p class="post-meta"><time datetime="2016-08-28T08:28:47+00:00" itemprop="datePublished">Aug 28, 2016</time></p>
+          <ul class="list-inline">
+            
+              <li class="list-inline-item">
+                <span class="h3"><span class="tag tag-success">programming</span></span>
+              </li>
+            
+            
+            <li class="list-inline-item">#机器人</li>
+            
+            <li class="list-inline-item">#Java</li>
+            
+            <li class="list-inline-item">#C++</li>
+            
+            <li class="list-inline-item">#编程</li>
+            
+            <li class="list-inline-item">#翻译</li>
+            
+          </ul>
+        </header>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-content" itemprop="articleBody">
+          <blockquote class="blockquote"><p>原文：<a href="http://wpilib.screenstepslive.com/s/4485/m/13809/l/599745-scheduling-commands">Scheduling commands</a></p>
+</blockquote>
+<p>指令会在事件触发、没有其他指令运行的子系统上默认指令、指令组中的指令、按钮按下、自动阶段等情况下被调度执行。即使许多指令可能看起来在并行运行，但是所有的指令都运行在一个线程（主机器人线程）中。这可以减少线程同步的种种困难。线程可能在 PID 循环、机器人通讯的地方用到。但是这些线程都不需要和主线程不断同步。这使得机器人程序更加稳定。</p>
+
+<p>这些操作都由调度器 <code>Scheduler</code> 类实现。它有一个 <code>run()</code> 方法被周期性执行（一般就以 Driver Station 的更新频率执行，即每 20 毫秒一次），会处理所有正在执行的指令。这个操作由调用指令的 <code>execute()</code> 和 <code>isFinished()</code> 方法实现。如果 <code>isFinished()</code> 返回真，那么指令就会被标记为“将被删除”，并且在下一个周期把它移除。如果有很多指令同时运行，那么 <code>Scheduler.run()</code> 方法调用时，所有指令的 <code>execute()</code> 和 <code>isFinished()</code> 方法都会被调用。这和用多线程并没有什么区别。</p>
+
+<hr>
+
+<h2>剖析指令式程序</h2>
+
+<p><img integrity="sha256-mNuPpujAGJ9wweVlRpQqjBRMI+AShOIxmrEgnU9EGPE=" crossorigin="anonymous" src="/assets/scheduling-commands/1-98db8fa6e8c0189f70c1e56546942a8c144c23e01284e2319ab1209d4f4418f1.png"></p>
+
+<p>这里展示了一个典型的指令式机器人程序的代码。<code>Scheduler.run()</code> 方法可以调用所有正在执行的指令的 <code>execute()</code> 和 <code>isFinished()</code> 方法。请忽略 Java 例子中的 <code>log()</code> 方法。</p>
+
+<h2><code>Scheduler.run</code> 方法：指令生命周期</h2>
+
+<p><img integrity="sha256-KbgWefNJiCHi1Lfi81lQ9hh1oSJ2Td4rwOpJFWJayns=" crossorigin="anonymous" src="/assets/scheduling-commands/2-29b81679f3498821e2d4b7e2f35950f61875a122764dde2bc0ea4915625aca7b.png"></p>
+
+<p>这些行为不论在 C++ <code>Scheduler.Run()</code> 的指令式程序中还是 Java <code>Scheduler.run()</code> 的指令式程序中都会调用。这些行为也会在 Driver Station 以 20 毫秒或 50 毫秒为周期刷新的时候执行。下面的伪代码说明了每次调用 <code>run()</code> 方法的时候会发生什么。</p>
+
+<ol>
+<li>按钮和触发器事件被不断询问，来判断是否有相关的指令需要被调度。如果触发器为真，指令被添加到即将执行的队列里。</li>
+<li>枚举所有正在运行指令，调用它们的 <code>execute()</code> 和 <code>isFinished()</code> 函数。已经结束的指令会从正在执行指令的列表中移除。</li>
+<li>把第一步即将执行队列里的指令，添加到正在执行的列表中。</li>
+<li>对空闲的子系统，向正在执行的列表中添加默认指令。</li>
+</ol>
+
+<h2>优化指令组</h2>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code</span>
 
 <span class="n">Pickup</span><span class="o">::</span><span class="n">Pickup</span><span class="p">()</span> <span class="o">:</span> <span class="n">CommandGroup</span><span class="p">(</span><span class="s">"Pickup"</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">AddSequential</span><span class="p">(</span><span class="k">new</span> <span class="n">CloseClaw</span><span class="p">());</span>
@@ -14,10 +143,112 @@
         <span class="n">addSequential</span><span class="o">(</span><span class="k">new</span> <span class="n">SetElevatorSetpoint</span><span class="o">(</span><span class="mf">0.25</span><span class="o">));</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><p>一旦我们编写好了机器人某个机械操控的指令，我们可以把这些指令合并起来组成一个指令组完成更复杂的动作。加入指令组的指令可以被顺序执行或者并行执行。顺序执行的指令在执行完成后才会执行之后的指令。并行指令开始执行后，下一个指令立刻会被调度。</p><p>很重要的一点是，添加到指令组中的指令必须在指令组的构造函数内添加。指令组只是一个由几个指令实例组成的类，帮助协调下属指令的执行。因此所有与指令组相关的参数都必须在构造函数内指定完成。</p><p>想象机器人设计中，有一个机械爪，连接到机械手腕关节，全部都放在一个升降装置上。当我们想要捡起某个东西时，机械爪需要先接近目标，然后升降装置和机械手腕才能启动，否则物体就会从机械爪上掉出来。这个例子里，<code>CloseClaw</code> 指令会先执行，执行完毕后，机械手腕会移动到指定位置，与此同时升降装置移动。这个可以使得机械手腕和升降装置同时移动，加速任务完成时间。</p><h2>指令组什么时候结束？</h2><p><img src="http://www.team6353.com/assets/scheduling-commands/3-3d1316f04eb6505fd26f40838eafeced0709efba814e2f1681f065e483d050e7.png" width="333" height="239" alt="scheduling-commands/3.png"></p><p>指令组在组合中所有启动的指令结束以后结束，不论指令是并行还是顺序添加的。比如很多指令都以顺序或者并行的方式被添加进来，指令组在这些指令全部完成以后结束。每个添加的指令被放在一个列表中。这些子指令执行完毕了，会从列表中移除。指令组在列表空时退出结束。</p><p>在上面的拾起指令中，指令组会在 <code>CloseClaw</code>, <code>SetWristSetpoint</code> 和 <code>SetElevatorSetpoint</code> 指令全部完成后退出。不论指令是顺序添加的还是并行添加的。</p><h2>如何在现在执行的指令里开始其他的指令？</h2><p>指令可以通过 Java 中 <code>schedule()</code> 方法，或者 C++ 中 <code>Schedule()</code> 方法在指令实例中被调度。这可以使得新添加的指令被加入调度器当前即将执行的指令列表中。这个功能在程序需要在某些条件下在某个指令中调用其他指令时十分有用。新调度的指令会被添加到新指令列表中。这些指令会在下一次调度器刷新时执行。新创建的指令不会在和添加时的同一个周期中执行。它会在下一次 <code>Scheduler.run()</code> 时（大约 20 毫秒后）执行。</p><h2>从调度器中移除所有正在执行的指令</h2><div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code</span>
+</code></pre></div>
+<p>一旦我们编写好了机器人某个机械操控的指令，我们可以把这些指令合并起来组成一个指令组完成更复杂的动作。加入指令组的指令可以被顺序执行或者并行执行。顺序执行的指令在执行完成后才会执行之后的指令。并行指令开始执行后，下一个指令立刻会被调度。</p>
+
+<p>很重要的一点是，添加到指令组中的指令必须在指令组的构造函数内添加。指令组只是一个由几个指令实例组成的类，帮助协调下属指令的执行。因此所有与指令组相关的参数都必须在构造函数内指定完成。</p>
+
+<p>想象机器人设计中，有一个机械爪，连接到机械手腕关节，全部都放在一个升降装置上。当我们想要捡起某个东西时，机械爪需要先接近目标，然后升降装置和机械手腕才能启动，否则物体就会从机械爪上掉出来。这个例子里，<code>CloseClaw</code> 指令会先执行，执行完毕后，机械手腕会移动到指定位置，与此同时升降装置移动。这个可以使得机械手腕和升降装置同时移动，加速任务完成时间。</p>
+
+<h2>指令组什么时候结束？</h2>
+
+<p><img integrity="sha256-PRMW8E62UF/Sb0CDjq/s7QcJ77qBTi8WgfBl5IPQUOc=" crossorigin="anonymous" src="/assets/scheduling-commands/3-3d1316f04eb6505fd26f40838eafeced0709efba814e2f1681f065e483d050e7.png"></p>
+
+<p>指令组在组合中所有启动的指令结束以后结束，不论指令是并行还是顺序添加的。比如很多指令都以顺序或者并行的方式被添加进来，指令组在这些指令全部完成以后结束。每个添加的指令被放在一个列表中。这些子指令执行完毕了，会从列表中移除。指令组在列表空时退出结束。</p>
+
+<p>在上面的拾起指令中，指令组会在 <code>CloseClaw</code>, <code>SetWristSetpoint</code> 和 <code>SetElevatorSetpoint</code> 指令全部完成后退出。不论指令是顺序添加的还是并行添加的。</p>
+
+<h2>如何在现在执行的指令里开始其他的指令？</h2>
+
+<p>指令可以通过 Java 中 <code>schedule()</code> 方法，或者 C++ 中 <code>Schedule()</code> 方法在指令实例中被调度。这可以使得新添加的指令被加入调度器当前即将执行的指令列表中。这个功能在程序需要在某些条件下在某个指令中调用其他指令时十分有用。新调度的指令会被添加到新指令列表中。这些指令会在下一次调度器刷新时执行。新创建的指令不会在和添加时的同一个周期中执行。它会在下一次 <code>Scheduler.run()</code> 时（大约 20 毫秒后）执行。</p>
+
+<h2>从调度器中移除所有正在执行的指令</h2>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// C++ Code</span>
 
 <span class="n">Scheduler</span><span class="o">::</span><span class="n">RemoveAll</span><span class="p">();</span>
 </code></pre></div><div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Java Code</span>
 
 <span class="n">Scheduler</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">removeAll</span><span class="o">();</span>
-</code></pre></div><p>偶尔我们需要保证调度器中没有指令执行。使用 Java 中 <code>Scheduler.removeAll()</code> 函数或者 C++ 中 <code>Scheduler::RemoveAll()</code> 函数可以移除所有指令。这会使得现在正在执行的所有指令的 <code>interrupted()</code> 方法 (Java) 或者 <code>Interrupted()</code> 方法 (C++) 被调用。还没有开始的指令会直接调用它们的 <code>end()</code> 方法 (Java) 或 <code>End()</code> 方法 (C++)。</p><h2><code>requires()</code> 方法有什么用？</h2><p><img src="http://www.team6353.com/assets/scheduling-commands/4-0246f103da229547af5fc361d15dc066d54ada969e940864376fde699729945f.png" width="640" height="325" alt="scheduling-commands/4.png"></p><p>如果有许多指令需要同一个子系统才能执行，我们不能让这些指令同时执行。比如，机械爪系统有 <code>OpenClaw</code> 和 <code>CloseClaw</code> 两个指令需要。它们不能同时运行。每个需要用到机械爪子系统的指令都要在构造函数中 <strong>1 - 调用 <code>requires()</code> (Java) 或者 <code>Requires()</code> (C++) 方法声明</strong>。任何一个指令运行时，如果手柄按钮按下调用了其他指令，第二个指令会抢占第一个指令的资源。比如 <code>OpenClaw</code> 指令正在运行，点击按钮运行 <code>CloseClaw</code> 指令，那么 <code>OpenClaw</code> 指令就会被中断，<strong>2 - 下一个周期中 <code>interrupted()</code> 方法被调用</strong>，然后 <code>CloseClaw</code> 指令被调度。细细想来这种调度方法的确常用。如果你按下一个按钮打开机械爪，然后又突然反悔，那第一个指令的确应该被停止。</p><p>一个指令可以调用许多子系统，比如一个复杂的自动阶段指令组。</p><p>指令组自动添加了所有子指令的子系统，作为自己需要依赖的子系统。因此我们不需要在指令组中手动 require 子系统。</p><h2>如何使得指令组中每个指令需要的子系统都被满足？</h2><p>指令组需要的所有子系统是一个所有子指令需要的子系统的集合。如果四个指令被添加到指令组中了，整个指令组会直接依赖所有四个指令依赖的子系统。比如，三个指令在指令组中定义，第一个需要子系统 A，第二个需要子系统 B，第三个需要子系统 C 和 D。指令组执行时就会依赖 ABCD 四个子系统。如果其他需要 ABCD 任意一个子系统的指令开始执行了，它会中断整个指令组，包括顺序和并行，正在执行和将要执行的所有指令。</p></div><div class="alert alert-info" role="alert"> Team 6353 | Zodiac 的原创内容遵循 <a class="alert-link" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 协议</a>。您可以自由分享、演绎，但不可用于商业用途。转载时请保留链接和协议。</div> </article><div class="discuss-wrapper"><div class="m-t-3"><div id="disqus_thread"></div> <script>var disqus_config=function(){this.page.url="http://www.team6353.com/programming/2016/08/28/scheduling-commands.html",this.page.identifier="/programming/2016/08/28/scheduling-commands",this.page.title="\u6307\u4ee4\u8c03\u5ea6"};!function(){var t=document,e=t.createElement("script");e.src="//zodiac-efz-robotics.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div></div></div></div></div></section><footer class="footer"><div class="container"><ul class="list-inline"><li class="list-inline-item">By Zodiac</li><li class="list-inline-item"><a class="text-xs-right" href="http://www.miitbeian.gov.cn/">沪ICP备16041880号-1</a></li></ul></div> </footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/vendors/jquery.easings.min.js"></script><script src="https://tajs.qq.com/stats?sId=57249037" charset="UTF-8" async defer></script></body></html>
+</code></pre></div>
+<p>偶尔我们需要保证调度器中没有指令执行。使用 Java 中 <code>Scheduler.removeAll()</code> 函数或者 C++ 中 <code>Scheduler::RemoveAll()</code> 函数可以移除所有指令。这会使得现在正在执行的所有指令的 <code>interrupted()</code> 方法 (Java) 或者 <code>Interrupted()</code> 方法 (C++) 被调用。还没有开始的指令会直接调用它们的 <code>end()</code> 方法 (Java) 或 <code>End()</code> 方法 (C++)。</p>
+
+<h2><code>requires()</code> 方法有什么用？</h2>
+
+<p><img integrity="sha256-AkbxA9oilUevX8Nh0V3AZtVK2paelAhkN2/eaZcplF8=" crossorigin="anonymous" src="/assets/scheduling-commands/4-0246f103da229547af5fc361d15dc066d54ada969e940864376fde699729945f.png"></p>
+
+<p>如果有许多指令需要同一个子系统才能执行，我们不能让这些指令同时执行。比如，机械爪系统有 <code>OpenClaw</code> 和 <code>CloseClaw</code> 两个指令需要。它们不能同时运行。每个需要用到机械爪子系统的指令都要在构造函数中 <strong>1 - 调用 <code>requires()</code> (Java) 或者 <code>Requires()</code> (C++) 方法声明</strong>。任何一个指令运行时，如果手柄按钮按下调用了其他指令，第二个指令会抢占第一个指令的资源。比如 <code>OpenClaw</code> 指令正在运行，点击按钮运行 <code>CloseClaw</code> 指令，那么 <code>OpenClaw</code> 指令就会被中断，<strong>2 - 下一个周期中 <code>interrupted()</code> 方法被调用</strong>，然后 <code>CloseClaw</code> 指令被调度。细细想来这种调度方法的确常用。如果你按下一个按钮打开机械爪，然后又突然反悔，那第一个指令的确应该被停止。</p>
+
+<p>一个指令可以调用许多子系统，比如一个复杂的自动阶段指令组。</p>
+
+<p>指令组自动添加了所有子指令的子系统，作为自己需要依赖的子系统。因此我们不需要在指令组中手动 require 子系统。</p>
+
+<h2>如何使得指令组中每个指令需要的子系统都被满足？</h2>
+
+<p>指令组需要的所有子系统是一个所有子指令需要的子系统的集合。如果四个指令被添加到指令组中了，整个指令组会直接依赖所有四个指令依赖的子系统。比如，三个指令在指令组中定义，第一个需要子系统 A，第二个需要子系统 B，第三个需要子系统 C 和 D。指令组执行时就会依赖 ABCD 四个子系统。如果其他需要 ABCD 任意一个子系统的指令开始执行了，它会中断整个指令组，包括顺序和并行，正在执行和将要执行的所有指令。</p>
+
+        </div>
+        <div class="alert alert-info" role="alert">
+          Team 6353 | Zodiac 的原创内容遵循 <a class="alert-link" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 协议</a>。您可以自由分享、演绎，但不可用于商业用途。转载时请保留链接和协议。
+        </div>
+      </article>
+      
+<div class="discuss-wrapper">
+  
+    <div class="m-t-3">
+  
+
+  
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+    this.page.url = "https://zodiacefz.github.io/programming/2016/08/28/scheduling-commands.html";
+    this.page.identifier = "/programming/2016/08/28/scheduling-commands";
+    this.page.title = "指令调度"
+  };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//zodiac-efz-robotics.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+</div>
+
+  
+</div>
+
+    </div>
+  </div>
+</div>
+
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <ul class="list-inline">
+      <li class="list-inline-item">By Zodiac</li>
+<li class="list-inline-item"><a class="text-xs-right" href="http://www.miitbeian.gov.cn/">沪ICP备16041880号-1</a></li>
+
+    </ul>
+  </div>
+</footer>
+
+
+    
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/vendors/jquery.easings.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://tajs.qq.com/stats?sId=57249037" charset="UTF-8" async defer></script>
+
+
+  </body>
+
+</html>

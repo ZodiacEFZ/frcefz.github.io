@@ -1,4 +1,108 @@
-<!DOCTYPE html><html lang="en"><head> <script>var _speedMark=new Date</script><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><meta name="google-site-verification" content="nhDpSkTIYdq00-JRzlp4L4y0U0w9kzLJDYqxKUGiyzA"/><title>简单子系统</title><meta name="description" content="原文：Simple Subsystems"><meta name="keywords" Content="Zodiac,FIRST,FRC,9036,机器人,竞赛,队伍"><link href="https://fonts.googleapis.com/css?family=Play|Amiko" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.css" rel="stylesheet"><link type="text/css" rel="stylesheet" href="http://www.team6353.com/assets/main-2eb1a6f2afe05556e851ac5ca85006a023df2ab21f73a4eb3a998a082819f04b.css"><link type="text/css" rel="stylesheet" href="http://www.team6353.com/assets/syntax-dce7d9260ac86556c0676ffb6d97e9f17b9edcbc99d8a98eeae91f062c109a4b.css"><link rel="canonical" href="http://www.team6353.com/programming/2016/08/23/simple-subsystems.html"><link rel="alternate" type="application/rss+xml" title="Team 6353 | Zodiac" href="http://www.team6353.com/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><meta name="msapplication-TileColor" content="#da532c"><meta name="theme-color" content="#ffffff"></head><body><header> <nav class="navbar navbar-light navbar-main"> <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-frc-efz-main"> ☰ </button><div class="collapse navbar-toggleable-xs" id="navbar-frc-efz-main"> <a class="navbar-brand" href="/">Team 6353 | Zodiac</a><div class="nav navbar-nav"> <a class="nav-item nav-link" href="/index.html">Welcome</a> <a class="nav-item nav-link" href="/team/2016/08/10/team-member.html">Members</a> <a class="nav-item nav-link" href="/post.html">Posts</a></div></div></nav> </header><section id="main"><div class="jumbotron jumbotron-fluid"><div class="container"><div class="row"><div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2"> <header class="post-header"><h1 class="post-title display-4" itemprop="name headline">简单子系统</h1><p class="post-meta"><time datetime="2016-08-23T03:40:36+00:00" itemprop="datePublished">Aug 23, 2016</time></p><ul class="list-inline"><li class="list-inline-item"> <span class="h3"><span class="tag tag-success">programming</span></span></li><li class="list-inline-item">#机器人</li><li class="list-inline-item">#Java</li><li class="list-inline-item">#C++</li><li class="list-inline-item">#编程</li><li class="list-inline-item">#翻译</li></ul> </header></div></div></div></div><div class="container"><div class="row"><div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2"> <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><div class="post-content" itemprop="articleBody"><blockquote class="blockquote"><p>原文：<a href="http://wpilib.screenstepslive.com/s/4485/m/13809/l/599735-simple-subsystems">Simple Subsystems</a></p></blockquote><h2>创建子系统</h2><div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Java code</span>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  
+  <script type="text/javascript">
+    var _speedMark = new Date();
+  </script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="google-site-verification" content="nhDpSkTIYdq00-JRzlp4L4y0U0w9kzLJDYqxKUGiyzA" />
+
+  
+  <title>简单子系统</title>
+  <meta name="description" content="原文：Simple Subsystems">
+  <meta name="keywords" Content="Zodiac,FIRST,FRC,6353,机器人,竞赛,队伍">
+  
+  
+    <link href="https://fonts.googleapis.com/css?family=Play|Amiko" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" integrity="sha256-bx1P6LiTj8HZgfxmzH9WE1362yWd6usPVrInte0qa3M=" crossorigin="anonymous" href="/assets/main-6f1d4fe8b8938fc1d981fc66cc7f56135dfadb259deaeb0f56b227b5ed2a6b73.css">
+  <link rel="stylesheet" type="text/css" integrity="sha256-a+xG2IoHp6dfueGuXkub91mQ65CpVX5O5FT3CMUqI2k=" crossorigin="anonymous" href="/assets/syntax-6bec46d88a07a7a75fb9e1ae5e4b9bf75990eb90a9557e4ee454f708c52a2369.css">
+  <link rel="canonical" href="https://zodiacefz.github.io/programming/2016/08/23/simple-subsystems.html">
+  <link rel="alternate" type="application/rss+xml" title="Team 6353 | Zodiac" href="https://zodiacefz.github.io/feed.xml">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+
+  <body>
+
+    <header>
+  <nav class="navbar navbar-light navbar-main">
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-frc-efz-main">
+  &#9776;
+</button>
+<div class="collapse navbar-toggleable-xs" id="navbar-frc-efz-main">
+  <a class="navbar-brand" href="/">Team 6353 | Zodiac</a>
+  <div class="nav navbar-nav">
+    <a class="nav-item nav-link" href="/index.html">Welcome</a>
+    <a class="nav-item nav-link" href="/team/2016/08/10/team-member.html">Members</a>
+    <!--<a class="nav-item nav-link" href="#frc/robot">Robot</a>
+    <a class="nav-item nav-link" href="#frc/robot">Activities</a>-->
+    <a class="nav-item nav-link" href="/post.html">Posts</a>
+  </div>
+</div>
+
+  </nav>
+</header>
+
+
+    <section id="main">
+      <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+        <header class="post-header">
+          <h1 class="post-title display-4" itemprop="name headline">简单子系统</h1>
+          <p class="post-meta"><time datetime="2016-08-23T03:40:36+00:00" itemprop="datePublished">Aug 23, 2016</time></p>
+          <ul class="list-inline">
+            
+              <li class="list-inline-item">
+                <span class="h3"><span class="tag tag-success">programming</span></span>
+              </li>
+            
+            
+            <li class="list-inline-item">#机器人</li>
+            
+            <li class="list-inline-item">#Java</li>
+            
+            <li class="list-inline-item">#C++</li>
+            
+            <li class="list-inline-item">#编程</li>
+            
+            <li class="list-inline-item">#翻译</li>
+            
+          </ul>
+        </header>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-content" itemprop="articleBody">
+          <blockquote class="blockquote"><p>原文：<a href="http://wpilib.screenstepslive.com/s/4485/m/13809/l/599735-simple-subsystems">Simple Subsystems</a></p>
+</blockquote>
+<h2>创建子系统</h2>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Java code</span>
 
 <span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">usfirst</span><span class="o">.</span><span class="na">frc</span><span class="o">.</span><span class="na">team1</span><span class="o">.</span><span class="na">robot</span><span class="o">.</span><span class="na">subsystems</span><span class="o">;</span>
 
@@ -25,7 +129,11 @@
         <span class="n">motor</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><p>这是一个很简单的控制机械爪的子系统。在这个例子中，机械爪使用一个马达驱动张开或关闭，并且没有使用任何传感器（我们可以用这个例子练习编程，但是请不要在实际中这么设计机械爪）。机械爪张开和关闭的程度是计时实现的。三个方法 <code>open()</code> <code>close()</code> <code>stop()</code> 可以驱动机械爪的马达。请注意，这里没有任何代码可以确认机械爪是否真的张开或关闭了。<code>open()</code> 方法调用时，机械爪向打开的方向移动。<code>close()</code> 方法使机械爪往关闭的方向移动。我们可以使用指令来控制机械爪究竟要花多少时间张开关闭。</p><h2>使用指令操纵机械爪</h2><div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Java code</span>
+</code></pre></div>
+<p>这是一个很简单的控制机械爪的子系统。在这个例子中，机械爪使用一个马达驱动张开或关闭，并且没有使用任何传感器（我们可以用这个例子练习编程，但是请不要在实际中这么设计机械爪）。机械爪张开和关闭的程度是计时实现的。三个方法 <code>open()</code> <code>close()</code> <code>stop()</code> 可以驱动机械爪的马达。请注意，这里没有任何代码可以确认机械爪是否真的张开或关闭了。<code>open()</code> 方法调用时，机械爪向打开的方向移动。<code>close()</code> 方法使机械爪往关闭的方向移动。我们可以使用指令来控制机械爪究竟要花多少时间张开关闭。</p>
+
+<h2>使用指令操纵机械爪</h2>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Java code</span>
 
 <span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">usfirst</span><span class="o">.</span><span class="na">frc</span><span class="o">.</span><span class="na">team1</span><span class="o">.</span><span class="na">robot</span><span class="o">.</span><span class="na">commands</span><span class="o">;</span>
 
@@ -60,4 +168,72 @@
         <span class="n">end</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><p>指令可以帮助我们设置每个子系统操作的时间。多个指令可以使用一个子系统完成多个行为。机械爪就是一个例子。指令可以设置机械爪张开或关闭的时间参数。比如上面的指令就控制了机械爪张开。请注意，我们在这个指令中用 <code>setTimeout</code> 函数设置了指令的执行时间为 0.9 秒。最后要在 <code>isFinished()</code> 函数中判断是否到达了指定时间。关于如何使用指令，请参见“使用指令”这篇文章。</p></div><div class="alert alert-info" role="alert"> Team 6353 | Zodiac 的原创内容遵循 <a class="alert-link" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 协议</a>。您可以自由分享、演绎，但不可用于商业用途。转载时请保留链接和协议。</div> </article><div class="discuss-wrapper"><div class="m-t-3"><div id="disqus_thread"></div> <script>var disqus_config=function(){this.page.url="http://www.team6353.com/programming/2016/08/23/simple-subsystems.html",this.page.identifier="/programming/2016/08/23/simple-subsystems",this.page.title="\u7b80\u5355\u5b50\u7cfb\u7edf"};!function(){var t=document,e=t.createElement("script");e.src="//zodiac-efz-robotics.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div></div></div></div></div></section><footer class="footer"><div class="container"><ul class="list-inline"><li class="list-inline-item">By Zodiac</li><li class="list-inline-item"><a class="text-xs-right" href="http://www.miitbeian.gov.cn/">沪ICP备16041880号-1</a></li></ul></div> </footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/vendors/jquery.easings.min.js"></script><script src="https://tajs.qq.com/stats?sId=57249037" charset="UTF-8" async defer></script></body></html>
+</code></pre></div>
+<p>指令可以帮助我们设置每个子系统操作的时间。多个指令可以使用一个子系统完成多个行为。机械爪就是一个例子。指令可以设置机械爪张开或关闭的时间参数。比如上面的指令就控制了机械爪张开。请注意，我们在这个指令中用 <code>setTimeout</code> 函数设置了指令的执行时间为 0.9 秒。最后要在 <code>isFinished()</code> 函数中判断是否到达了指定时间。关于如何使用指令，请参见“使用指令”这篇文章。</p>
+
+        </div>
+        <div class="alert alert-info" role="alert">
+          Team 6353 | Zodiac 的原创内容遵循 <a class="alert-link" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 协议</a>。您可以自由分享、演绎，但不可用于商业用途。转载时请保留链接和协议。
+        </div>
+      </article>
+      
+<div class="discuss-wrapper">
+  
+    <div class="m-t-3">
+  
+
+  
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+    this.page.url = "https://zodiacefz.github.io/programming/2016/08/23/simple-subsystems.html";
+    this.page.identifier = "/programming/2016/08/23/simple-subsystems";
+    this.page.title = "简单子系统"
+  };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//zodiac-efz-robotics.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+</div>
+
+  
+</div>
+
+    </div>
+  </div>
+</div>
+
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <ul class="list-inline">
+      <li class="list-inline-item">By Zodiac</li>
+<li class="list-inline-item"><a class="text-xs-right" href="http://www.miitbeian.gov.cn/">沪ICP备16041880号-1</a></li>
+
+    </ul>
+  </div>
+</footer>
+
+
+    
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/vendors/jquery.easings.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://tajs.qq.com/stats?sId=57249037" charset="UTF-8" async defer></script>
+
+
+  </body>
+
+</html>
